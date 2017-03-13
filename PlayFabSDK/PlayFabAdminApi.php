@@ -880,7 +880,7 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Retrieves the pre-signed URL for uploading a content file. A subsequent HTTP PUT to the returned URL uploads the content.
+    /// Retrieves the pre-signed URL for uploading a content file. A subsequent HTTP PUT to the returned URL uploads the  content. Also, please be aware that the Content service is specifically PlayFab's CDN offering, for which standard CDN rates apply.
     /// https://api.playfab.com/Documentation/Admin/method/GetContentUploadUrl
     /// </summary>
     public static function GetContentUploadUrl($titleId, $authValue, $request)

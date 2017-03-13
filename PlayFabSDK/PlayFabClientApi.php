@@ -16,6 +16,28 @@ class PlayFabClientApi
     }
 
     /// <summary>
+    /// Requests a challenge from the server to be signed by Windows Hello Passport service to authenticate.
+    /// https://api.playfab.com/Documentation/Client/method/GetWindowsHelloChallenge
+    /// </summary>
+    public static function GetWindowsHelloChallenge($titleId, $authValue, $request)
+    {
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetWindowsHelloChallenge", $request, null, $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Link Windows Hello to the current PlayFab Account
+    /// https://api.playfab.com/Documentation/Client/method/LinkWindowsHello
+    /// </summary>
+    public static function LinkWindowsHello($titleId, $authValue, $request)
+    {
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkWindowsHello", $request, null, $authValue);
+        return $result;
+    }
+
+    /// <summary>
     /// Signs the user in using the Android device identifier, returning a session identifier that can subsequently be used for API calls which require an authenticated user
     /// https://api.playfab.com/Documentation/Client/method/LoginWithAndroidDeviceID
     /// </summary>
@@ -81,7 +103,7 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Signs the user in using a Google account access token(https://developers.google.com/android/reference/com/google/android/gms/auth/GoogleAuthUtil#public-methods), returning a session identifier that can subsequently be used for API calls which require an authenticated user
+    /// Signs the user in using their Google account credentials
     /// https://api.playfab.com/Documentation/Client/method/LoginWithGoogleAccount
     /// </summary>
     public static function LoginWithGoogleAccount($titleId, $authValue, $request)
@@ -159,6 +181,19 @@ class PlayFabClientApi
     }
 
     /// <summary>
+    /// Completes the Windows Hello login flow by returning the signed value of the challange from GetWindowsHelloChallenge. Windows Hello has a 2 step client to server authentication scheme. Step one is to request from the server a challenge string. Step two is to request the user sign the string via Windows Hello and then send the signed value back to the server. 
+    /// https://api.playfab.com/Documentation/Client/method/LoginWithWindowsHello
+    /// </summary>
+    public static function LoginWithWindowsHello($titleId, $authValue, $request)
+    {
+        if (!isset($titleId)) $titleId = PlayFabSettings::$titleId;
+        if (!isset($request->$titleId)) !$request->titleId = $titleId;
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LoginWithWindowsHello", $request, null, $authValue);
+        return $result;
+    }
+
+    /// <summary>
     /// Registers a new Playfab user account, returning a session identifier that can subsequently be used for API calls which require an authenticated user. You must supply either a username or an email address.
     /// https://api.playfab.com/Documentation/Client/method/RegisterPlayFabUser
     /// </summary>
@@ -168,6 +203,30 @@ class PlayFabClientApi
         if (!isset($request->$titleId)) !$request->titleId = $titleId;
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RegisterPlayFabUser", $request, null, $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Register using Windows Hello authentication. Before a user can request a challenge or perform a signin the user must first either register or link a Windows Hello account.
+    /// https://api.playfab.com/Documentation/Client/method/RegisterWithWindowsHello
+    /// </summary>
+    public static function RegisterWithWindowsHello($titleId, $authValue, $request)
+    {
+        if (!isset($titleId)) $titleId = PlayFabSettings::$titleId;
+        if (!isset($request->$titleId)) !$request->titleId = $titleId;
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RegisterWithWindowsHello", $request, null, $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Unlink Windows Hello from the current PlayFab Account
+    /// https://api.playfab.com/Documentation/Client/method/UnlinkWindowsHello
+    /// </summary>
+    public static function UnlinkWindowsHello($titleId, $authValue, $request)
+    {
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkWindowsHello", $request, null, $authValue);
         return $result;
     }
 
@@ -352,7 +411,7 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Links the currently signed-in user account to the Google account specified by the Google account access token (https://developers.google.com/android/reference/com/google/android/gms/auth/GoogleAuthUtil#public-methods).
+    /// Links the currently signed-in user account to their Google account, using their Google account credentials
     /// https://api.playfab.com/Documentation/Client/method/LinkGoogleAccount
     /// </summary>
     public static function LinkGoogleAccount($titleId, $authValue, $request)
@@ -551,6 +610,18 @@ class PlayFabClientApi
         //TODO: Check the sessionTicket
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkTwitch", $request, "X-Authentication", $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Update the avatar URL of the player
+    /// https://api.playfab.com/Documentation/Client/method/UpdateAvatarUrl
+    /// </summary>
+    public static function UpdateAvatarUrl($titleId, $authValue, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UpdateAvatarUrl", $request, "X-Authentication", $authValue);
         return $result;
     }
 
@@ -1215,7 +1286,7 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// This API retrieves a pre-signed URL for accessing a content file for the title. A subsequent  HTTP GET to the returned URL will attempt to download the content. A HEAD query to the returned URL will attempt to  retrieve the metadata of the content. Note that a successful result does not guarantee the existence of this content -  if it has not been uploaded, the query to retrieve the data will fail. See this post for more information:  https://community.playfab.com/hc/en-us/community/posts/205469488-How-to-upload-files-to-PlayFab-s-Content-Service
+    /// This API retrieves a pre-signed URL for accessing a content file for the title. A subsequent  HTTP GET to the returned URL will attempt to download the content. A HEAD query to the returned URL will attempt to  retrieve the metadata of the content. Note that a successful result does not guarantee the existence of this content -  if it has not been uploaded, the query to retrieve the data will fail. See this post for more information:  https://community.playfab.com/hc/en-us/community/posts/205469488-How-to-upload-files-to-PlayFab-s-Content-Service.  Also, please be aware that the Content service is specifically PlayFab's CDN offering, for which standard CDN rates apply.
     /// https://api.playfab.com/Documentation/Client/method/GetContentDownloadUrl
     /// </summary>
     public static function GetContentDownloadUrl($titleId, $authValue, $request)
@@ -1359,7 +1430,7 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Accepts an open trade. If the call is successful, the offered and accepted items will be swapped between the two players' inventories.
+    /// Accepts an open trade (one that has not yet been accepted or cancelled), if the locally signed-in player is in the  allowed player list for the trade, or it is open to all players. If the call is successful, the offered and accepted items will be swapped  between the two players' inventories.
     /// https://api.playfab.com/Documentation/Client/method/AcceptTrade
     /// </summary>
     public static function AcceptTrade($titleId, $authValue, $request)
@@ -1371,7 +1442,7 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Cancels an open trade.
+    /// Cancels an open trade (one that has not yet been accepted or cancelled). Note that only the player who created the trade  can cancel it via this API call, to prevent griefing of the trade system (cancelling trades in order to prevent other players from accepting  them, for trades that can be claimed by more than one player).
     /// https://api.playfab.com/Documentation/Client/method/CancelTrade
     /// </summary>
     public static function CancelTrade($titleId, $authValue, $request)
@@ -1407,7 +1478,7 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Opens a new outstanding trade.
+    /// Opens a new outstanding trade. Note that a given item instance may only be in one open trade at a time.
     /// https://api.playfab.com/Documentation/Client/method/OpenTrade
     /// </summary>
     public static function OpenTrade($titleId, $authValue, $request)
@@ -1451,6 +1522,17 @@ class PlayFabClientApi
         //TODO: Check the sessionTicket
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayerTags", $request, "X-Authentication", $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Validates with Windows that the receipt for an Windows App Store in-app purchase is valid and that it matches the purchased catalog item
+    /// https://api.playfab.com/Documentation/Client/method/ValidateWindowsStoreReceipt
+    /// </summary>
+    public static function ValidateWindowsStoreReceipt($titleId, $authValue, $request)
+    {
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ValidateWindowsStoreReceipt", $request, null, $authValue);
         return $result;
     }
 

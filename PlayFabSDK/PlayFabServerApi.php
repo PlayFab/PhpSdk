@@ -112,6 +112,18 @@ class PlayFabServerApi
     }
 
     /// <summary>
+    /// Update the avatar URL of the specified player
+    /// https://api.playfab.com/Documentation/Server/method/UpdateAvatarUrl
+    /// </summary>
+    public static function UpdateAvatarUrl($titleId, $authValue, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/UpdateAvatarUrl", $request, "X-SecretKey", $authValue);
+        return $result;
+    }
+
+    /// <summary>
     /// Updates information of a list of existing bans specified with Ban Ids.
     /// https://api.playfab.com/Documentation/Server/method/UpdateBans
     /// </summary>
@@ -772,6 +784,18 @@ class PlayFabServerApi
     }
 
     /// <summary>
+    /// Updates the tag list for a specified user in the friend list of another user
+    /// https://api.playfab.com/Documentation/Server/method/SetFriendTags
+    /// </summary>
+    public static function SetFriendTags($titleId, $authValue, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/SetFriendTags", $request, "X-SecretKey", $authValue);
+        return $result;
+    }
+
+    /// <summary>
     /// Inform the matchmaker that a Game Server Instance is removed.
     /// https://api.playfab.com/Documentation/Server/method/DeregisterGame
     /// </summary>
@@ -1000,7 +1024,7 @@ class PlayFabServerApi
     }
 
     /// <summary>
-    /// This API retrieves a pre-signed URL for accessing a content file for the title. A subsequent  HTTP GET to the returned URL will attempt to download the content. A HEAD query to the returned URL will attempt to  retrieve the metadata of the content. Note that a successful result does not guarantee the existence of this content -  if it has not been uploaded, the query to retrieve the data will fail. See this post for more information:  https://community.playfab.com/hc/en-us/community/posts/205469488-How-to-upload-files-to-PlayFab-s-Content-Service
+    /// This API retrieves a pre-signed URL for accessing a content file for the title. A subsequent  HTTP GET to the returned URL will attempt to download the content. A HEAD query to the returned URL will attempt to  retrieve the metadata of the content. Note that a successful result does not guarantee the existence of this content -  if it has not been uploaded, the query to retrieve the data will fail. See this post for more information:  https://community.playfab.com/hc/en-us/community/posts/205469488-How-to-upload-files-to-PlayFab-s-Content-Service.  Also, please be aware that the Content service is specifically PlayFab's CDN offering, for which standard CDN rates apply.
     /// https://api.playfab.com/Documentation/Server/method/GetContentDownloadUrl
     /// </summary>
     public static function GetContentDownloadUrl($titleId, $authValue, $request)
