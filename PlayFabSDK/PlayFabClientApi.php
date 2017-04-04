@@ -27,17 +27,6 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Link Windows Hello to the current PlayFab Account
-    /// https://api.playfab.com/Documentation/Client/method/LinkWindowsHello
-    /// </summary>
-    public static function LinkWindowsHello($titleId, $authValue, $request)
-    {
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkWindowsHello", $request, null, $authValue);
-        return $result;
-    }
-
-    /// <summary>
     /// Signs the user in using the Android device identifier, returning a session identifier that can subsequently be used for API calls which require an authenticated user
     /// https://api.playfab.com/Documentation/Client/method/LoginWithAndroidDeviceID
     /// </summary>
@@ -64,7 +53,7 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Signs the user into the PlayFab account, returning a session identifier that can subsequently be used for API calls which require an authenticated user
+    /// Signs the user into the PlayFab account, returning a session identifier that can subsequently be used for API calls which require an authenticated user. Unlike most other login API calls, LoginWithEmailAddress does not permit the  creation of new accounts via the CreateAccountFlag. Email addresses may be used to create accounts via RegisterPlayFabUser.
     /// https://api.playfab.com/Documentation/Client/method/LoginWithEmailAddress
     /// </summary>
     public static function LoginWithEmailAddress($titleId, $authValue, $request)
@@ -142,7 +131,7 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Signs the user into the PlayFab account, returning a session identifier that can subsequently be used for API calls which require an authenticated user. Unlike other login API calls, LoginWithEmailAddress does not permit the creation of new accounts via the CreateAccountFlag. Email accounts must be created using the RegisterPlayFabUser API or added to existing accounts using AddUsernamePassword.
+    /// Signs the user into the PlayFab account, returning a session identifier that can subsequently be used for API calls which require an authenticated user. Unlike most other login API calls, LoginWithPlayFab does not permit the  creation of new accounts via the CreateAccountFlag. Username/Password credentials may be used to create accounts via  RegisterPlayFabUser, or added to existing accounts using AddUsernamePassword.
     /// https://api.playfab.com/Documentation/Client/method/LoginWithPlayFab
     /// </summary>
     public static function LoginWithPlayFab($titleId, $authValue, $request)
@@ -207,7 +196,7 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Register using Windows Hello authentication. Before a user can request a challenge or perform a signin the user must first either register or link a Windows Hello account.
+    /// Registers a new PlayFab user account using Windows Hello authentication, returning a session ticket  that can subsequently be used for API calls which require an authenticated user
     /// https://api.playfab.com/Documentation/Client/method/RegisterWithWindowsHello
     /// </summary>
     public static function RegisterWithWindowsHello($titleId, $authValue, $request)
@@ -216,17 +205,6 @@ class PlayFabClientApi
         if (!isset($request->$titleId)) !$request->titleId = $titleId;
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RegisterWithWindowsHello", $request, null, $authValue);
-        return $result;
-    }
-
-    /// <summary>
-    /// Unlink Windows Hello from the current PlayFab Account
-    /// https://api.playfab.com/Documentation/Client/method/UnlinkWindowsHello
-    /// </summary>
-    public static function UnlinkWindowsHello($titleId, $authValue, $request)
-    {
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkWindowsHello", $request, null, $authValue);
         return $result;
     }
 
@@ -471,6 +449,17 @@ class PlayFabClientApi
     }
 
     /// <summary>
+    /// Link Windows Hello authentication to the current PlayFab Account
+    /// https://api.playfab.com/Documentation/Client/method/LinkWindowsHello
+    /// </summary>
+    public static function LinkWindowsHello($titleId, $authValue, $request)
+    {
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkWindowsHello", $request, null, $authValue);
+        return $result;
+    }
+
+    /// <summary>
     /// Removes the specified generic service identifier from the player's PlayFab account.
     /// https://api.playfab.com/Documentation/Client/method/RemoveGenericID
     /// </summary>
@@ -610,6 +599,17 @@ class PlayFabClientApi
         //TODO: Check the sessionTicket
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkTwitch", $request, "X-Authentication", $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Unlink Windows Hello authentication from the current PlayFab Account
+    /// https://api.playfab.com/Documentation/Client/method/UnlinkWindowsHello
+    /// </summary>
+    public static function UnlinkWindowsHello($titleId, $authValue, $request)
+    {
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkWindowsHello", $request, null, $authValue);
         return $result;
     }
 
@@ -914,7 +914,7 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Retrieves a completed purchase along with its current PlayFab status.
+    /// Retrieves a purchase along with its current PlayFab status.
     /// https://api.playfab.com/Documentation/Client/method/GetPurchase
     /// </summary>
     public static function GetPurchase($titleId, $authValue, $request)
@@ -1082,7 +1082,7 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Restores all in-app purchases based on the given refresh receipt.
+    /// Restores all in-app purchases based on the given restore receipt
     /// https://api.playfab.com/Documentation/Client/method/RestoreIOSPurchases
     /// </summary>
     public static function RestoreIOSPurchases($titleId, $authValue, $request)
