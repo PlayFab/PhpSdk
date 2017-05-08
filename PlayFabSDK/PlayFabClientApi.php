@@ -454,8 +454,9 @@ class PlayFabClientApi
     /// </summary>
     public static function LinkWindowsHello($titleId, $authValue, $request)
     {
+        //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkWindowsHello", $request, null, $authValue);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkWindowsHello", $request, "X-Authentication", $authValue);
         return $result;
     }
 
@@ -608,8 +609,9 @@ class PlayFabClientApi
     /// </summary>
     public static function UnlinkWindowsHello($titleId, $authValue, $request)
     {
+        //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkWindowsHello", $request, null, $authValue);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkWindowsHello", $request, "X-Authentication", $authValue);
         return $result;
     }
 
@@ -914,7 +916,7 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Retrieves a purchase along with its current PlayFab status.
+    /// Retrieves a purchase along with its current PlayFab status. Returns inventory items from the purchase that are still active.
     /// https://api.playfab.com/Documentation/Client/method/GetPurchase
     /// </summary>
     public static function GetPurchase($titleId, $authValue, $request)
@@ -1531,8 +1533,9 @@ class PlayFabClientApi
     /// </summary>
     public static function ValidateWindowsStoreReceipt($titleId, $authValue, $request)
     {
+        //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ValidateWindowsStoreReceipt", $request, null, $authValue);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ValidateWindowsStoreReceipt", $request, "X-Authentication", $authValue);
         return $result;
     }
 

@@ -856,7 +856,7 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Delete a content file from the title
+    /// Delete a content file from the title. When deleting a file that does not exist, it returns success.
     /// https://api.playfab.com/Documentation/Admin/method/DeleteContent
     /// </summary>
     public static function DeleteContent($titleId, $authValue, $request)
