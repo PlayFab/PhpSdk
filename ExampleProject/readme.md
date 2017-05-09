@@ -1,11 +1,9 @@
-PhpSdk Getting Started Guide
-========
+# PhpSdk Getting Started Guide
 
 This is a ROUGH getting started guide for PHP SDK.
 
 
-PHP Project Setup
-----
+## PHP Project Setup
 
 * Install PHP 7.1
 * Install Apache 2.4
@@ -19,8 +17,7 @@ PHP Project Setup
 * Copy the contents of our sdk into your ./Apache24/htdocs folder
 * Run apache
 
-Finish and Execute
-----
+## Finish and Execute
 
 If you set up everything correctly, this page should work: https://localhost/ExampleProject/gui.php
 
@@ -30,7 +27,6 @@ If you set up everything correctly, this page should work: https://localhost/Exa
   * {"CustomID":"GettingStartedGuide", "CreateAccount": true}
 * Press "Send"
 
-PENDING CHANGES
-----
+## PENDING CHANGES
 
 This guide and example describe using the Client API via your PHP server.  This is not a best practice.  Your game should use the JavaScriptSdk for client calls, from the client html.  Your server logic should make server api calls as needed, and you should implement your own server logic between your client and our server api.
