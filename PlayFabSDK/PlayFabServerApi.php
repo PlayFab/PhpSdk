@@ -28,6 +28,18 @@ class PlayFabServerApi
     }
 
     /// <summary>
+    /// Retrieves the player's profile
+    /// https://api.playfab.com/Documentation/Server/method/GetPlayerProfile
+    /// </summary>
+    public static function GetPlayerProfile($titleId, $authValue, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/GetPlayerProfile", $request, "X-SecretKey", $authValue);
+        return $result;
+    }
+
+    /// <summary>
     /// Retrieves the unique PlayFab identifiers for the given set of Facebook identifiers.
     /// https://api.playfab.com/Documentation/Server/method/GetPlayFabIDsFromFacebookIDs
     /// </summary>

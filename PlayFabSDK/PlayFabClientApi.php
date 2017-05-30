@@ -257,6 +257,18 @@ class PlayFabClientApi
     }
 
     /// <summary>
+    /// Retrieves the player's profile
+    /// https://api.playfab.com/Documentation/Client/method/GetPlayerProfile
+    /// </summary>
+    public static function GetPlayerProfile($titleId, $authValue, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayerProfile", $request, "X-Authentication", $authValue);
+        return $result;
+    }
+
+    /// <summary>
     /// Retrieves the unique PlayFab identifiers for the given set of Facebook identifiers.
     /// https://api.playfab.com/Documentation/Client/method/GetPlayFabIDsFromFacebookIDs
     /// </summary>
