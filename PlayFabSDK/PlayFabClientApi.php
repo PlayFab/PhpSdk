@@ -1084,42 +1084,6 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Registers the iOS device to receive push notifications
-    /// https://api.playfab.com/Documentation/Client/method/RegisterForIOSPushNotification
-    /// </summary>
-    public static function RegisterForIOSPushNotification($titleId, $authValue, $request)
-    {
-        //TODO: Check the sessionTicket
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RegisterForIOSPushNotification", $request, "X-Authentication", $authValue);
-        return $result;
-    }
-
-    /// <summary>
-    /// Restores all in-app purchases based on the given restore receipt
-    /// https://api.playfab.com/Documentation/Client/method/RestoreIOSPurchases
-    /// </summary>
-    public static function RestoreIOSPurchases($titleId, $authValue, $request)
-    {
-        //TODO: Check the sessionTicket
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RestoreIOSPurchases", $request, "X-Authentication", $authValue);
-        return $result;
-    }
-
-    /// <summary>
-    /// Validates with the Apple store that the receipt for an iOS in-app purchase is valid and that it matches the purchased catalog item
-    /// https://api.playfab.com/Documentation/Client/method/ValidateIOSReceipt
-    /// </summary>
-    public static function ValidateIOSReceipt($titleId, $authValue, $request)
-    {
-        //TODO: Check the sessionTicket
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ValidateIOSReceipt", $request, "X-Authentication", $authValue);
-        return $result;
-    }
-
-    /// <summary>
     /// Get details about all current running game servers matching the given parameters.
     /// https://api.playfab.com/Documentation/Client/method/GetCurrentGames
     /// </summary>
@@ -1164,30 +1128,6 @@ class PlayFabClientApi
         //TODO: Check the sessionTicket
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/StartGame", $request, "X-Authentication", $authValue);
-        return $result;
-    }
-
-    /// <summary>
-    /// Registers the Android device to receive push notifications
-    /// https://api.playfab.com/Documentation/Client/method/AndroidDevicePushNotificationRegistration
-    /// </summary>
-    public static function AndroidDevicePushNotificationRegistration($titleId, $authValue, $request)
-    {
-        //TODO: Check the sessionTicket
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AndroidDevicePushNotificationRegistration", $request, "X-Authentication", $authValue);
-        return $result;
-    }
-
-    /// <summary>
-    /// Validates a Google Play purchase and gives the corresponding item to the player.
-    /// https://api.playfab.com/Documentation/Client/method/ValidateGooglePlayPurchase
-    /// </summary>
-    public static function ValidateGooglePlayPurchase($titleId, $authValue, $request)
-    {
-        //TODO: Check the sessionTicket
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ValidateGooglePlayPurchase", $request, "X-Authentication", $authValue);
         return $result;
     }
 
@@ -1432,18 +1372,6 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Validates with Amazon that the receipt for an Amazon App Store in-app purchase is valid and that it matches the purchased catalog item
-    /// https://api.playfab.com/Documentation/Client/method/ValidateAmazonIAPReceipt
-    /// </summary>
-    public static function ValidateAmazonIAPReceipt($titleId, $authValue, $request)
-    {
-        //TODO: Check the sessionTicket
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ValidateAmazonIAPReceipt", $request, "X-Authentication", $authValue);
-        return $result;
-    }
-
-    /// <summary>
     /// Accepts an open trade (one that has not yet been accepted or cancelled), if the locally signed-in player is in the  allowed player list for the trade, or it is open to all players. If the call is successful, the offered and accepted items will be swapped  between the two players' inventories.
     /// https://api.playfab.com/Documentation/Client/method/AcceptTrade
     /// </summary>
@@ -1536,6 +1464,78 @@ class PlayFabClientApi
         //TODO: Check the sessionTicket
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayerTags", $request, "X-Authentication", $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Registers the Android device to receive push notifications
+    /// https://api.playfab.com/Documentation/Client/method/AndroidDevicePushNotificationRegistration
+    /// </summary>
+    public static function AndroidDevicePushNotificationRegistration($titleId, $authValue, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AndroidDevicePushNotificationRegistration", $request, "X-Authentication", $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Registers the iOS device to receive push notifications
+    /// https://api.playfab.com/Documentation/Client/method/RegisterForIOSPushNotification
+    /// </summary>
+    public static function RegisterForIOSPushNotification($titleId, $authValue, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RegisterForIOSPushNotification", $request, "X-Authentication", $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Restores all in-app purchases based on the given restore receipt
+    /// https://api.playfab.com/Documentation/Client/method/RestoreIOSPurchases
+    /// </summary>
+    public static function RestoreIOSPurchases($titleId, $authValue, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RestoreIOSPurchases", $request, "X-Authentication", $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Validates with Amazon that the receipt for an Amazon App Store in-app purchase is valid and that it matches the purchased catalog item
+    /// https://api.playfab.com/Documentation/Client/method/ValidateAmazonIAPReceipt
+    /// </summary>
+    public static function ValidateAmazonIAPReceipt($titleId, $authValue, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ValidateAmazonIAPReceipt", $request, "X-Authentication", $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Validates a Google Play purchase and gives the corresponding item to the player.
+    /// https://api.playfab.com/Documentation/Client/method/ValidateGooglePlayPurchase
+    /// </summary>
+    public static function ValidateGooglePlayPurchase($titleId, $authValue, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ValidateGooglePlayPurchase", $request, "X-Authentication", $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Validates with the Apple store that the receipt for an iOS in-app purchase is valid and that it matches the purchased catalog item
+    /// https://api.playfab.com/Documentation/Client/method/ValidateIOSReceipt
+    /// </summary>
+    public static function ValidateIOSReceipt($titleId, $authValue, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ValidateIOSReceipt", $request, "X-Authentication", $authValue);
         return $result;
     }
 

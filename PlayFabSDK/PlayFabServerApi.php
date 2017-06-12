@@ -904,18 +904,6 @@ class PlayFabServerApi
     }
 
     /// <summary>
-    /// Awards the specified users the specified Steam achievements
-    /// https://api.playfab.com/Documentation/Server/method/AwardSteamAchievement
-    /// </summary>
-    public static function AwardSteamAchievement($titleId, $authValue, $request)
-    {
-        //TODO: Check the devSecretKey
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/AwardSteamAchievement", $request, "X-SecretKey", $authValue);
-        return $result;
-    }
-
-    /// <summary>
     /// Writes a character-based event into PlayStream.
     /// https://api.playfab.com/Documentation/Server/method/WriteCharacterEvent
     /// </summary>
@@ -1296,6 +1284,18 @@ class PlayFabServerApi
         //TODO: Check the devSecretKey
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/RemovePlayerTag", $request, "X-SecretKey", $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Awards the specified users the specified Steam achievements
+    /// https://api.playfab.com/Documentation/Server/method/AwardSteamAchievement
+    /// </summary>
+    public static function AwardSteamAchievement($titleId, $authValue, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/AwardSteamAchievement", $request, "X-SecretKey", $authValue);
         return $result;
     }
 
