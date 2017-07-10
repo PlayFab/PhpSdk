@@ -4,6 +4,42 @@ include 'PlayFabHttp.php';
 class PlayFabAdminApi
 {
     /// <summary>
+    /// Creates a new Player Shared Secret Key. It may take up to 5 minutes for this key to become generally available after this API returns.
+    /// https://api.playfab.com/Documentation/Admin/method/CreatePlayerSharedSecret
+    /// </summary>
+    public static function CreatePlayerSharedSecret($titleId, $authValue, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/CreatePlayerSharedSecret", $request, "X-SecretKey", $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Deletes an existing Player Shared Secret Key. It may take up to 5 minutes for this delete to be reflected after this API returns.
+    /// https://api.playfab.com/Documentation/Admin/method/DeletePlayerSharedSecret
+    /// </summary>
+    public static function DeletePlayerSharedSecret($titleId, $authValue, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/DeletePlayerSharedSecret", $request, "X-SecretKey", $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Returns all Player Shared Secret Keys including disabled and expired.
+    /// https://api.playfab.com/Documentation/Admin/method/GetPlayerSharedSecrets
+    /// </summary>
+    public static function GetPlayerSharedSecrets($titleId, $authValue, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/GetPlayerSharedSecrets", $request, "X-SecretKey", $authValue);
+        return $result;
+    }
+
+    /// <summary>
     /// Gets the requested policy.
     /// https://api.playfab.com/Documentation/Admin/method/GetPolicy
     /// </summary>
@@ -12,6 +48,30 @@ class PlayFabAdminApi
         //TODO: Check the devSecretKey
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/GetPolicy", $request, "X-SecretKey", $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Sets or resets the player's secret. Player secrets are used to sign API requests.
+    /// https://api.playfab.com/Documentation/Admin/method/SetPlayerSecret
+    /// </summary>
+    public static function SetPlayerSecret($titleId, $authValue, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/SetPlayerSecret", $request, "X-SecretKey", $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Updates a existing Player Shared Secret Key. It may take up to 5 minutes for this update to become generally available after this API returns.
+    /// https://api.playfab.com/Documentation/Admin/method/UpdatePlayerSharedSecret
+    /// </summary>
+    public static function UpdatePlayerSharedSecret($titleId, $authValue, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/UpdatePlayerSharedSecret", $request, "X-SecretKey", $authValue);
         return $result;
     }
 

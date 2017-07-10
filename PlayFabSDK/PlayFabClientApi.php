@@ -16,6 +16,17 @@ class PlayFabClientApi
     }
 
     /// <summary>
+    /// Returns the title's base 64 encoded RSA CSP blob.
+    /// https://api.playfab.com/Documentation/Client/method/GetTitlePublicKey
+    /// </summary>
+    public static function GetTitlePublicKey($titleId, $authValue, $request)
+    {
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetTitlePublicKey", $request, null, $authValue);
+        return $result;
+    }
+
+    /// <summary>
     /// Requests a challenge from the server to be signed by Windows Hello Passport service to authenticate.
     /// https://api.playfab.com/Documentation/Client/method/GetWindowsHelloChallenge
     /// </summary>
@@ -205,6 +216,18 @@ class PlayFabClientApi
         if (!isset($request->$titleId)) !$request->titleId = $titleId;
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RegisterWithWindowsHello", $request, null, $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Sets the player's secret if it is not already set. Player secrets are used to sign API requests. To reset a player's secret use the Admin or Server API method SetPlayerSecret.
+    /// https://api.playfab.com/Documentation/Client/method/SetPlayerSecret
+    /// </summary>
+    public static function SetPlayerSecret($titleId, $authValue, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/SetPlayerSecret", $request, "X-Authentication", $authValue);
         return $result;
     }
 

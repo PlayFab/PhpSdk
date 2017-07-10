@@ -16,6 +16,18 @@ class PlayFabServerApi
     }
 
     /// <summary>
+    /// Sets the player's secret if it is not already set. Player secrets are used to sign API requests. To reset a player's secret use the Admin or Server API method SetPlayerSecret.
+    /// https://api.playfab.com/Documentation/Server/method/SetPlayerSecret
+    /// </summary>
+    public static function SetPlayerSecret($titleId, $authValue, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/SetPlayerSecret", $request, "X-SecretKey", $authValue);
+        return $result;
+    }
+
+    /// <summary>
     /// Bans users by PlayFab ID with optional IP address, or MAC address for the provided game.
     /// https://api.playfab.com/Documentation/Server/method/BanUsers
     /// </summary>
