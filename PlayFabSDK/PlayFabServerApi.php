@@ -1180,7 +1180,7 @@ class PlayFabServerApi
     }
 
     /// <summary>
-    /// Updates the title-specific custom data for the user's chjaracter which is readable and writable by the client
+    /// Updates the title-specific custom data for the user's character which is readable and writable by the client
     /// https://api.playfab.com/Documentation/Server/method/UpdateCharacterData
     /// </summary>
     public static function UpdateCharacterData($titleId, $authValue, $request)

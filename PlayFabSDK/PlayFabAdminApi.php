@@ -100,6 +100,18 @@ class PlayFabAdminApi
     }
 
     /// <summary>
+    /// Removes a user's player account from a title and deletes all associated data
+    /// https://api.playfab.com/Documentation/Admin/method/DeletePlayer
+    /// </summary>
+    public static function DeletePlayer($titleId, $authValue, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/DeletePlayer", $request, "X-SecretKey", $authValue);
+        return $result;
+    }
+
+    /// <summary>
     /// Retrieves the relevant details for a specified user, based upon a match against a supplied unique identifier
     /// https://api.playfab.com/Documentation/Admin/method/GetUserAccountInfo
     /// </summary>
