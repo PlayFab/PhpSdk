@@ -196,18 +196,6 @@ class PlayFabServerApi
     }
 
     /// <summary>
-    /// Retrieve a list of all PlayStream actions groups.
-    /// https://api.playfab.com/Documentation/Server/method/GetAllActionGroups
-    /// </summary>
-    public static function GetAllActionGroups($titleId, $authValue, $request)
-    {
-        //TODO: Check the devSecretKey
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/GetAllActionGroups", $request, "X-SecretKey", $authValue);
-        return $result;
-    }
-
-    /// <summary>
     /// Retrieves an array of player segment definitions. Results from this can be used in subsequent API calls such as GetPlayersInSegment which requires a Segment ID. While segment names can change the ID for that segment will not change.
     /// https://api.playfab.com/Documentation/Server/method/GetAllSegments
     /// </summary>
