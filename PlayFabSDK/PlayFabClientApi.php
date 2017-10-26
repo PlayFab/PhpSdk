@@ -4,7 +4,9 @@ include 'PlayFabHttp.php';
 class PlayFabClientApi
 {
     /// <summary>
-    /// Accepts an open trade (one that has not yet been accepted or cancelled), if the locally signed-in player is in the  allowed player list for the trade, or it is open to all players. If the call is successful, the offered and accepted items will be swapped  between the two players' inventories.
+    /// Accepts an open trade (one that has not yet been accepted or cancelled), if the locally signed-in player is in the
+    /// allowed player list for the trade, or it is open to all players. If the call is successful, the offered and accepted
+    /// items will be swapped  between the two players' inventories.
     /// https://api.playfab.com/Documentation/Client/method/AcceptTrade
     /// </summary>
     public static function AcceptTrade($titleId, $authValue, $request)
@@ -16,7 +18,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Adds the PlayFab user, based upon a match against a supplied unique identifier, to the friend list of the local user. At least one of FriendPlayFabId,FriendUsername,FriendEmail, or FriendTitleDisplayName should be initialized.
+    /// Adds the PlayFab user, based upon a match against a supplied unique identifier, to the friend list of the local user. At
+    /// least one of FriendPlayFabId,FriendUsername,FriendEmail, or FriendTitleDisplayName should be initialized.
     /// https://api.playfab.com/Documentation/Client/method/AddFriend
     /// </summary>
     public static function AddFriend($titleId, $authValue, $request)
@@ -28,7 +31,9 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Adds the specified generic service identifier to the player's PlayFab account. This is designed to allow for a PlayFab ID lookup of any arbitrary service identifier a title wants to add. This identifier should never be used as authentication credentials, as the intent is that it is easily accessible by other players.
+    /// Adds the specified generic service identifier to the player's PlayFab account. This is designed to allow for a PlayFab
+    /// ID lookup of any arbitrary service identifier a title wants to add. This identifier should never be used as
+    /// authentication credentials, as the intent is that it is easily accessible by other players.
     /// https://api.playfab.com/Documentation/Client/method/AddGenericID
     /// </summary>
     public static function AddGenericID($titleId, $authValue, $request)
@@ -40,7 +45,9 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Adds users to the set of those able to update both the shared data, as well as the set of users  in the group. Only users in the group can add new members. Shared Groups are designed for sharing data between a very  small number of players, please see our guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
+    /// Adds users to the set of those able to update both the shared data, as well as the set of users  in the group. Only
+    /// users in the group can add new members. Shared Groups are designed for sharing data between a very  small number of
+    /// players, please see our guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
     /// https://api.playfab.com/Documentation/Client/method/AddSharedGroupMembers
     /// </summary>
     public static function AddSharedGroupMembers($titleId, $authValue, $request)
@@ -52,7 +59,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Adds playfab username/password auth to an existing account created via an anonymous auth method, e.g. automatic device ID login.
+    /// Adds playfab username/password auth to an existing account created via an anonymous auth method, e.g. automatic device
+    /// ID login.
     /// https://api.playfab.com/Documentation/Client/method/AddUsernamePassword
     /// </summary>
     public static function AddUsernamePassword($titleId, $authValue, $request)
@@ -100,7 +108,9 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Cancels an open trade (one that has not yet been accepted or cancelled). Note that only the player who created the trade  can cancel it via this API call, to prevent griefing of the trade system (cancelling trades in order to prevent other players from accepting  them, for trades that can be claimed by more than one player).
+    /// Cancels an open trade (one that has not yet been accepted or cancelled). Note that only the player who created the trade
+    /// can cancel it via this API call, to prevent griefing of the trade system (cancelling trades in order to prevent other
+    /// players from accepting  them, for trades that can be claimed by more than one player).
     /// https://api.playfab.com/Documentation/Client/method/CancelTrade
     /// </summary>
     public static function CancelTrade($titleId, $authValue, $request)
@@ -112,7 +122,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Confirms with the payment provider that the purchase was approved (if applicable) and adjusts inventory and  virtual currency balances as appropriate
+    /// Confirms with the payment provider that the purchase was approved (if applicable) and adjusts inventory and  virtual
+    /// currency balances as appropriate
     /// https://api.playfab.com/Documentation/Client/method/ConfirmPurchase
     /// </summary>
     public static function ConfirmPurchase($titleId, $authValue, $request)
@@ -136,7 +147,10 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Requests the creation of a shared group object, containing key/value pairs which may be updated by  all members of the group. Upon creation, the current user will be the only member of the group. Shared Groups are designed  for sharing data between a very small number of players, please see our guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
+    /// Requests the creation of a shared group object, containing key/value pairs which may be updated by  all members of the
+    /// group. Upon creation, the current user will be the only member of the group. Shared Groups are designed  for sharing
+    /// data between a very small number of players, please see our guide:
+    /// https://api.playfab.com/docs/tutorials/landing-players/shared-groups
     /// https://api.playfab.com/Documentation/Client/method/CreateSharedGroup
     /// </summary>
     public static function CreateSharedGroup($titleId, $authValue, $request)
@@ -172,7 +186,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Lists all of the characters that belong to a specific user. CharacterIds are not globally unique; characterId must be evaluated with the parent PlayFabId to guarantee uniqueness.
+    /// Lists all of the characters that belong to a specific user. CharacterIds are not globally unique; characterId must be
+    /// evaluated with the parent PlayFabId to guarantee uniqueness.
     /// https://api.playfab.com/Documentation/Client/method/GetAllUsersCharacters
     /// </summary>
     public static function GetAllUsersCharacters($titleId, $authValue, $request)
@@ -256,7 +271,13 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// This API retrieves a pre-signed URL for accessing a content file for the title. A subsequent  HTTP GET to the returned URL will attempt to download the content. A HEAD query to the returned URL will attempt to  retrieve the metadata of the content. Note that a successful result does not guarantee the existence of this content -  if it has not been uploaded, the query to retrieve the data will fail. See this post for more information:  https://community.playfab.com/hc/en-us/community/posts/205469488-How-to-upload-files-to-PlayFab-s-Content-Service.  Also, please be aware that the Content service is specifically PlayFab's CDN offering, for which standard CDN rates apply.
+    /// This API retrieves a pre-signed URL for accessing a content file for the title. A subsequent  HTTP GET to the returned
+    /// URL will attempt to download the content. A HEAD query to the returned URL will attempt to  retrieve the metadata of the
+    /// content. Note that a successful result does not guarantee the existence of this content -  if it has not been uploaded,
+    /// the query to retrieve the data will fail. See this post for more information:
+    /// https://community.playfab.com/hc/en-us/community/posts/205469488-How-to-upload-files-to-PlayFab-s-Content-Service.
+    /// Also, please be aware that the Content service is specifically PlayFab's CDN offering, for which standard CDN rates
+    /// apply.
     /// https://api.playfab.com/Documentation/Client/method/GetContentDownloadUrl
     /// </summary>
     public static function GetContentDownloadUrl($titleId, $authValue, $request)
@@ -280,7 +301,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Retrieves a list of ranked friends of the current player for the given statistic, starting from the indicated point in the leaderboard
+    /// Retrieves a list of ranked friends of the current player for the given statistic, starting from the indicated point in
+    /// the leaderboard
     /// https://api.playfab.com/Documentation/Client/method/GetFriendLeaderboard
     /// </summary>
     public static function GetFriendLeaderboard($titleId, $authValue, $request)
@@ -292,7 +314,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Retrieves a list of ranked friends of the current player for the given statistic, centered on the requested PlayFab user. If PlayFabId is empty or null will return currently logged in user.
+    /// Retrieves a list of ranked friends of the current player for the given statistic, centered on the requested PlayFab
+    /// user. If PlayFabId is empty or null will return currently logged in user.
     /// https://api.playfab.com/Documentation/Client/method/GetFriendLeaderboardAroundPlayer
     /// </summary>
     public static function GetFriendLeaderboardAroundPlayer($titleId, $authValue, $request)
@@ -304,7 +327,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Retrieves the current friend list for the local user, constrained to users who have PlayFab accounts. Friends from linked accounts (Facebook, Steam) are also included. You may optionally exclude some linked services' friends.
+    /// Retrieves the current friend list for the local user, constrained to users who have PlayFab accounts. Friends from
+    /// linked accounts (Facebook, Steam) are also included. You may optionally exclude some linked services' friends.
     /// https://api.playfab.com/Documentation/Client/method/GetFriendsList
     /// </summary>
     public static function GetFriendsList($titleId, $authValue, $request)
@@ -316,7 +340,7 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    ///  Get details about the regions hosting game servers matching the given parameters.
+    /// Get details about the regions hosting game servers matching the given parameters.
     /// https://api.playfab.com/Documentation/Client/method/GetGameServerRegions
     /// </summary>
     public static function GetGameServerRegions($titleId, $authValue, $request)
@@ -352,7 +376,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Retrieves a list of ranked users for the given statistic, centered on the requested player. If PlayFabId is empty or null will return currently logged in user.
+    /// Retrieves a list of ranked users for the given statistic, centered on the requested player. If PlayFabId is empty or
+    /// null will return currently logged in user.
     /// https://api.playfab.com/Documentation/Client/method/GetLeaderboardAroundPlayer
     /// </summary>
     public static function GetLeaderboardAroundPlayer($titleId, $authValue, $request)
@@ -376,7 +401,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Gets a Photon custom authentication token that can be used to securely join the player into a Photon room. See https://api.playfab.com/docs/using-photon-with-playfab/ for more details.
+    /// Gets a Photon custom authentication token that can be used to securely join the player into a Photon room. See
+    /// https://api.playfab.com/docs/using-photon-with-playfab/ for more details.
     /// https://api.playfab.com/Documentation/Client/method/GetPhotonAuthenticationToken
     /// </summary>
     public static function GetPhotonAuthenticationToken($titleId, $authValue, $request)
@@ -424,7 +450,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Retrieves the indicated statistics (current version and values for all statistics, if none are specified), for the local player.
+    /// Retrieves the indicated statistics (current version and values for all statistics, if none are specified), for the local
+    /// player.
     /// https://api.playfab.com/Documentation/Client/method/GetPlayerStatistics
     /// </summary>
     public static function GetPlayerStatistics($titleId, $authValue, $request)
@@ -484,7 +511,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Retrieves the unique PlayFab identifiers for the given set of Game Center identifiers (referenced in the Game Center Programming Guide as the Player Identifier).
+    /// Retrieves the unique PlayFab identifiers for the given set of Game Center identifiers (referenced in the Game Center
+    /// Programming Guide as the Player Identifier).
     /// https://api.playfab.com/Documentation/Client/method/GetPlayFabIDsFromGameCenterIDs
     /// </summary>
     public static function GetPlayFabIDsFromGameCenterIDs($titleId, $authValue, $request)
@@ -496,7 +524,9 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Retrieves the unique PlayFab identifiers for the given set of generic service identifiers. A generic identifier is the service name plus the service-specific ID for the player, as specified by the title when the generic identifier was added to the player account.
+    /// Retrieves the unique PlayFab identifiers for the given set of generic service identifiers. A generic identifier is the
+    /// service name plus the service-specific ID for the player, as specified by the title when the generic identifier was
+    /// added to the player account.
     /// https://api.playfab.com/Documentation/Client/method/GetPlayFabIDsFromGenericIDs
     /// </summary>
     public static function GetPlayFabIDsFromGenericIDs($titleId, $authValue, $request)
@@ -508,7 +538,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Retrieves the unique PlayFab identifiers for the given set of Google identifiers. The Google identifiers are the IDs for the user accounts, available as "id" in the Google+ People API calls.
+    /// Retrieves the unique PlayFab identifiers for the given set of Google identifiers. The Google identifiers are the IDs for
+    /// the user accounts, available as "id" in the Google+ People API calls.
     /// https://api.playfab.com/Documentation/Client/method/GetPlayFabIDsFromGoogleIDs
     /// </summary>
     public static function GetPlayFabIDsFromGoogleIDs($titleId, $authValue, $request)
@@ -520,7 +551,9 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Retrieves the unique PlayFab identifiers for the given set of Kongregate identifiers. The Kongregate identifiers are the IDs for the user accounts, available as "user_id" from the Kongregate API methods(ex: http://developers.kongregate.com/docs/client/getUserId).
+    /// Retrieves the unique PlayFab identifiers for the given set of Kongregate identifiers. The Kongregate identifiers are the
+    /// IDs for the user accounts, available as "user_id" from the Kongregate API methods(ex:
+    /// http://developers.kongregate.com/docs/client/getUserId).
     /// https://api.playfab.com/Documentation/Client/method/GetPlayFabIDsFromKongregateIDs
     /// </summary>
     public static function GetPlayFabIDsFromKongregateIDs($titleId, $authValue, $request)
@@ -532,7 +565,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Retrieves the unique PlayFab identifiers for the given set of Steam identifiers. The Steam identifiers  are the profile IDs for the user accounts, available as SteamId in the Steamworks Community API calls.
+    /// Retrieves the unique PlayFab identifiers for the given set of Steam identifiers. The Steam identifiers  are the profile
+    /// IDs for the user accounts, available as SteamId in the Steamworks Community API calls.
     /// https://api.playfab.com/Documentation/Client/method/GetPlayFabIDsFromSteamIDs
     /// </summary>
     public static function GetPlayFabIDsFromSteamIDs($titleId, $authValue, $request)
@@ -544,7 +578,9 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Retrieves the unique PlayFab identifiers for the given set of Twitch identifiers. The Twitch identifiers are the IDs for the user accounts, available as "_id" from the Twitch API methods (ex: https://github.com/justintv/Twitch-API/blob/master/v3_resources/users.md#get-usersuser).
+    /// Retrieves the unique PlayFab identifiers for the given set of Twitch identifiers. The Twitch identifiers are the IDs for
+    /// the user accounts, available as "_id" from the Twitch API methods (ex:
+    /// https://github.com/justintv/Twitch-API/blob/master/v3_resources/users.md#get-usersuser).
     /// https://api.playfab.com/Documentation/Client/method/GetPlayFabIDsFromTwitchIDs
     /// </summary>
     public static function GetPlayFabIDsFromTwitchIDs($titleId, $authValue, $request)
@@ -568,7 +604,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Retrieves a purchase along with its current PlayFab status. Returns inventory items from the purchase that are still active.
+    /// Retrieves a purchase along with its current PlayFab status. Returns inventory items from the purchase that are still
+    /// active.
     /// https://api.playfab.com/Documentation/Client/method/GetPurchase
     /// </summary>
     public static function GetPurchase($titleId, $authValue, $request)
@@ -580,7 +617,10 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Retrieves data stored in a shared group object, as well as the list of members in  the group. Non-members of the group may use this to retrieve group data, including membership, but they  will not receive data for keys marked as private. Shared Groups are designed for sharing data between a  very small number of players, please see our guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
+    /// Retrieves data stored in a shared group object, as well as the list of members in  the group. Non-members of the group
+    /// may use this to retrieve group data, including membership, but they  will not receive data for keys marked as private.
+    /// Shared Groups are designed for sharing data between a  very small number of players, please see our guide:
+    /// https://api.playfab.com/docs/tutorials/landing-players/shared-groups
     /// https://api.playfab.com/Documentation/Client/method/GetSharedGroupData
     /// </summary>
     public static function GetSharedGroupData($titleId, $authValue, $request)
@@ -734,7 +774,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Grants the specified character type to the user. CharacterIds are not globally unique; characterId must be evaluated with the parent PlayFabId to guarantee uniqueness.
+    /// Grants the specified character type to the user. CharacterIds are not globally unique; characterId must be evaluated
+    /// with the parent PlayFabId to guarantee uniqueness.
     /// https://api.playfab.com/Documentation/Client/method/GrantCharacterToUser
     /// </summary>
     public static function GrantCharacterToUser($titleId, $authValue, $request)
@@ -866,7 +907,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Signs the user in using the Android device identifier, returning a session identifier that can subsequently be used for API calls which require an authenticated user
+    /// Signs the user in using the Android device identifier, returning a session identifier that can subsequently be used for
+    /// API calls which require an authenticated user
     /// https://api.playfab.com/Documentation/Client/method/LoginWithAndroidDeviceID
     /// </summary>
     public static function LoginWithAndroidDeviceID($titleId, $authValue, $request)
@@ -879,7 +921,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Signs the user in using a custom unique identifier generated by the title, returning a session identifier that can subsequently be used for API calls which require an authenticated user
+    /// Signs the user in using a custom unique identifier generated by the title, returning a session identifier that can
+    /// subsequently be used for API calls which require an authenticated user
     /// https://api.playfab.com/Documentation/Client/method/LoginWithCustomID
     /// </summary>
     public static function LoginWithCustomID($titleId, $authValue, $request)
@@ -892,7 +935,10 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Signs the user into the PlayFab account, returning a session identifier that can subsequently be used for API calls which require an authenticated user. Unlike most other login API calls, LoginWithEmailAddress does not permit the  creation of new accounts via the CreateAccountFlag. Email addresses may be used to create accounts via RegisterPlayFabUser.
+    /// Signs the user into the PlayFab account, returning a session identifier that can subsequently be used for API calls
+    /// which require an authenticated user. Unlike most other login API calls, LoginWithEmailAddress does not permit the
+    /// creation of new accounts via the CreateAccountFlag. Email addresses may be used to create accounts via
+    /// RegisterPlayFabUser.
     /// https://api.playfab.com/Documentation/Client/method/LoginWithEmailAddress
     /// </summary>
     public static function LoginWithEmailAddress($titleId, $authValue, $request)
@@ -905,7 +951,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Signs the user in using a Facebook access token, returning a session identifier that can subsequently be used for API calls which require an authenticated user
+    /// Signs the user in using a Facebook access token, returning a session identifier that can subsequently be used for API
+    /// calls which require an authenticated user
     /// https://api.playfab.com/Documentation/Client/method/LoginWithFacebook
     /// </summary>
     public static function LoginWithFacebook($titleId, $authValue, $request)
@@ -918,7 +965,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Signs the user in using an iOS Game Center player identifier, returning a session identifier that can subsequently be used for API calls which require an authenticated user
+    /// Signs the user in using an iOS Game Center player identifier, returning a session identifier that can subsequently be
+    /// used for API calls which require an authenticated user
     /// https://api.playfab.com/Documentation/Client/method/LoginWithGameCenter
     /// </summary>
     public static function LoginWithGameCenter($titleId, $authValue, $request)
@@ -944,7 +992,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Signs the user in using the vendor-specific iOS device identifier, returning a session identifier that can subsequently be used for API calls which require an authenticated user
+    /// Signs the user in using the vendor-specific iOS device identifier, returning a session identifier that can subsequently
+    /// be used for API calls which require an authenticated user
     /// https://api.playfab.com/Documentation/Client/method/LoginWithIOSDeviceID
     /// </summary>
     public static function LoginWithIOSDeviceID($titleId, $authValue, $request)
@@ -970,7 +1019,10 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Signs the user into the PlayFab account, returning a session identifier that can subsequently be used for API calls which require an authenticated user. Unlike most other login API calls, LoginWithPlayFab does not permit the  creation of new accounts via the CreateAccountFlag. Username/Password credentials may be used to create accounts via  RegisterPlayFabUser, or added to existing accounts using AddUsernamePassword.
+    /// Signs the user into the PlayFab account, returning a session identifier that can subsequently be used for API calls
+    /// which require an authenticated user. Unlike most other login API calls, LoginWithPlayFab does not permit the  creation
+    /// of new accounts via the CreateAccountFlag. Username/Password credentials may be used to create accounts via
+    /// RegisterPlayFabUser, or added to existing accounts using AddUsernamePassword.
     /// https://api.playfab.com/Documentation/Client/method/LoginWithPlayFab
     /// </summary>
     public static function LoginWithPlayFab($titleId, $authValue, $request)
@@ -983,7 +1035,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Signs the user in using a Steam authentication ticket, returning a session identifier that can subsequently be used for API calls which require an authenticated user
+    /// Signs the user in using a Steam authentication ticket, returning a session identifier that can subsequently be used for
+    /// API calls which require an authenticated user
     /// https://api.playfab.com/Documentation/Client/method/LoginWithSteam
     /// </summary>
     public static function LoginWithSteam($titleId, $authValue, $request)
@@ -1009,7 +1062,10 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Completes the Windows Hello login flow by returning the signed value of the challange from GetWindowsHelloChallenge. Windows Hello has a 2 step client to server authentication scheme. Step one is to request from the server a challenge string. Step two is to request the user sign the string via Windows Hello and then send the signed value back to the server. 
+    /// Completes the Windows Hello login flow by returning the signed value of the challange from GetWindowsHelloChallenge.
+    /// Windows Hello has a 2 step client to server authentication scheme. Step one is to request from the server a challenge
+    /// string. Step two is to request the user sign the string via Windows Hello and then send the signed value back to the
+    /// server.
     /// https://api.playfab.com/Documentation/Client/method/LoginWithWindowsHello
     /// </summary>
     public static function LoginWithWindowsHello($titleId, $authValue, $request)
@@ -1022,7 +1078,12 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Attempts to locate a game session matching the given parameters. If the goal is to match the player into a specific active session, only the LobbyId is required. Otherwise, the BuildVersion, GameMode, and Region are all required parameters. Note that parameters specified in the search are required (they are not weighting factors). If a slot is found in a server instance matching the parameters, the slot will be assigned to that player, removing it from the availabe set. In that case, the information on the game session will be returned, otherwise the Status returned will be GameNotFound.
+    /// Attempts to locate a game session matching the given parameters. If the goal is to match the player into a specific
+    /// active session, only the LobbyId is required. Otherwise, the BuildVersion, GameMode, and Region are all required
+    /// parameters. Note that parameters specified in the search are required (they are not weighting factors). If a slot is
+    /// found in a server instance matching the parameters, the slot will be assigned to that player, removing it from the
+    /// availabe set. In that case, the information on the game session will be returned, otherwise the Status returned will be
+    /// GameNotFound.
     /// https://api.playfab.com/Documentation/Client/method/Matchmake
     /// </summary>
     public static function Matchmake($titleId, $authValue, $request)
@@ -1058,7 +1119,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Buys a single item with virtual currency. You must specify both the virtual currency to use to purchase,  as well as what the client believes the price to be. This lets the server fail the purchase if the price has changed.
+    /// Buys a single item with virtual currency. You must specify both the virtual currency to use to purchase,  as well as
+    /// what the client believes the price to be. This lets the server fail the purchase if the price has changed.
     /// https://api.playfab.com/Documentation/Client/method/PurchaseItem
     /// </summary>
     public static function PurchaseItem($titleId, $authValue, $request)
@@ -1070,7 +1132,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Adds the virtual goods associated with the coupon to the user's inventory. Coupons can be generated  via the Economy->Catalogs tab in the PlayFab Game Manager.
+    /// Adds the virtual goods associated with the coupon to the user's inventory. Coupons can be generated  via the
+    /// Economy->Catalogs tab in the PlayFab Game Manager.
     /// https://api.playfab.com/Documentation/Client/method/RedeemCoupon
     /// </summary>
     public static function RedeemCoupon($titleId, $authValue, $request)
@@ -1094,7 +1157,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Registers a new Playfab user account, returning a session identifier that can subsequently be used for API calls which require an authenticated user. You must supply either a username or an email address.
+    /// Registers a new Playfab user account, returning a session identifier that can subsequently be used for API calls which
+    /// require an authenticated user. You must supply either a username or an email address.
     /// https://api.playfab.com/Documentation/Client/method/RegisterPlayFabUser
     /// </summary>
     public static function RegisterPlayFabUser($titleId, $authValue, $request)
@@ -1107,7 +1171,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Registers a new PlayFab user account using Windows Hello authentication, returning a session ticket  that can subsequently be used for API calls which require an authenticated user
+    /// Registers a new PlayFab user account using Windows Hello authentication, returning a session ticket  that can
+    /// subsequently be used for API calls which require an authenticated user
     /// https://api.playfab.com/Documentation/Client/method/RegisterWithWindowsHello
     /// </summary>
     public static function RegisterWithWindowsHello($titleId, $authValue, $request)
@@ -1144,7 +1209,10 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Removes users from the set of those able to update the shared data and the set of users  in the group. Only users in the group can remove members. If as a result of the call, zero users remain with  access, the group and its associated data will be deleted. Shared Groups are designed for sharing data between  a very small number of players, please see our guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
+    /// Removes users from the set of those able to update the shared data and the set of users  in the group. Only users in the
+    /// group can remove members. If as a result of the call, zero users remain with  access, the group and its associated data
+    /// will be deleted. Shared Groups are designed for sharing data between  a very small number of players, please see our
+    /// guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
     /// https://api.playfab.com/Documentation/Client/method/RemoveSharedGroupMembers
     /// </summary>
     public static function RemoveSharedGroupMembers($titleId, $authValue, $request)
@@ -1156,7 +1224,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Submit a report for another player (due to bad bahavior, etc.), so that customer service representatives for the title can take action concerning potentially toxic players.
+    /// Submit a report for another player (due to bad bahavior, etc.), so that customer service representatives for the title
+    /// can take action concerning potentially toxic players.
     /// https://api.playfab.com/Documentation/Client/method/ReportPlayer
     /// </summary>
     public static function ReportPlayer($titleId, $authValue, $request)
@@ -1180,7 +1249,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Forces an email to be sent to the registered email address for the user's account, with a link allowing the user to change the password
+    /// Forces an email to be sent to the registered email address for the user's account, with a link allowing the user to
+    /// change the password
     /// https://api.playfab.com/Documentation/Client/method/SendAccountRecoveryEmail
     /// </summary>
     public static function SendAccountRecoveryEmail($titleId, $authValue, $request)
@@ -1203,7 +1273,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Sets the player's secret if it is not already set. Player secrets are used to sign API requests. To reset a player's secret use the Admin or Server API method SetPlayerSecret.
+    /// Sets the player's secret if it is not already set. Player secrets are used to sign API requests. To reset a player's
+    /// secret use the Admin or Server API method SetPlayerSecret.
     /// https://api.playfab.com/Documentation/Client/method/SetPlayerSecret
     /// </summary>
     public static function SetPlayerSecret($titleId, $authValue, $request)
@@ -1239,7 +1310,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Decrements the user's balance of the specified virtual currency by the stated amount
+    /// Decrements the user's balance of the specified virtual currency by the stated amount. It is possible to make a VC
+    /// balance negative with this API.
     /// https://api.playfab.com/Documentation/Client/method/SubtractUserVirtualCurrency
     /// </summary>
     public static function SubtractUserVirtualCurrency($titleId, $authValue, $request)
@@ -1299,7 +1371,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Unlinks the related Google account from the user's PlayFab account (https://developers.google.com/android/reference/com/google/android/gms/auth/GoogleAuthUtil#public-methods).
+    /// Unlinks the related Google account from the user's PlayFab account
+    /// (https://developers.google.com/android/reference/com/google/android/gms/auth/GoogleAuthUtil#public-methods).
     /// https://api.playfab.com/Documentation/Client/method/UnlinkGoogleAccount
     /// </summary>
     public static function UnlinkGoogleAccount($titleId, $authValue, $request)
@@ -1371,7 +1444,9 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Opens the specified container, with the specified key (when required), and returns the contents of the opened container. If the container (and key when relevant) are consumable (RemainingUses > 0), their RemainingUses will be decremented, consistent with the operation of ConsumeItem.
+    /// Opens the specified container, with the specified key (when required), and returns the contents of the opened container.
+    /// If the container (and key when relevant) are consumable (RemainingUses > 0), their RemainingUses will be decremented,
+    /// consistent with the operation of ConsumeItem.
     /// https://api.playfab.com/Documentation/Client/method/UnlockContainerInstance
     /// </summary>
     public static function UnlockContainerInstance($titleId, $authValue, $request)
@@ -1383,7 +1458,9 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Searches target inventory for an ItemInstance matching the given CatalogItemId, if necessary unlocks it using an appropriate key, and returns the contents of the opened container. If the container (and key when relevant) are consumable (RemainingUses > 0), their RemainingUses will be decremented, consistent with the operation of ConsumeItem.
+    /// Searches target inventory for an ItemInstance matching the given CatalogItemId, if necessary unlocks it using an
+    /// appropriate key, and returns the contents of the opened container. If the container (and key when relevant) are
+    /// consumable (RemainingUses > 0), their RemainingUses will be decremented, consistent with the operation of ConsumeItem.
     /// https://api.playfab.com/Documentation/Client/method/UnlockContainerItem
     /// </summary>
     public static function UnlockContainerItem($titleId, $authValue, $request)
@@ -1407,7 +1484,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Creates and updates the title-specific custom data for the user's character which is readable  and writable by the client
+    /// Creates and updates the title-specific custom data for the user's character which is readable  and writable by the
+    /// client
     /// https://api.playfab.com/Documentation/Client/method/UpdateCharacterData
     /// </summary>
     public static function UpdateCharacterData($titleId, $authValue, $request)
@@ -1419,7 +1497,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Updates the values of the specified title-specific statistics for the specific character. By default, clients are not permitted to update statistics. Developers may override this setting in the Game Manager > Settings > API Features.
+    /// Updates the values of the specified title-specific statistics for the specific character. By default, clients are not
+    /// permitted to update statistics. Developers may override this setting in the Game Manager > Settings > API Features.
     /// https://api.playfab.com/Documentation/Client/method/UpdateCharacterStatistics
     /// </summary>
     public static function UpdateCharacterStatistics($titleId, $authValue, $request)
@@ -1431,7 +1510,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Updates the values of the specified title-specific statistics for the user. By default, clients are not permitted to update statistics. Developers may override this setting in the Game Manager > Settings > API Features.
+    /// Updates the values of the specified title-specific statistics for the user. By default, clients are not permitted to
+    /// update statistics. Developers may override this setting in the Game Manager > Settings > API Features.
     /// https://api.playfab.com/Documentation/Client/method/UpdatePlayerStatistics
     /// </summary>
     public static function UpdatePlayerStatistics($titleId, $authValue, $request)
@@ -1443,7 +1523,11 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Adds, updates, and removes data keys for a shared group object. If the permission is set to Public, all fields updated or added in this call will be readable by users not in the group. By default, data permissions are set to Private. Regardless of the permission setting, only members of the group can update the data. Shared Groups are designed  for sharing data between a very small number of players, please see our guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
+    /// Adds, updates, and removes data keys for a shared group object. If the permission is set to Public, all fields updated
+    /// or added in this call will be readable by users not in the group. By default, data permissions are set to Private.
+    /// Regardless of the permission setting, only members of the group can update the data. Shared Groups are designed  for
+    /// sharing data between a very small number of players, please see our guide:
+    /// https://api.playfab.com/docs/tutorials/landing-players/shared-groups
     /// https://api.playfab.com/Documentation/Client/method/UpdateSharedGroupData
     /// </summary>
     public static function UpdateSharedGroupData($titleId, $authValue, $request)
@@ -1491,7 +1575,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Validates with Amazon that the receipt for an Amazon App Store in-app purchase is valid and that it matches the purchased catalog item
+    /// Validates with Amazon that the receipt for an Amazon App Store in-app purchase is valid and that it matches the
+    /// purchased catalog item
     /// https://api.playfab.com/Documentation/Client/method/ValidateAmazonIAPReceipt
     /// </summary>
     public static function ValidateAmazonIAPReceipt($titleId, $authValue, $request)
@@ -1515,7 +1600,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Validates with the Apple store that the receipt for an iOS in-app purchase is valid and that it matches the purchased catalog item
+    /// Validates with the Apple store that the receipt for an iOS in-app purchase is valid and that it matches the purchased
+    /// catalog item
     /// https://api.playfab.com/Documentation/Client/method/ValidateIOSReceipt
     /// </summary>
     public static function ValidateIOSReceipt($titleId, $authValue, $request)
@@ -1527,7 +1613,8 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Validates with Windows that the receipt for an Windows App Store in-app purchase is valid and that it matches the purchased catalog item
+    /// Validates with Windows that the receipt for an Windows App Store in-app purchase is valid and that it matches the
+    /// purchased catalog item
     /// https://api.playfab.com/Documentation/Client/method/ValidateWindowsStoreReceipt
     /// </summary>
     public static function ValidateWindowsStoreReceipt($titleId, $authValue, $request)

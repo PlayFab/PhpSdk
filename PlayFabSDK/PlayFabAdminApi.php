@@ -40,7 +40,8 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Adds the game server executable specified (previously uploaded - see GetServerBuildUploadUrl) to the set of those a client is permitted to request in a call to StartGame
+    /// Adds the game server executable specified (previously uploaded - see GetServerBuildUploadUrl) to the set of those a
+    /// client is permitted to request in a call to StartGame
     /// https://api.playfab.com/Documentation/Admin/method/AddServerBuild
     /// </summary>
     public static function AddServerBuild($titleId, $authValue, $request)
@@ -64,7 +65,8 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Adds one or more virtual currencies to the set defined for the title. Virtual Currencies have a maximum value of 2,147,483,647 when granted to a player. Any value over that will be discarded.
+    /// Adds one or more virtual currencies to the set defined for the title. Virtual Currencies have a maximum value of
+    /// 2,147,483,647 when granted to a player. Any value over that will be discarded.
     /// https://api.playfab.com/Documentation/Admin/method/AddVirtualCurrencyTypes
     /// </summary>
     public static function AddVirtualCurrencyTypes($titleId, $authValue, $request)
@@ -112,7 +114,8 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Creates a new Player Shared Secret Key. It may take up to 5 minutes for this key to become generally available after this API returns.
+    /// Creates a new Player Shared Secret Key. It may take up to 5 minutes for this key to become generally available after
+    /// this API returns.
     /// https://api.playfab.com/Documentation/Admin/method/CreatePlayerSharedSecret
     /// </summary>
     public static function CreatePlayerSharedSecret($titleId, $authValue, $request)
@@ -124,7 +127,8 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Adds a new player statistic configuration to the title, optionally allowing the developer to specify a reset interval and an aggregation method.
+    /// Adds a new player statistic configuration to the title, optionally allowing the developer to specify a reset interval
+    /// and an aggregation method.
     /// https://api.playfab.com/Documentation/Admin/method/CreatePlayerStatisticDefinition
     /// </summary>
     public static function CreatePlayerStatisticDefinition($titleId, $authValue, $request)
@@ -160,7 +164,8 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Deletes an existing Player Shared Secret Key. It may take up to 5 minutes for this delete to be reflected after this API returns.
+    /// Deletes an existing Player Shared Secret Key. It may take up to 5 minutes for this delete to be reflected after this API
+    /// returns.
     /// https://api.playfab.com/Documentation/Admin/method/DeletePlayerSharedSecret
     /// </summary>
     public static function DeletePlayerSharedSecret($titleId, $authValue, $request)
@@ -196,14 +201,14 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Deletes the users for the provided game. Deletes custom data, all account linkages, and statistics. This method does not remove the player's event history, login history, inventory items, nor virtual currencies.
-    /// https://api.playfab.com/Documentation/Admin/method/DeleteUsers
+    /// Permanently deletes a title and all associated configuration
+    /// https://api.playfab.com/Documentation/Admin/method/DeleteTitle
     /// </summary>
-    public static function DeleteUsers($titleId, $authValue, $request)
+    public static function DeleteTitle($titleId, $authValue, $request)
     {
         //TODO: Check the devSecretKey
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/DeleteUsers", $request, "X-SecretKey", $authValue);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/DeleteTitle", $request, "X-SecretKey", $authValue);
         return $result;
     }
 
@@ -220,7 +225,8 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Retrieves an array of player segment definitions. Results from this can be used in subsequent API calls such as GetPlayersInSegment which requires a Segment ID. While segment names can change the ID for that segment will not change.
+    /// Retrieves an array of player segment definitions. Results from this can be used in subsequent API calls such as
+    /// GetPlayersInSegment which requires a Segment ID. While segment names can change the ID for that segment will not change.
     /// https://api.playfab.com/Documentation/Admin/method/GetAllSegments
     /// </summary>
     public static function GetAllSegments($titleId, $authValue, $request)
@@ -268,7 +274,8 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Lists all the current cloud script versions. For each version, information about the current published and latest revisions is also listed.
+    /// Lists all the current cloud script versions. For each version, information about the current published and latest
+    /// revisions is also listed.
     /// https://api.playfab.com/Documentation/Admin/method/GetCloudScriptVersions
     /// </summary>
     public static function GetCloudScriptVersions($titleId, $authValue, $request)
@@ -292,7 +299,9 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Retrieves the pre-signed URL for uploading a content file. A subsequent HTTP PUT to the returned URL uploads the  content. Also, please be aware that the Content service is specifically PlayFab's CDN offering, for which standard CDN rates apply.
+    /// Retrieves the pre-signed URL for uploading a content file. A subsequent HTTP PUT to the returned URL uploads the
+    /// content. Also, please be aware that the Content service is specifically PlayFab's CDN offering, for which standard CDN
+    /// rates apply.
     /// https://api.playfab.com/Documentation/Admin/method/GetContentUploadUrl
     /// </summary>
     public static function GetContentUploadUrl($titleId, $authValue, $request)
@@ -364,7 +373,10 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Allows for paging through all players in a given segment. This API creates a snapshot of all player profiles that match the segment definition at the time of its creation and lives through the Total Seconds to Live, refreshing its life span on each subsequent use of the Continuation Token. Profiles that change during the course of paging will not be reflected in the results. AB Test segments are currently not supported by this operation.
+    /// Allows for paging through all players in a given segment. This API creates a snapshot of all player profiles that match
+    /// the segment definition at the time of its creation and lives through the Total Seconds to Live, refreshing its life span
+    /// on each subsequent use of the Continuation Token. Profiles that change during the course of paging will not be reflected
+    /// in the results. AB Test segments are currently not supported by this operation.
     /// https://api.playfab.com/Documentation/Admin/method/GetPlayersInSegment
     /// </summary>
     public static function GetPlayersInSegment($titleId, $authValue, $request)
@@ -376,7 +388,8 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Retrieves the configuration information for all player statistics defined in the title, regardless of whether they have a reset interval.
+    /// Retrieves the configuration information for all player statistics defined in the title, regardless of whether they have
+    /// a reset interval.
     /// https://api.playfab.com/Documentation/Admin/method/GetPlayerStatisticDefinitions
     /// </summary>
     public static function GetPlayerStatisticDefinitions($titleId, $authValue, $request)
@@ -460,7 +473,8 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Retrieves the pre-authorized URL for uploading a game server package containing a build (does not enable the build for use - see AddServerBuild)
+    /// Retrieves the pre-authorized URL for uploading a game server package containing a build (does not enable the build for
+    /// use - see AddServerBuild)
     /// https://api.playfab.com/Documentation/Admin/method/GetServerBuildUploadUrl
     /// </summary>
     public static function GetServerBuildUploadUrl($titleId, $authValue, $request)
@@ -736,7 +750,8 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Removes the game server executable specified from the set of those a client is permitted to request in a call to StartGame
+    /// Removes the game server executable specified from the set of those a client is permitted to request in a call to
+    /// StartGame
     /// https://api.playfab.com/Documentation/Admin/method/RemoveServerBuild
     /// </summary>
     public static function RemoveServerBuild($titleId, $authValue, $request)
@@ -768,18 +783,6 @@ class PlayFabAdminApi
         //TODO: Check the devSecretKey
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/ResetCharacterStatistics", $request, "X-SecretKey", $authValue);
-        return $result;
-    }
-
-    /// <summary>
-    /// Resets all title-specific information about a particular account, including user data, virtual currency balances, inventory, purchase history, and statistics
-    /// https://api.playfab.com/Documentation/Admin/method/ResetUsers
-    /// </summary>
-    public static function ResetUsers($titleId, $authValue, $request)
-    {
-        //TODO: Check the devSecretKey
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/ResetUsers", $request, "X-SecretKey", $authValue);
         return $result;
     }
 
@@ -856,7 +859,8 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Forces an email to be sent to the registered email address for the specified account, with a link allowing the user to change the password
+    /// Forces an email to be sent to the registered email address for the specified account, with a link allowing the user to
+    /// change the password
     /// https://api.playfab.com/Documentation/Admin/method/SendAccountRecoveryEmail
     /// </summary>
     public static function SendAccountRecoveryEmail($titleId, $authValue, $request)
@@ -952,7 +956,9 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Sets the Amazon Resource Name (ARN) for iOS and Android push notifications. Documentation on the exact restrictions can be found at: http://docs.aws.amazon.com/sns/latest/api/API_CreatePlatformApplication.html. Currently, Amazon device Messaging is not supported.
+    /// Sets the Amazon Resource Name (ARN) for iOS and Android push notifications. Documentation on the exact restrictions can
+    /// be found at: http://docs.aws.amazon.com/sns/latest/api/API_CreatePlatformApplication.html. Currently, Amazon device
+    /// Messaging is not supported.
     /// https://api.playfab.com/Documentation/Admin/method/SetupPushNotification
     /// </summary>
     public static function SetupPushNotification($titleId, $authValue, $request)
@@ -1000,7 +1006,8 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Creates a new Cloud Script revision and uploads source code to it. Note that at this time, only one file should be submitted in the revision.
+    /// Creates a new Cloud Script revision and uploads source code to it. Note that at this time, only one file should be
+    /// submitted in the revision.
     /// https://api.playfab.com/Documentation/Admin/method/UpdateCloudScript
     /// </summary>
     public static function UpdateCloudScript($titleId, $authValue, $request)
@@ -1012,7 +1019,8 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Updates a existing Player Shared Secret Key. It may take up to 5 minutes for this update to become generally available after this API returns.
+    /// Updates a existing Player Shared Secret Key. It may take up to 5 minutes for this update to become generally available
+    /// after this API returns.
     /// https://api.playfab.com/Documentation/Admin/method/UpdatePlayerSharedSecret
     /// </summary>
     public static function UpdatePlayerSharedSecret($titleId, $authValue, $request)

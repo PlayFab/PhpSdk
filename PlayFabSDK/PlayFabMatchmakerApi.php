@@ -52,7 +52,8 @@ class PlayFabMatchmakerApi
     }
 
     /// <summary>
-    /// Retrieves the relevant details for a specified user, which the external match-making service can then use to compute effective matches
+    /// Retrieves the relevant details for a specified user, which the external match-making service can then use to compute
+    /// effective matches
     /// https://api.playfab.com/Documentation/Matchmaker/method/UserInfo
     /// </summary>
     public static function UserInfo($titleId, $authValue, $request)
