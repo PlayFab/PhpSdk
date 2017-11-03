@@ -961,6 +961,19 @@ class PlayFabServerApi
     }
 
     /// <summary>
+    /// Forces an email to be sent to the registered contact email address for the user's account based on an account recovery
+    /// email template
+    /// https://api.playfab.com/Documentation/Server/method/SendCustomAccountRecoveryEmail
+    /// </summary>
+    public static function SendCustomAccountRecoveryEmail($titleId, $authValue, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/SendCustomAccountRecoveryEmail", $request, "X-SecretKey", $authValue);
+        return $result;
+    }
+
+    /// <summary>
     /// Sends an iOS/Android Push Notification to a specific user, if that user's device has been configured for Push
     /// Notifications in PlayFab. If a user has linked both Android and iOS devices, both will be notified.
     /// https://api.playfab.com/Documentation/Server/method/SendPushNotification

@@ -349,6 +349,18 @@ class PlayFabAdminApi
     }
 
     /// <summary>
+    /// Gets a player's ID from an auth token.
+    /// https://api.playfab.com/Documentation/Admin/method/GetPlayerIdFromAuthToken
+    /// </summary>
+    public static function GetPlayerIdFromAuthToken($titleId, $authValue, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/GetPlayerIdFromAuthToken", $request, "X-SecretKey", $authValue);
+        return $result;
+    }
+
+    /// <summary>
     /// List all segments that a player currently belongs to at this moment in time.
     /// https://api.playfab.com/Documentation/Admin/method/GetPlayerSegments
     /// </summary>
@@ -783,6 +795,18 @@ class PlayFabAdminApi
         //TODO: Check the devSecretKey
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/ResetCharacterStatistics", $request, "X-SecretKey", $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Reset a player's password for a given title.
+    /// https://api.playfab.com/Documentation/Admin/method/ResetPassword
+    /// </summary>
+    public static function ResetPassword($titleId, $authValue, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/ResetPassword", $request, "X-SecretKey", $authValue);
         return $result;
     }
 

@@ -45,6 +45,18 @@ class PlayFabClientApi
     }
 
     /// <summary>
+    /// Adds or updates a contact email to the player's profile
+    /// https://api.playfab.com/Documentation/Client/method/AddOrUpdateContactEmail
+    /// </summary>
+    public static function AddOrUpdateContactEmail($titleId, $authValue, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AddOrUpdateContactEmail", $request, "X-Authentication", $authValue);
+        return $result;
+    }
+
+    /// <summary>
     /// Adds users to the set of those able to update both the shared data, as well as the set of users  in the group. Only
     /// users in the group can add new members. Shared Groups are designed for sharing data between a very  small number of
     /// players, please see our guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
@@ -1181,6 +1193,18 @@ class PlayFabClientApi
         if (!isset($request->$titleId)) !$request->titleId = $titleId;
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RegisterWithWindowsHello", $request, null, $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Removes a contact email from the player's profile
+    /// https://api.playfab.com/Documentation/Client/method/RemoveContactEmail
+    /// </summary>
+    public static function RemoveContactEmail($titleId, $authValue, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RemoveContactEmail", $request, "X-Authentication", $authValue);
         return $result;
     }
 
