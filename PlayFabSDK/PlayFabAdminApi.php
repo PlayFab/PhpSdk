@@ -361,6 +361,18 @@ class PlayFabAdminApi
     }
 
     /// <summary>
+    /// Retrieves the player's profile
+    /// https://api.playfab.com/Documentation/Admin/method/GetPlayerProfile
+    /// </summary>
+    public static function GetPlayerProfile($titleId, $authValue, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/GetPlayerProfile", $request, "X-SecretKey", $authValue);
+        return $result;
+    }
+
+    /// <summary>
     /// List all segments that a player currently belongs to at this moment in time.
     /// https://api.playfab.com/Documentation/Admin/method/GetPlayerSegments
     /// </summary>
