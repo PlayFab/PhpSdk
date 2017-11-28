@@ -90,6 +90,18 @@ class PlayFabAdminApi
     }
 
     /// <summary>
+    /// Checks the global count for the limited edition item.
+    /// https://api.playfab.com/Documentation/Admin/method/CheckLimitedEditionItemAvailability
+    /// </summary>
+    public static function CheckLimitedEditionItemAvailability($titleId, $authValue, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/CheckLimitedEditionItemAvailability", $request, "X-SecretKey", $authValue);
+        return $result;
+    }
+
+    /// <summary>
     /// Create an ActionsOnPlayersInSegment task, which iterates through all players in a segment to execute action.
     /// https://api.playfab.com/Documentation/Admin/method/CreateActionsOnPlayersInSegmentTask
     /// </summary>
@@ -686,6 +698,18 @@ class PlayFabAdminApi
         //TODO: Check the devSecretKey
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/GrantItemsToUsers", $request, "X-SecretKey", $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Increases the global count for the given scarce resource.
+    /// https://api.playfab.com/Documentation/Admin/method/IncrementLimitedEditionItemAvailability
+    /// </summary>
+    public static function IncrementLimitedEditionItemAvailability($titleId, $authValue, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/IncrementLimitedEditionItemAvailability", $request, "X-SecretKey", $authValue);
         return $result;
     }
 

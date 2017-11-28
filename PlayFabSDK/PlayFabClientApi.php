@@ -45,7 +45,7 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Adds or updates a contact email to the player's profile
+    /// Adds or updates a contact email to the player's profile.
     /// https://api.playfab.com/Documentation/Client/method/AddOrUpdateContactEmail
     /// </summary>
     public static function AddOrUpdateContactEmail($titleId, $authValue, $request)
@@ -409,6 +409,20 @@ class PlayFabClientApi
         //TODO: Check the sessionTicket
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetLeaderboardForUserCharacters", $request, "X-Authentication", $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// For payments flows where the provider requires playfab (the fulfiller) to initiate the transaction, but the client
+    /// completes the rest of the flow. In the Xsolla case, the token returned here will be passed to Xsolla by the client to
+    /// create a cart. Poll GetPurchase using the returned OrderId once you've completed the payment.
+    /// https://api.playfab.com/Documentation/Client/method/GetPaymentToken
+    /// </summary>
+    public static function GetPaymentToken($titleId, $authValue, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPaymentToken", $request, "X-Authentication", $authValue);
         return $result;
     }
 
@@ -1197,7 +1211,7 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Removes a contact email from the player's profile
+    /// Removes a contact email from the player's profile.
     /// https://api.playfab.com/Documentation/Client/method/RemoveContactEmail
     /// </summary>
     public static function RemoveContactEmail($titleId, $authValue, $request)
@@ -1244,6 +1258,19 @@ class PlayFabClientApi
         //TODO: Check the sessionTicket
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RemoveSharedGroupMembers", $request, "X-Authentication", $authValue);
+        return $result;
+    }
+
+    /// <summary>
+    /// Write a PlayStream event to describe the provided player device information. This API method is not designed to be
+    /// called directly by developers. Each PlayFab client SDK will eventually report this information automatically.
+    /// https://api.playfab.com/Documentation/Client/method/ReportDeviceInfo
+    /// </summary>
+    public static function ReportDeviceInfo($titleId, $authValue, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ReportDeviceInfo", $request, "X-Authentication", $authValue);
         return $result;
     }
 
