@@ -1301,7 +1301,8 @@ class PlayFabClientApi
 
     /// <summary>
     /// Forces an email to be sent to the registered email address for the user's account, with a link allowing the user to
-    /// change the password
+    /// change the password.If an account recovery email template ID is provided, an email using the custom email template will
+    /// be used.
     /// https://api.playfab.com/Documentation/Client/method/SendAccountRecoveryEmail
     /// </summary>
     public static function SendAccountRecoveryEmail($titleId, $authValue, $request)
