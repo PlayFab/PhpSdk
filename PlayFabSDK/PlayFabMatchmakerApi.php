@@ -7,11 +7,11 @@ class PlayFabMatchmakerApi
     /// Validates a user with the PlayFab service
     /// https://api.playfab.com/Documentation/Matchmaker/method/AuthUser
     /// </summary>
-    public static function AuthUser($titleId, $authValue, $request)
+    public static function AuthUser($titleId, $developerSecreteKey, $request)
     {
         //TODO: Check the devSecretKey
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Matchmaker/AuthUser", $request, "X-SecretKey", $authValue);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Matchmaker/AuthUser", $request, "X-SecretKey", $developerSecreteKey);
         return $result;
     }
 
@@ -19,11 +19,11 @@ class PlayFabMatchmakerApi
     /// Informs the PlayFab game server hosting service that the indicated user has joined the Game Server Instance specified
     /// https://api.playfab.com/Documentation/Matchmaker/method/PlayerJoined
     /// </summary>
-    public static function PlayerJoined($titleId, $authValue, $request)
+    public static function PlayerJoined($titleId, $developerSecreteKey, $request)
     {
         //TODO: Check the devSecretKey
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Matchmaker/PlayerJoined", $request, "X-SecretKey", $authValue);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Matchmaker/PlayerJoined", $request, "X-SecretKey", $developerSecreteKey);
         return $result;
     }
 
@@ -31,11 +31,11 @@ class PlayFabMatchmakerApi
     /// Informs the PlayFab game server hosting service that the indicated user has left the Game Server Instance specified
     /// https://api.playfab.com/Documentation/Matchmaker/method/PlayerLeft
     /// </summary>
-    public static function PlayerLeft($titleId, $authValue, $request)
+    public static function PlayerLeft($titleId, $developerSecreteKey, $request)
     {
         //TODO: Check the devSecretKey
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Matchmaker/PlayerLeft", $request, "X-SecretKey", $authValue);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Matchmaker/PlayerLeft", $request, "X-SecretKey", $developerSecreteKey);
         return $result;
     }
 
@@ -43,11 +43,11 @@ class PlayFabMatchmakerApi
     /// Instructs the PlayFab game server hosting service to instantiate a new Game Server Instance
     /// https://api.playfab.com/Documentation/Matchmaker/method/StartGame
     /// </summary>
-    public static function StartGame($titleId, $authValue, $request)
+    public static function StartGame($titleId, $developerSecreteKey, $request)
     {
         //TODO: Check the devSecretKey
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Matchmaker/StartGame", $request, "X-SecretKey", $authValue);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Matchmaker/StartGame", $request, "X-SecretKey", $developerSecreteKey);
         return $result;
     }
 
@@ -56,11 +56,11 @@ class PlayFabMatchmakerApi
     /// effective matches
     /// https://api.playfab.com/Documentation/Matchmaker/method/UserInfo
     /// </summary>
-    public static function UserInfo($titleId, $authValue, $request)
+    public static function UserInfo($titleId, $developerSecreteKey, $request)
     {
         //TODO: Check the devSecretKey
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Matchmaker/UserInfo", $request, "X-SecretKey", $authValue);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Matchmaker/UserInfo", $request, "X-SecretKey", $developerSecreteKey);
         return $result;
     }
 
