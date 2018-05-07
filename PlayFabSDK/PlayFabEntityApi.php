@@ -274,6 +274,18 @@ class PlayFabEntityApi
     }
 
     /// <summary>
+    /// Retrieves the entity's profile.
+    /// https://api.playfab.com/Documentation/Entity/method/GetProfiles
+    /// </summary>
+    public static function GetProfiles($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Profile/GetProfiles", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Initiates file uploads to an entity's profile.
     /// https://api.playfab.com/Documentation/Entity/method/InitiateFileUploads
     /// </summary>

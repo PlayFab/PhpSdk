@@ -4,7 +4,7 @@ if (!class_exists("PlayFabSettings")) {
     class PlayFabSettings
     {
         public static $PlayFabApiUrl = "https://{titleId}.playfabapi.com";
-        public static $versionString = "PhpSdk-0.0.180409";
+        public static $versionString = "PhpSdk-0.0.180507";
         public static $enableCompression = false; // Can't get this to work
         public static $titleId = null;
         public static $disableSsl = false;
@@ -52,7 +52,6 @@ if (!class_exists("PlayFabHttp")) {
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             if (PlayFabSettings::$disableSsl) {
                 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0); // TODO: DON'T PUBLISH WITH THIS
-                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0); // TODO: DON'T PUBLISH WITH THIS
             }
             curl_setopt($ch, CURLOPT_HTTPHEADER, $httpHeaders);
             $rawResult = curl_exec($ch);
