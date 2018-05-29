@@ -4,7 +4,7 @@ if (!class_exists("PlayFabSettings")) {
     class PlayFabSettings
     {
         public static $PlayFabApiUrl = "https://{titleId}.playfabapi.com";
-        public static $versionString = "PhpSdk-0.0.180507";
+        public static $versionString = "PhpSdk-0.0.180529";
         public static $enableCompression = false; // Can't get this to work
         public static $titleId = null;
         public static $disableSsl = false;

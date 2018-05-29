@@ -164,6 +164,18 @@ class PlayFabAdminApi
     }
 
     /// <summary>
+    /// Removes a master player account entirely from all titles and deletes all associated data
+    /// https://api.playfab.com/Documentation/Admin/method/DeleteMasterPlayerAccount
+    /// </summary>
+    public static function DeleteMasterPlayerAccount($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/DeleteMasterPlayerAccount", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
     /// Removes a user's player account from a title and deletes all associated data
     /// https://api.playfab.com/Documentation/Admin/method/DeletePlayer
     /// </summary>
@@ -221,6 +233,18 @@ class PlayFabAdminApi
         //TODO: Check the devSecretKey
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/DeleteTitle", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
+    /// Exports all associated data of a master player account
+    /// https://api.playfab.com/Documentation/Admin/method/ExportMasterPlayerData
+    /// </summary>
+    public static function ExportMasterPlayerData($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/ExportMasterPlayerData", $request, "X-SecretKey", $developerSecreteKey);
         return $result;
     }
 
@@ -357,6 +381,18 @@ class PlayFabAdminApi
         //TODO: Check the devSecretKey
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/GetMatchmakerGameModes", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
+    /// Get the list of titles that the player has played
+    /// https://api.playfab.com/Documentation/Admin/method/GetPlayedTitleList
+    /// </summary>
+    public static function GetPlayedTitleList($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/GetPlayedTitleList", $request, "X-SecretKey", $developerSecreteKey);
         return $result;
     }
 
