@@ -148,6 +148,18 @@ class PlayFabEntityApi
     }
 
     /// <summary>
+    /// Executes CloudScript using the Entity Profile
+    /// https://api.playfab.com/Documentation/Entity/method/ExecuteEntityCloudScript
+    /// </summary>
+    public static function ExecuteEntityCloudScript($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/CloudScript/ExecuteEntityCloudScript", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Finalize file uploads to an entity's profile.
     /// https://api.playfab.com/Documentation/Entity/method/FinalizeFileUploads
     /// </summary>
@@ -498,6 +510,18 @@ class PlayFabEntityApi
         //TODO: Check the entityToken
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Group/UpdateRole", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
+    /// Write batches of entity based events to PlayStream.
+    /// https://api.playfab.com/Documentation/Entity/method/WriteEvents
+    /// </summary>
+    public static function WriteEvents($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Event/WriteEvents", $request, "X-EntityToken", $entityToken);
         return $result;
     }
 
