@@ -406,8 +406,8 @@ class PlayFabServerApi
     }
 
     /// <summary>
-    /// Returns whatever info is requested in the response for the user. Note that PII (like email address, facebook id)
-    /// may be returned. All parameters default to false.
+    /// Returns whatever info is requested in the response for the user. Note that PII (like email address, facebook id) may be
+    /// returned. All parameters default to false.
     /// https://api.playfab.com/Documentation/Server/method/GetPlayerCombinedInfo
     /// </summary>
     public static function GetPlayerCombinedInfo($titleId, $developerSecreteKey, $request)
@@ -502,6 +502,30 @@ class PlayFabServerApi
         //TODO: Check the devSecretKey
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/GetPlayFabIDsFromFacebookIDs", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
+    /// Retrieves the unique PlayFab identifiers for the given set of Facebook Instant Games identifiers.
+    /// https://api.playfab.com/Documentation/Server/method/GetPlayFabIDsFromFacebookInstantGamesIds
+    /// </summary>
+    public static function GetPlayFabIDsFromFacebookInstantGamesIds($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/GetPlayFabIDsFromFacebookInstantGamesIds", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
+    /// Retrieves the unique PlayFab identifiers for the given set of Nintendo Switch Device identifiers.
+    /// https://api.playfab.com/Documentation/Server/method/GetPlayFabIDsFromNintendoSwitchDeviceIds
+    /// </summary>
+    public static function GetPlayFabIDsFromNintendoSwitchDeviceIds($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/GetPlayFabIDsFromNintendoSwitchDeviceIds", $request, "X-SecretKey", $developerSecreteKey);
         return $result;
     }
 

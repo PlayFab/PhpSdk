@@ -536,6 +536,18 @@ class PlayFabClientApi
     }
 
     /// <summary>
+    /// Retrieves the unique PlayFab identifiers for the given set of Facebook Instant Game identifiers.
+    /// https://api.playfab.com/Documentation/Client/method/GetPlayFabIDsFromFacebookInstantGamesIds
+    /// </summary>
+    public static function GetPlayFabIDsFromFacebookInstantGamesIds($titleId, $clientSessionTicket, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromFacebookInstantGamesIds", $request, "X-Authentication", $clientSessionTicket);
+        return $result;
+    }
+
+    /// <summary>
     /// Retrieves the unique PlayFab identifiers for the given set of Game Center identifiers (referenced in the Game Center
     /// Programming Guide as the Player Identifier).
     /// https://api.playfab.com/Documentation/Client/method/GetPlayFabIDsFromGameCenterIDs
@@ -586,6 +598,18 @@ class PlayFabClientApi
         //TODO: Check the sessionTicket
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromKongregateIDs", $request, "X-Authentication", $clientSessionTicket);
+        return $result;
+    }
+
+    /// <summary>
+    /// Retrieves the unique PlayFab identifiers for the given set of Nintendo Switch identifiers.
+    /// https://api.playfab.com/Documentation/Client/method/GetPlayFabIDsFromNintendoSwitchDeviceIds
+    /// </summary>
+    public static function GetPlayFabIDsFromNintendoSwitchDeviceIds($titleId, $clientSessionTicket, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromNintendoSwitchDeviceIds", $request, "X-Authentication", $clientSessionTicket);
         return $result;
     }
 
@@ -848,6 +872,18 @@ class PlayFabClientApi
     }
 
     /// <summary>
+    /// Links the Facebook Instant Games Id to the user's PlayFab account
+    /// https://api.playfab.com/Documentation/Client/method/LinkFacebookInstantGamesId
+    /// </summary>
+    public static function LinkFacebookInstantGamesId($titleId, $clientSessionTicket, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkFacebookInstantGamesId", $request, "X-Authentication", $clientSessionTicket);
+        return $result;
+    }
+
+    /// <summary>
     /// Links the Game Center account associated with the provided Game Center ID to the user's PlayFab account
     /// https://api.playfab.com/Documentation/Client/method/LinkGameCenterAccount
     /// </summary>
@@ -892,6 +928,18 @@ class PlayFabClientApi
         //TODO: Check the sessionTicket
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkKongregate", $request, "X-Authentication", $clientSessionTicket);
+        return $result;
+    }
+
+    /// <summary>
+    /// Links the NintendoSwitchDeviceId to the user's PlayFab account
+    /// https://api.playfab.com/Documentation/Client/method/LinkNintendoSwitchDeviceId
+    /// </summary>
+    public static function LinkNintendoSwitchDeviceId($titleId, $clientSessionTicket, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkNintendoSwitchDeviceId", $request, "X-Authentication", $clientSessionTicket);
         return $result;
     }
 
@@ -990,6 +1038,20 @@ class PlayFabClientApi
     }
 
     /// <summary>
+    /// Signs the user in using a Facebook Instant Games ID, returning a session identifier that can subsequently be used for
+    /// API calls which require an authenticated user. Requires Facebook Instant Games to be configured.
+    /// https://api.playfab.com/Documentation/Client/method/LoginWithFacebookInstantGamesId
+    /// </summary>
+    public static function LoginWithFacebookInstantGamesId($titleId, $request)
+    {
+        if (!isset($titleId)) $titleId = PlayFabSettings::$titleId;
+        if (!isset($request->$titleId)) !$request->titleId = $titleId;
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LoginWithFacebookInstantGamesId", $request, null, null);
+        return $result;
+    }
+
+    /// <summary>
     /// Signs the user in using an iOS Game Center player identifier, returning a session identifier that can subsequently be
     /// used for API calls which require an authenticated user
     /// https://api.playfab.com/Documentation/Client/method/LoginWithGameCenter
@@ -1040,6 +1102,20 @@ class PlayFabClientApi
         if (!isset($request->$titleId)) !$request->titleId = $titleId;
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LoginWithKongregate", $request, null, null);
+        return $result;
+    }
+
+    /// <summary>
+    /// Signs the user in using a Nintendo Switch Device ID, returning a session identifier that can subsequently be used for
+    /// API calls which require an authenticated user
+    /// https://api.playfab.com/Documentation/Client/method/LoginWithNintendoSwitchDeviceId
+    /// </summary>
+    public static function LoginWithNintendoSwitchDeviceId($titleId, $request)
+    {
+        if (!isset($titleId)) $titleId = PlayFabSettings::$titleId;
+        if (!isset($request->$titleId)) !$request->titleId = $titleId;
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LoginWithNintendoSwitchDeviceId", $request, null, null);
         return $result;
     }
 
@@ -1410,6 +1486,18 @@ class PlayFabClientApi
     }
 
     /// <summary>
+    /// Unlinks the related Facebook Instant Game Ids from the user's PlayFab account
+    /// https://api.playfab.com/Documentation/Client/method/UnlinkFacebookInstantGamesId
+    /// </summary>
+    public static function UnlinkFacebookInstantGamesId($titleId, $clientSessionTicket, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkFacebookInstantGamesId", $request, "X-Authentication", $clientSessionTicket);
+        return $result;
+    }
+
+    /// <summary>
     /// Unlinks the related Game Center account from the user's PlayFab account
     /// https://api.playfab.com/Documentation/Client/method/UnlinkGameCenterAccount
     /// </summary>
@@ -1455,6 +1543,18 @@ class PlayFabClientApi
         //TODO: Check the sessionTicket
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkKongregate", $request, "X-Authentication", $clientSessionTicket);
+        return $result;
+    }
+
+    /// <summary>
+    /// Unlinks the related NintendoSwitchDeviceId from the user's PlayFab account
+    /// https://api.playfab.com/Documentation/Client/method/UnlinkNintendoSwitchDeviceId
+    /// </summary>
+    public static function UnlinkNintendoSwitchDeviceId($titleId, $clientSessionTicket, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkNintendoSwitchDeviceId", $request, "X-Authentication", $clientSessionTicket);
         return $result;
     }
 
