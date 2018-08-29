@@ -4,7 +4,8 @@ include 'PlayFabHttp.php';
 class PlayFabCloudScriptApi
 {
     /// <summary>
-    /// Executes CloudScript using the Entity Profile
+    /// Cloud Script is one of PlayFab's most versatile features. It allows client code to request execution of any kind of
+    /// custom server-side functionality you can implement, and it can be used in conjunction with virtually anything.
     /// https://api.playfab.com/Documentation/CloudScript/method/ExecuteEntityCloudScript
     /// </summary>
     public static function ExecuteEntityCloudScript($titleId, $entityToken, $request)

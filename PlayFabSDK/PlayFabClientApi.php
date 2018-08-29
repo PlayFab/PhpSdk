@@ -159,6 +159,19 @@ class PlayFabClientApi
     }
 
     /// <summary>
+    /// Grants the player's current entitlements from Xbox Live, consuming all availble items in Xbox and granting them to the
+    /// player's PlayFab inventory. This call is idempotent and will not grant previously granted items to the player.
+    /// https://api.playfab.com/Documentation/Client/method/ConsumeXboxEntitlements
+    /// </summary>
+    public static function ConsumeXboxEntitlements($titleId, $clientSessionTicket, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ConsumeXboxEntitlements", $request, "X-Authentication", $clientSessionTicket);
+        return $result;
+    }
+
+    /// <summary>
     /// Requests the creation of a shared group object, containing key/value pairs which may be updated by all members of the
     /// group. Upon creation, the current user will be the only member of the group. Shared Groups are designed for sharing data
     /// between a very small number of players, please see our guide:
@@ -980,6 +993,18 @@ class PlayFabClientApi
     }
 
     /// <summary>
+    /// Links the Xbox Live account associated with the provided access code to the user's PlayFab account
+    /// https://api.playfab.com/Documentation/Client/method/LinkXboxAccount
+    /// </summary>
+    public static function LinkXboxAccount($titleId, $clientSessionTicket, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkXboxAccount", $request, "X-Authentication", $clientSessionTicket);
+        return $result;
+    }
+
+    /// <summary>
     /// Signs the user in using the Android device identifier, returning a session identifier that can subsequently be used for
     /// API calls which require an authenticated user
     /// https://api.playfab.com/Documentation/Client/method/LoginWithAndroidDeviceID
@@ -1175,6 +1200,20 @@ class PlayFabClientApi
         if (!isset($request->$titleId)) !$request->titleId = $titleId;
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LoginWithWindowsHello", $request, null, null);
+        return $result;
+    }
+
+    /// <summary>
+    /// Signs the user in using a Xbox Live Token, returning a session identifier that can subsequently be used for API calls
+    /// which require an authenticated user
+    /// https://api.playfab.com/Documentation/Client/method/LoginWithXbox
+    /// </summary>
+    public static function LoginWithXbox($titleId, $request)
+    {
+        if (!isset($titleId)) $titleId = PlayFabSettings::$titleId;
+        if (!isset($request->$titleId)) !$request->titleId = $titleId;
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LoginWithXbox", $request, null, null);
         return $result;
     }
 
@@ -1591,6 +1630,18 @@ class PlayFabClientApi
         //TODO: Check the sessionTicket
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkWindowsHello", $request, "X-Authentication", $clientSessionTicket);
+        return $result;
+    }
+
+    /// <summary>
+    /// Unlinks the related Xbox Live account from the user's PlayFab account
+    /// https://api.playfab.com/Documentation/Client/method/UnlinkXboxAccount
+    /// </summary>
+    public static function UnlinkXboxAccount($titleId, $clientSessionTicket, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkXboxAccount", $request, "X-Authentication", $clientSessionTicket);
         return $result;
     }
 
