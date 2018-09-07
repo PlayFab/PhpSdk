@@ -52,7 +52,8 @@ class PlayFabProfilesApi
     }
 
     /// <summary>
-    /// Updates the entity's language
+    /// Updates the entity's language. The precedence hierarchy for communication to the player is Title Player Account
+    /// language, Master Player Account language, and then title default language if the first two aren't set or supported.
     /// https://api.playfab.com/Documentation/Profiles/method/SetProfileLanguage
     /// </summary>
     public static function SetProfileLanguage($titleId, $entityToken, $request)
