@@ -142,6 +142,18 @@ class PlayFabServerApi
     }
 
     /// <summary>
+    /// Removes a user's player account from a title and deletes all associated data
+    /// https://api.playfab.com/Documentation/Server/method/DeletePlayer
+    /// </summary>
+    public static function DeletePlayer($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/DeletePlayer", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
     /// Deletes a shared group, freeing up the shared group ID to be reused for a new group. Shared Groups are designed for
     /// sharing data between a very small number of players, please see our guide:
     /// https://api.playfab.com/docs/tutorials/landing-players/shared-groups
@@ -156,7 +168,7 @@ class PlayFabServerApi
     }
 
     /// <summary>
-    /// Deletes the users for the provided game. Deletes custom data, all account linkages, and statistics.
+    /// Deletes custom data, all account linkages, and statistics.
     /// https://api.playfab.com/Documentation/Server/method/DeleteUsers
     /// </summary>
     public static function DeleteUsers($titleId, $developerSecreteKey, $request)
