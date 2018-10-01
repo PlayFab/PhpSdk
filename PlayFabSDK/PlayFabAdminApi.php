@@ -385,18 +385,6 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// Get a matchmaking queue configuration.
-    /// https://api.playfab.com/Documentation/Admin/method/GetMatchmakingQueue
-    /// </summary>
-    public static function GetMatchmakingQueue($titleId, $developerSecreteKey, $request)
-    {
-        //TODO: Check the devSecretKey
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/GetMatchmakingQueue", $request, "X-SecretKey", $developerSecreteKey);
-        return $result;
-    }
-
-    /// <summary>
     /// Get the list of titles that the player has played
     /// https://api.playfab.com/Documentation/Admin/method/GetPlayedTitleList
     /// </summary>
@@ -774,18 +762,6 @@ class PlayFabAdminApi
     }
 
     /// <summary>
-    /// List all matchmaking queue configs.
-    /// https://api.playfab.com/Documentation/Admin/method/ListMatchmakingQueues
-    /// </summary>
-    public static function ListMatchmakingQueues($titleId, $developerSecreteKey, $request)
-    {
-        //TODO: Check the devSecretKey
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/ListMatchmakingQueues", $request, "X-SecretKey", $developerSecreteKey);
-        return $result;
-    }
-
-    /// <summary>
     /// Retrieves the build details for all game server executables which are currently defined for the title
     /// https://api.playfab.com/Documentation/Admin/method/ListServerBuilds
     /// </summary>
@@ -842,18 +818,6 @@ class PlayFabAdminApi
         //TODO: Check the devSecretKey
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/RefundPurchase", $request, "X-SecretKey", $developerSecreteKey);
-        return $result;
-    }
-
-    /// <summary>
-    /// Remove a matchmaking queue config.
-    /// https://api.playfab.com/Documentation/Admin/method/RemoveMatchmakingQueue
-    /// </summary>
-    public static function RemoveMatchmakingQueue($titleId, $developerSecreteKey, $request)
-    {
-        //TODO: Check the devSecretKey
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/RemoveMatchmakingQueue", $request, "X-SecretKey", $developerSecreteKey);
         return $result;
     }
 
@@ -1025,18 +989,6 @@ class PlayFabAdminApi
         //TODO: Check the devSecretKey
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/SetCatalogItems", $request, "X-SecretKey", $developerSecreteKey);
-        return $result;
-    }
-
-    /// <summary>
-    /// Create or update a matchmaking queue configuration.
-    /// https://api.playfab.com/Documentation/Admin/method/SetMatchmakingQueue
-    /// </summary>
-    public static function SetMatchmakingQueue($titleId, $developerSecreteKey, $request)
-    {
-        //TODO: Check the devSecretKey
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/SetMatchmakingQueue", $request, "X-SecretKey", $developerSecreteKey);
         return $result;
     }
 
