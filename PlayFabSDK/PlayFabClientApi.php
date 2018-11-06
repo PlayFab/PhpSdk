@@ -654,6 +654,18 @@ class PlayFabClientApi
     }
 
     /// <summary>
+    /// Retrieves the unique PlayFab identifiers for the given set of XboxLive identifiers.
+    /// https://api.playfab.com/Documentation/Client/method/GetPlayFabIDsFromXboxLiveIDs
+    /// </summary>
+    public static function GetPlayFabIDsFromXboxLiveIDs($titleId, $clientSessionTicket, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromXboxLiveIDs", $request, "X-Authentication", $clientSessionTicket);
+        return $result;
+    }
+
+    /// <summary>
     /// Retrieves the key-value store of custom publisher settings
     /// https://api.playfab.com/Documentation/Client/method/GetPublisherData
     /// </summary>
@@ -957,6 +969,19 @@ class PlayFabClientApi
     }
 
     /// <summary>
+    /// Links an OpenID Connect account to a user's PlayFab account, based on an existing relationship between a title and an
+    /// Open ID Connect provider and the OpenId Connect JWT from that provider.
+    /// https://api.playfab.com/Documentation/Client/method/LinkOpenIdConnect
+    /// </summary>
+    public static function LinkOpenIdConnect($titleId, $clientSessionTicket, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkOpenIdConnect", $request, "X-Authentication", $clientSessionTicket);
+        return $result;
+    }
+
+    /// <summary>
     /// Links the Steam account associated with the provided Steam authentication ticket to the user's PlayFab account
     /// https://api.playfab.com/Documentation/Client/method/LinkSteamAccount
     /// </summary>
@@ -1141,6 +1166,20 @@ class PlayFabClientApi
         if (!isset($request->$titleId)) !$request->titleId = $titleId;
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LoginWithNintendoSwitchDeviceId", $request, null, null);
+        return $result;
+    }
+
+    /// <summary>
+    /// Logs in a user with an Open ID Connect JWT created by an existing relationship between a title and an Open ID Connect
+    /// provider.
+    /// https://api.playfab.com/Documentation/Client/method/LoginWithOpenIdConnect
+    /// </summary>
+    public static function LoginWithOpenIdConnect($titleId, $request)
+    {
+        if (!isset($titleId)) $titleId = PlayFabSettings::$titleId;
+        if (!isset($request->$titleId)) !$request->titleId = $titleId;
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LoginWithOpenIdConnect", $request, null, null);
         return $result;
     }
 
@@ -1594,6 +1633,19 @@ class PlayFabClientApi
         //TODO: Check the sessionTicket
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkNintendoSwitchDeviceId", $request, "X-Authentication", $clientSessionTicket);
+        return $result;
+    }
+
+    /// <summary>
+    /// Unlinks an OpenID Connect account from a user's PlayFab account, based on the connection ID of an existing relationship
+    /// between a title and an Open ID Connect provider.
+    /// https://api.playfab.com/Documentation/Client/method/UnlinkOpenIdConnect
+    /// </summary>
+    public static function UnlinkOpenIdConnect($titleId, $clientSessionTicket, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkOpenIdConnect", $request, "X-Authentication", $clientSessionTicket);
         return $result;
     }
 

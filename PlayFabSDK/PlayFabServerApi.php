@@ -168,18 +168,6 @@ class PlayFabServerApi
     }
 
     /// <summary>
-    /// Deletes custom data, all account linkages, and statistics.
-    /// https://api.playfab.com/Documentation/Server/method/DeleteUsers
-    /// </summary>
-    public static function DeleteUsers($titleId, $developerSecreteKey, $request)
-    {
-        //TODO: Check the devSecretKey
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/DeleteUsers", $request, "X-SecretKey", $developerSecreteKey);
-        return $result;
-    }
-
-    /// <summary>
     /// Inform the matchmaker that a Game Server Instance is removed.
     /// https://api.playfab.com/Documentation/Server/method/DeregisterGame
     /// </summary>
@@ -555,6 +543,18 @@ class PlayFabServerApi
     }
 
     /// <summary>
+    /// Retrieves the unique PlayFab identifiers for the given set of XboxLive identifiers.
+    /// https://api.playfab.com/Documentation/Server/method/GetPlayFabIDsFromXboxLiveIDs
+    /// </summary>
+    public static function GetPlayFabIDsFromXboxLiveIDs($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/GetPlayFabIDsFromXboxLiveIDs", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
     /// Retrieves the key-value store of custom publisher settings
     /// https://api.playfab.com/Documentation/Server/method/GetPublisherData
     /// </summary>
@@ -576,6 +576,18 @@ class PlayFabServerApi
         //TODO: Check the devSecretKey
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/GetRandomResultTables", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
+    /// Retrieves the associated PlayFab account identifiers for the given set of server custom identifiers.
+    /// https://api.playfab.com/Documentation/Server/method/GetServerCustomIDsFromPlayFabIDs
+    /// </summary>
+    public static function GetServerCustomIDsFromPlayFabIDs($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/GetServerCustomIDsFromPlayFabIDs", $request, "X-SecretKey", $developerSecreteKey);
         return $result;
     }
 
@@ -795,6 +807,44 @@ class PlayFabServerApi
         //TODO: Check the devSecretKey
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/GrantItemsToUsers", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
+    /// Links the Xbox Live account associated with the provided access code to the user's PlayFab account
+    /// https://api.playfab.com/Documentation/Server/method/LinkXboxAccount
+    /// </summary>
+    public static function LinkXboxAccount($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/LinkXboxAccount", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
+    /// Securely login a game client from an external server backend using a custom identifier for that player. Server Custom ID
+    /// and Client Custom ID are mutually exclusive and cannot be used to retrieve the same player account.
+    /// https://api.playfab.com/Documentation/Server/method/LoginWithServerCustomId
+    /// </summary>
+    public static function LoginWithServerCustomId($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/LoginWithServerCustomId", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
+    /// Signs the user in using a Xbox Live Token from an external server backend, returning a session identifier that can
+    /// subsequently be used for API calls which require an authenticated user
+    /// https://api.playfab.com/Documentation/Server/method/LoginWithXbox
+    /// </summary>
+    public static function LoginWithXbox($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/LoginWithXbox", $request, "X-SecretKey", $developerSecreteKey);
         return $result;
     }
 
@@ -1165,6 +1215,18 @@ class PlayFabServerApi
         //TODO: Check the devSecretKey
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/SubtractUserVirtualCurrency", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
+    /// Unlinks the related Xbox Live account from the user's PlayFab account
+    /// https://api.playfab.com/Documentation/Server/method/UnlinkXboxAccount
+    /// </summary>
+    public static function UnlinkXboxAccount($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/UnlinkXboxAccount", $request, "X-SecretKey", $developerSecreteKey);
         return $result;
     }
 
