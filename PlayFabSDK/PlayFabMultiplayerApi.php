@@ -172,6 +172,18 @@ class PlayFabMultiplayerApi
     }
 
     /// <summary>
+    /// Lists archived multiplayer server sessions for a build.
+    /// https://api.playfab.com/Documentation/Multiplayer/method/ListArchivedMultiplayerServers
+    /// </summary>
+    public static function ListArchivedMultiplayerServers($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/ListArchivedMultiplayerServers", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Lists multiplayer server game assets for a title.
     /// https://api.playfab.com/Documentation/Multiplayer/method/ListAssetSummaries
     /// </summary>
