@@ -159,6 +159,18 @@ class PlayFabClientApi
     }
 
     /// <summary>
+    /// Checks for any new consumable entitlements. If any are found, they are consumed and added as PlayFab items
+    /// https://api.playfab.com/Documentation/Client/method/ConsumePSNEntitlements
+    /// </summary>
+    public static function ConsumePSNEntitlements($titleId, $clientSessionTicket, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ConsumePSNEntitlements", $request, "X-Authentication", $clientSessionTicket);
+        return $result;
+    }
+
+    /// <summary>
     /// Grants the player's current entitlements from Xbox Live, consuming all availble items in Xbox and granting them to the
     /// player's PlayFab inventory. This call is idempotent and will not grant previously granted items to the player.
     /// https://api.playfab.com/Documentation/Client/method/ConsumeXboxEntitlements
@@ -627,6 +639,18 @@ class PlayFabClientApi
     }
 
     /// <summary>
+    /// Retrieves the unique PlayFab identifiers for the given set of PlayStation Network identifiers.
+    /// https://api.playfab.com/Documentation/Client/method/GetPlayFabIDsFromPSNAccountIDs
+    /// </summary>
+    public static function GetPlayFabIDsFromPSNAccountIDs($titleId, $clientSessionTicket, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromPSNAccountIDs", $request, "X-Authentication", $clientSessionTicket);
+        return $result;
+    }
+
+    /// <summary>
     /// Retrieves the unique PlayFab identifiers for the given set of Steam identifiers. The Steam identifiers are the profile
     /// IDs for the user accounts, available as SteamId in the Steamworks Community API calls.
     /// https://api.playfab.com/Documentation/Client/method/GetPlayFabIDsFromSteamIDs
@@ -982,6 +1006,18 @@ class PlayFabClientApi
     }
 
     /// <summary>
+    /// Links the PlayStation Network account associated with the provided access code to the user's PlayFab account
+    /// https://api.playfab.com/Documentation/Client/method/LinkPSNAccount
+    /// </summary>
+    public static function LinkPSNAccount($titleId, $clientSessionTicket, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkPSNAccount", $request, "X-Authentication", $clientSessionTicket);
+        return $result;
+    }
+
+    /// <summary>
     /// Links the Steam account associated with the provided Steam authentication ticket to the user's PlayFab account
     /// https://api.playfab.com/Documentation/Client/method/LinkSteamAccount
     /// </summary>
@@ -1200,6 +1236,20 @@ class PlayFabClientApi
     }
 
     /// <summary>
+    /// Signs the user in using a PlayStation Network authentication code, returning a session identifier that can subsequently
+    /// be used for API calls which require an authenticated user
+    /// https://api.playfab.com/Documentation/Client/method/LoginWithPSN
+    /// </summary>
+    public static function LoginWithPSN($titleId, $request)
+    {
+        if (!isset($titleId)) $titleId = PlayFabSettings::$titleId;
+        if (!isset($request->$titleId)) !$request->titleId = $titleId;
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LoginWithPSN", $request, null, null);
+        return $result;
+    }
+
+    /// <summary>
     /// Signs the user in using a Steam authentication ticket, returning a session identifier that can subsequently be used for
     /// API calls which require an authenticated user
     /// https://api.playfab.com/Documentation/Client/method/LoginWithSteam
@@ -1320,6 +1370,18 @@ class PlayFabClientApi
         //TODO: Check the sessionTicket
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RedeemCoupon", $request, "X-Authentication", $clientSessionTicket);
+        return $result;
+    }
+
+    /// <summary>
+    /// Uses the supplied OAuth code to refresh the internally cached player PSN auth token
+    /// https://api.playfab.com/Documentation/Client/method/RefreshPSNAuthToken
+    /// </summary>
+    public static function RefreshPSNAuthToken($titleId, $clientSessionTicket, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RefreshPSNAuthToken", $request, "X-Authentication", $clientSessionTicket);
         return $result;
     }
 
@@ -1646,6 +1708,18 @@ class PlayFabClientApi
         //TODO: Check the sessionTicket
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkOpenIdConnect", $request, "X-Authentication", $clientSessionTicket);
+        return $result;
+    }
+
+    /// <summary>
+    /// Unlinks the related PSN account from the user's PlayFab account
+    /// https://api.playfab.com/Documentation/Client/method/UnlinkPSNAccount
+    /// </summary>
+    public static function UnlinkPSNAccount($titleId, $clientSessionTicket, $request)
+    {
+        //TODO: Check the sessionTicket
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkPSNAccount", $request, "X-Authentication", $clientSessionTicket);
         return $result;
     }
 
