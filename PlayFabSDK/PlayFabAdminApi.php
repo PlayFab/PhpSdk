@@ -16,6 +16,18 @@ class PlayFabAdminApi
     }
 
     /// <summary>
+    /// Update news item to include localized version
+    /// https://api.playfab.com/Documentation/Admin/method/AddLocalizedNews
+    /// </summary>
+    public static function AddLocalizedNews($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/AddLocalizedNews", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
     /// Adds a new news item to the title's news feed
     /// https://api.playfab.com/Documentation/Admin/method/AddNews
     /// </summary>

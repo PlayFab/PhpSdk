@@ -530,6 +530,18 @@ class PlayFabServerApi
     }
 
     /// <summary>
+    /// Retrieves the unique PlayFab identifiers for the given set of PlayStation Network identifiers.
+    /// https://api.playfab.com/Documentation/Server/method/GetPlayFabIDsFromPSNAccountIDs
+    /// </summary>
+    public static function GetPlayFabIDsFromPSNAccountIDs($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/GetPlayFabIDsFromPSNAccountIDs", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
     /// Retrieves the unique PlayFab identifiers for the given set of Steam identifiers. The Steam identifiers are the profile
     /// IDs for the user accounts, available as SteamId in the Steamworks Community API calls.
     /// https://api.playfab.com/Documentation/Server/method/GetPlayFabIDsFromSteamIDs
