@@ -13,7 +13,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AcceptTrade", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AcceptTrade", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -26,7 +26,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AddFriend", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AddFriend", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -40,7 +40,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AddGenericID", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AddGenericID", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -52,7 +52,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AddOrUpdateContactEmail", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AddOrUpdateContactEmail", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -66,7 +66,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AddSharedGroupMembers", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AddSharedGroupMembers", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -79,7 +79,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AddUsernamePassword", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AddUsernamePassword", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -91,7 +91,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AddUserVirtualCurrency", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AddUserVirtualCurrency", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -103,7 +103,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AndroidDevicePushNotificationRegistration", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AndroidDevicePushNotificationRegistration", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -115,7 +115,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AttributeInstall", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/AttributeInstall", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -129,7 +129,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/CancelTrade", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/CancelTrade", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -142,7 +142,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ConfirmPurchase", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ConfirmPurchase", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -154,7 +154,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ConsumeItem", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ConsumeItem", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -166,7 +166,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ConsumePSNEntitlements", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ConsumePSNEntitlements", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -179,7 +179,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ConsumeXboxEntitlements", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ConsumeXboxEntitlements", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -194,7 +194,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/CreateSharedGroup", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/CreateSharedGroup", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -206,7 +206,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ExecuteCloudScript", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ExecuteCloudScript", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -218,7 +218,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetAccountInfo", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetAccountInfo", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -231,7 +231,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetAllUsersCharacters", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetAllUsersCharacters", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -243,7 +243,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetCatalogItems", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetCatalogItems", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -255,7 +255,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetCharacterData", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetCharacterData", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -267,7 +267,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetCharacterInventory", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetCharacterInventory", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -279,7 +279,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetCharacterLeaderboard", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetCharacterLeaderboard", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -291,7 +291,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetCharacterReadOnlyData", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetCharacterReadOnlyData", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -303,7 +303,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetCharacterStatistics", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetCharacterStatistics", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -320,7 +320,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetContentDownloadUrl", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetContentDownloadUrl", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -332,7 +332,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetCurrentGames", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetCurrentGames", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -345,7 +345,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetFriendLeaderboard", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetFriendLeaderboard", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -358,7 +358,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetFriendLeaderboardAroundPlayer", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetFriendLeaderboardAroundPlayer", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -371,7 +371,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetFriendsList", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetFriendsList", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -383,7 +383,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetGameServerRegions", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetGameServerRegions", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -395,7 +395,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetLeaderboard", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetLeaderboard", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -407,7 +407,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetLeaderboardAroundCharacter", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetLeaderboardAroundCharacter", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -420,7 +420,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetLeaderboardAroundPlayer", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetLeaderboardAroundPlayer", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -432,7 +432,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetLeaderboardForUserCharacters", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetLeaderboardForUserCharacters", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -446,7 +446,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPaymentToken", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPaymentToken", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -459,7 +459,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPhotonAuthenticationToken", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPhotonAuthenticationToken", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -471,7 +471,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayerCombinedInfo", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayerCombinedInfo", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -483,7 +483,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayerProfile", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayerProfile", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -495,7 +495,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayerSegments", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayerSegments", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -508,7 +508,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayerStatistics", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayerStatistics", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -520,7 +520,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayerStatisticVersions", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayerStatisticVersions", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -532,7 +532,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayerTags", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayerTags", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -544,7 +544,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayerTrades", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayerTrades", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -556,7 +556,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromFacebookIDs", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromFacebookIDs", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -568,7 +568,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromFacebookInstantGamesIds", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromFacebookInstantGamesIds", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -581,7 +581,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromGameCenterIDs", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromGameCenterIDs", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -595,7 +595,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromGenericIDs", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromGenericIDs", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -608,7 +608,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromGoogleIDs", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromGoogleIDs", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -622,7 +622,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromKongregateIDs", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromKongregateIDs", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -634,7 +634,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromNintendoSwitchDeviceIds", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromNintendoSwitchDeviceIds", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -646,7 +646,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromPSNAccountIDs", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromPSNAccountIDs", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -659,7 +659,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromSteamIDs", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromSteamIDs", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -673,7 +673,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromTwitchIDs", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromTwitchIDs", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -685,7 +685,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromXboxLiveIDs", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPlayFabIDsFromXboxLiveIDs", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -697,7 +697,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPublisherData", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPublisherData", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -710,7 +710,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPurchase", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetPurchase", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -725,7 +725,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetSharedGroupData", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetSharedGroupData", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -737,7 +737,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetStoreItems", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetStoreItems", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -749,7 +749,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetTime", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetTime", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -761,7 +761,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetTitleData", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetTitleData", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -773,7 +773,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetTitleNews", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetTitleNews", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -796,7 +796,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetTradeStatus", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetTradeStatus", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -808,7 +808,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetUserData", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetUserData", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -820,7 +820,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetUserInventory", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetUserInventory", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -832,7 +832,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetUserPublisherData", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetUserPublisherData", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -844,7 +844,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetUserPublisherReadOnlyData", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetUserPublisherReadOnlyData", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -856,7 +856,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetUserReadOnlyData", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GetUserReadOnlyData", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -880,7 +880,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GrantCharacterToUser", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/GrantCharacterToUser", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -892,7 +892,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkAndroidDeviceID", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkAndroidDeviceID", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -904,7 +904,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkCustomID", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkCustomID", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -916,7 +916,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkFacebookAccount", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkFacebookAccount", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -928,7 +928,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkFacebookInstantGamesId", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkFacebookInstantGamesId", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -940,7 +940,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkGameCenterAccount", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkGameCenterAccount", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -952,7 +952,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkGoogleAccount", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkGoogleAccount", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -964,7 +964,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkIOSDeviceID", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkIOSDeviceID", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -976,7 +976,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkKongregate", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkKongregate", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -988,7 +988,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkNintendoSwitchDeviceId", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkNintendoSwitchDeviceId", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1001,7 +1001,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkOpenIdConnect", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkOpenIdConnect", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1013,7 +1013,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkPSNAccount", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkPSNAccount", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1025,7 +1025,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkSteamAccount", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkSteamAccount", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1037,7 +1037,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkTwitch", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkTwitch", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1049,7 +1049,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkWindowsHello", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkWindowsHello", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1061,7 +1061,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkXboxAccount", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkXboxAccount", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1319,7 +1319,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/Matchmake", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/Matchmake", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1331,7 +1331,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/OpenTrade", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/OpenTrade", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1343,7 +1343,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/PayForPurchase", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/PayForPurchase", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1356,7 +1356,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/PurchaseItem", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/PurchaseItem", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1369,7 +1369,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RedeemCoupon", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RedeemCoupon", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1381,7 +1381,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RefreshPSNAuthToken", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RefreshPSNAuthToken", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1393,7 +1393,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RegisterForIOSPushNotification", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RegisterForIOSPushNotification", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1433,7 +1433,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RemoveContactEmail", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RemoveContactEmail", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1445,7 +1445,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RemoveFriend", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RemoveFriend", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1457,7 +1457,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RemoveGenericID", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RemoveGenericID", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1472,7 +1472,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RemoveSharedGroupMembers", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RemoveSharedGroupMembers", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1485,7 +1485,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ReportDeviceInfo", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ReportDeviceInfo", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1498,7 +1498,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ReportPlayer", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ReportPlayer", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1510,7 +1510,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RestoreIOSPurchases", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/RestoreIOSPurchases", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1535,7 +1535,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/SetFriendTags", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/SetFriendTags", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1548,7 +1548,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/SetPlayerSecret", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/SetPlayerSecret", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1560,7 +1560,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/StartGame", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/StartGame", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1572,7 +1572,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/StartPurchase", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/StartPurchase", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1585,7 +1585,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/SubtractUserVirtualCurrency", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/SubtractUserVirtualCurrency", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1597,7 +1597,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkAndroidDeviceID", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkAndroidDeviceID", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1609,7 +1609,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkCustomID", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkCustomID", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1621,7 +1621,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkFacebookAccount", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkFacebookAccount", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1633,7 +1633,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkFacebookInstantGamesId", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkFacebookInstantGamesId", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1645,7 +1645,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkGameCenterAccount", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkGameCenterAccount", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1658,7 +1658,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkGoogleAccount", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkGoogleAccount", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1670,7 +1670,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkIOSDeviceID", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkIOSDeviceID", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1682,7 +1682,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkKongregate", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkKongregate", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1694,7 +1694,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkNintendoSwitchDeviceId", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkNintendoSwitchDeviceId", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1707,7 +1707,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkOpenIdConnect", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkOpenIdConnect", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1719,7 +1719,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkPSNAccount", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkPSNAccount", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1731,7 +1731,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkSteamAccount", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkSteamAccount", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1743,7 +1743,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkTwitch", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkTwitch", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1755,7 +1755,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkWindowsHello", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkWindowsHello", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1767,7 +1767,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkXboxAccount", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkXboxAccount", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1781,7 +1781,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlockContainerInstance", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlockContainerInstance", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1795,7 +1795,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlockContainerItem", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlockContainerItem", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1807,7 +1807,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UpdateAvatarUrl", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UpdateAvatarUrl", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1819,7 +1819,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UpdateCharacterData", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UpdateCharacterData", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1832,7 +1832,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UpdateCharacterStatistics", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UpdateCharacterStatistics", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1845,7 +1845,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UpdatePlayerStatistics", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UpdatePlayerStatistics", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1861,7 +1861,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UpdateSharedGroupData", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UpdateSharedGroupData", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1873,7 +1873,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UpdateUserData", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UpdateUserData", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1885,7 +1885,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UpdateUserPublisherData", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UpdateUserPublisherData", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1897,7 +1897,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UpdateUserTitleDisplayName", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UpdateUserTitleDisplayName", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1910,7 +1910,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ValidateAmazonIAPReceipt", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ValidateAmazonIAPReceipt", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1922,7 +1922,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ValidateGooglePlayPurchase", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ValidateGooglePlayPurchase", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1935,7 +1935,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ValidateIOSReceipt", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ValidateIOSReceipt", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1948,7 +1948,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ValidateWindowsStoreReceipt", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/ValidateWindowsStoreReceipt", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1960,7 +1960,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/WriteCharacterEvent", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/WriteCharacterEvent", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1972,7 +1972,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/WritePlayerEvent", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/WritePlayerEvent", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1984,7 +1984,7 @@ class PlayFabClientApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/WriteTitleEvent", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/WriteTitleEvent", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 

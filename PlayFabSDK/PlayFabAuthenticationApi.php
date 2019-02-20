@@ -11,7 +11,7 @@ class PlayFabAuthenticationApi
     public static function GetEntityToken($titleId, $entityToken, $clientSessionTicket, $developerSecreteKey, $request)
     {
         if (!is_null($entityToken)) { $authKey = "X-EntityToken"; $authValue = $entityToken; }
-        elseif (!is_null($clientSessionTicket)) { $authKey = "X-Authentication"; $authValue = $clientSessionTicket; }
+        elseif (!is_null($clientSessionTicket)) { $authKey = "X-Authorization"; $authValue = $clientSessionTicket; }
         elseif (!is_null($developerSecreteKey)) { $authKey = "X-SecretKey"; $authValue = $developerSecreteKey; }
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Authentication/GetEntityToken", $request, $authKey, $authValue);
@@ -40,7 +40,7 @@ class PlayFabAuthenticationApi
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::GetEntityToken($titleId, "/Authentication/GetEntityToken", $request, "X-Authentication", $clientSessionTicket);
+        $result = PlayFabHttp::GetEntityToken($titleId, "/Authentication/GetEntityToken", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
