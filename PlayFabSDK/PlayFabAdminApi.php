@@ -138,6 +138,18 @@ class PlayFabAdminApi
     }
 
     /// <summary>
+    /// Registers a relationship between a title and an Open ID Connect provider.
+    /// https://api.playfab.com/Documentation/Admin/method/CreateOpenIdConnection
+    /// </summary>
+    public static function CreateOpenIdConnection($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/CreateOpenIdConnection", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
     /// Creates a new Player Shared Secret Key. It may take up to 5 minutes for this key to become generally available after
     /// this API returns.
     /// https://api.playfab.com/Documentation/Admin/method/CreatePlayerSharedSecret
@@ -184,6 +196,18 @@ class PlayFabAdminApi
         //TODO: Check the devSecretKey
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/DeleteMasterPlayerAccount", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
+    /// Removes a relationship between a title and an OpenID Connect provider.
+    /// https://api.playfab.com/Documentation/Admin/method/DeleteOpenIdConnection
+    /// </summary>
+    public static function DeleteOpenIdConnection($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/DeleteOpenIdConnection", $request, "X-SecretKey", $developerSecreteKey);
         return $result;
     }
 
@@ -774,6 +798,18 @@ class PlayFabAdminApi
     }
 
     /// <summary>
+    /// Retrieves a list of all Open ID Connect providers registered to a title.
+    /// https://api.playfab.com/Documentation/Admin/method/ListOpenIdConnection
+    /// </summary>
+    public static function ListOpenIdConnection($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/ListOpenIdConnection", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
     /// Retrieves the build details for all game server executables which are currently defined for the title
     /// https://api.playfab.com/Documentation/Admin/method/ListServerBuilds
     /// </summary>
@@ -1136,6 +1172,18 @@ class PlayFabAdminApi
         //TODO: Check the devSecretKey
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/UpdateCloudScript", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
+    /// Modifies data and credentials for an existing relationship between a title and an Open ID Connect provider
+    /// https://api.playfab.com/Documentation/Admin/method/UpdateOpenIdConnection
+    /// </summary>
+    public static function UpdateOpenIdConnection($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/UpdateOpenIdConnection", $request, "X-SecretKey", $developerSecreteKey);
         return $result;
     }
 

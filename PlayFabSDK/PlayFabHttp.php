@@ -3,8 +3,8 @@
 if (!class_exists("PlayFabSettings")) {
     class PlayFabSettings
     {
-        public static $versionString = "PhpSdk-0.0.190219";
-        public static $requestGetParams = array("sdk" => "0.0.190219");
+        public static $versionString = "PhpSdk-0.0.190304";
+        public static $requestGetParams = array("sdk" => "0.0.190304");
         public static $productionEnvironmentUrl = ".playfabapi.com"; // This is only for customers running a private cluster.  Generally you shouldn't touch this
         public static $enableCompression = false; // Can't get this to work
         public static $verticalName = null; // The name of a customer vertical. This is only for customers running a private cluster. Generally you shouldn't touch this
