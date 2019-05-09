@@ -197,18 +197,6 @@ class PlayFabMultiplayerApi
     }
 
     /// <summary>
-    /// Get a matchmaking queue configuration.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/GetMatchmakingQueue
-    /// </summary>
-    public static function GetMatchmakingQueue($titleId, $entityToken, $request)
-    {
-        //TODO: Check the entityToken
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Match/GetMatchmakingQueue", $request, "X-EntityToken", $entityToken);
-        return $result;
-    }
-
-    /// <summary>
     /// Get a matchmaking ticket by ticket Id.
     /// https://api.playfab.com/Documentation/Multiplayer/method/GetMatchmakingTicket
     /// </summary>
@@ -265,6 +253,18 @@ class PlayFabMultiplayerApi
         //TODO: Check the entityToken
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/GetTitleEnabledForMultiplayerServersStatus", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
+    /// Gets the quotas for a title in relation to multiplayer servers.
+    /// https://api.playfab.com/Documentation/Multiplayer/method/GetTitleMultiplayerServersQuotas
+    /// </summary>
+    public static function GetTitleMultiplayerServersQuotas($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/GetTitleMultiplayerServersQuotas", $request, "X-EntityToken", $entityToken);
         return $result;
     }
 
@@ -353,18 +353,6 @@ class PlayFabMultiplayerApi
     }
 
     /// <summary>
-    /// List all matchmaking queue configs.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/ListMatchmakingQueues
-    /// </summary>
-    public static function ListMatchmakingQueues($titleId, $entityToken, $request)
-    {
-        //TODO: Check the entityToken
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Match/ListMatchmakingQueues", $request, "X-EntityToken", $entityToken);
-        return $result;
-    }
-
-    /// <summary>
     /// List all matchmaking ticket Ids the user is a member of.
     /// https://api.playfab.com/Documentation/Multiplayer/method/ListMatchmakingTicketsForPlayer
     /// </summary>
@@ -412,18 +400,6 @@ class PlayFabMultiplayerApi
     }
 
     /// <summary>
-    /// Remove a matchmaking queue config.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/RemoveMatchmakingQueue
-    /// </summary>
-    public static function RemoveMatchmakingQueue($titleId, $entityToken, $request)
-    {
-        //TODO: Check the entityToken
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Match/RemoveMatchmakingQueue", $request, "X-EntityToken", $entityToken);
-        return $result;
-    }
-
-    /// <summary>
     /// Request a multiplayer server session. Accepts tokens for title and if game client accesss is enabled, allows game client
     /// to request a server with player entity token.
     /// https://api.playfab.com/Documentation/Multiplayer/method/RequestMultiplayerServer
@@ -445,18 +421,6 @@ class PlayFabMultiplayerApi
         //TODO: Check the entityToken
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/RolloverContainerRegistryCredentials", $request, "X-EntityToken", $entityToken);
-        return $result;
-    }
-
-    /// <summary>
-    /// Create or update a matchmaking queue configuration.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/SetMatchmakingQueue
-    /// </summary>
-    public static function SetMatchmakingQueue($titleId, $entityToken, $request)
-    {
-        //TODO: Check the entityToken
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Match/SetMatchmakingQueue", $request, "X-EntityToken", $entityToken);
         return $result;
     }
 
