@@ -57,5 +57,17 @@ class PlayFabAuthenticationApi
         return $result;
     }
 
+    /// <summary>
+    /// Method for a server to validate a client provided EntityToken. Only callable by the title entity.
+    /// https://api.playfab.com/Documentation/Authentication/method/ValidateEntityToken
+    /// </summary>
+    public static function ValidateEntityToken($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Authentication/ValidateEntityToken", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
 }
 ?>
