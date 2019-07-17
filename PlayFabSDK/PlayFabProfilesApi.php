@@ -40,6 +40,18 @@ class PlayFabProfilesApi
     }
 
     /// <summary>
+    /// Retrieves the title player accounts associated with the given master player account.
+    /// https://api.playfab.com/Documentation/Profiles/method/GetTitlePlayersFromMasterPlayerAccountIds
+    /// </summary>
+    public static function GetTitlePlayersFromMasterPlayerAccountIds($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Profile/GetTitlePlayersFromMasterPlayerAccountIds", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Sets the global title access policy
     /// https://api.playfab.com/Documentation/Profiles/method/SetGlobalPolicy
     /// </summary>
