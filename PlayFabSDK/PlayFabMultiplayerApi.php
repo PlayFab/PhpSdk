@@ -377,6 +377,18 @@ class PlayFabMultiplayerApi
     }
 
     /// <summary>
+    /// Lists quality of service servers for party.
+    /// https://api.playfab.com/Documentation/Multiplayer/method/ListPartyQosServers
+    /// </summary>
+    public static function ListPartyQosServers($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/ListPartyQosServers", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Lists quality of service servers.
     /// https://api.playfab.com/Documentation/Multiplayer/method/ListQosServers
     /// </summary>
