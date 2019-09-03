@@ -658,6 +658,18 @@ class PlayFabServerApi
     }
 
     /// <summary>
+    /// Retrieves the set of items defined for the specified store, including all prices defined, for the specified player
+    /// https://api.playfab.com/Documentation/Server/method/GetStoreItems
+    /// </summary>
+    public static function GetStoreItems($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/GetStoreItems", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
     /// Retrieves the current server time
     /// https://api.playfab.com/Documentation/Server/method/GetTime
     /// </summary>
@@ -909,6 +921,19 @@ class PlayFabServerApi
         //TODO: Check the devSecretKey
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/LoginWithXbox", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
+    /// Signs the user in using an Xbox ID and Sandbox ID, returning a session identifier that can subsequently be used for API
+    /// calls which require an authenticated user
+    /// https://api.playfab.com/Documentation/Server/method/LoginWithXboxId
+    /// </summary>
+    public static function LoginWithXboxId($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/LoginWithXboxId", $request, "X-SecretKey", $developerSecreteKey);
         return $result;
     }
 

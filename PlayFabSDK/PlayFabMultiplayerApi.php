@@ -400,6 +400,18 @@ class PlayFabMultiplayerApi
     }
 
     /// <summary>
+    /// Lists quality of service servers.
+    /// https://api.playfab.com/Documentation/Multiplayer/method/ListQosServersForTitle
+    /// </summary>
+    public static function ListQosServersForTitle($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/ListQosServersForTitle", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Lists virtual machines for a title.
     /// https://api.playfab.com/Documentation/Multiplayer/method/ListVirtualMachineSummaries
     /// </summary>
