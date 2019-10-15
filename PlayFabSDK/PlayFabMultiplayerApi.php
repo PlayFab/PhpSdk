@@ -28,6 +28,18 @@ class PlayFabMultiplayerApi
     }
 
     /// <summary>
+    /// Creates a multiplayer server build alias.
+    /// https://api.playfab.com/Documentation/Multiplayer/method/CreateBuildAlias
+    /// </summary>
+    public static function CreateBuildAlias($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/CreateBuildAlias", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Creates a multiplayer server build with a custom container.
     /// https://api.playfab.com/Documentation/Multiplayer/method/CreateBuildWithCustomContainer
     /// </summary>
@@ -113,6 +125,18 @@ class PlayFabMultiplayerApi
     }
 
     /// <summary>
+    /// Deletes a multiplayer server build alias.
+    /// https://api.playfab.com/Documentation/Multiplayer/method/DeleteBuildAlias
+    /// </summary>
+    public static function DeleteBuildAlias($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/DeleteBuildAlias", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Deletes a multiplayer server game certificate.
     /// https://api.playfab.com/Documentation/Multiplayer/method/DeleteCertificate
     /// </summary>
@@ -169,6 +193,18 @@ class PlayFabMultiplayerApi
         //TODO: Check the entityToken
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/GetBuild", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
+    /// Gets a multiplayer server build alias.
+    /// https://api.playfab.com/Documentation/Multiplayer/method/GetBuildAlias
+    /// </summary>
+    public static function GetBuildAlias($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/GetBuildAlias", $request, "X-EntityToken", $entityToken);
         return $result;
     }
 
@@ -301,6 +337,19 @@ class PlayFabMultiplayerApi
         //TODO: Check the entityToken
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/ListAssetSummaries", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
+    /// Lists details of all build aliases for a title. Accepts tokens for title and if game client access is enabled, allows
+    /// game client to request list of builds with player entity token.
+    /// https://api.playfab.com/Documentation/Multiplayer/method/ListBuildAliases
+    /// </summary>
+    public static function ListBuildAliases($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/ListBuildAliases", $request, "X-EntityToken", $entityToken);
         return $result;
     }
 
@@ -458,6 +507,18 @@ class PlayFabMultiplayerApi
         //TODO: Check the entityToken
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/ShutdownMultiplayerServer", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
+    /// Creates a multiplayer server build alias.
+    /// https://api.playfab.com/Documentation/Multiplayer/method/UpdateBuildAlias
+    /// </summary>
+    public static function UpdateBuildAlias($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/UpdateBuildAlias", $request, "X-EntityToken", $entityToken);
         return $result;
     }
 
