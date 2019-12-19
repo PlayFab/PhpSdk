@@ -257,6 +257,18 @@ class PlayFabMultiplayerApi
     }
 
     /// <summary>
+    /// Gets multiplayer server logs after a server has terminated.
+    /// https://api.playfab.com/Documentation/Multiplayer/method/GetMultiplayerServerLogs
+    /// </summary>
+    public static function GetMultiplayerServerLogs($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/GetMultiplayerServerLogs", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Get the statistics for a queue.
     /// https://api.playfab.com/Documentation/Multiplayer/method/GetQueueStatistics
     /// </summary>
@@ -507,6 +519,18 @@ class PlayFabMultiplayerApi
         //TODO: Check the entityToken
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/ShutdownMultiplayerServer", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
+    /// Untags a container image.
+    /// https://api.playfab.com/Documentation/Multiplayer/method/UntagContainerImage
+    /// </summary>
+    public static function UntagContainerImage($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/UntagContainerImage", $request, "X-EntityToken", $entityToken);
         return $result;
     }
 
