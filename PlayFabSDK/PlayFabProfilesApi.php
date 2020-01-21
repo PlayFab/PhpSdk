@@ -5,7 +5,7 @@ class PlayFabProfilesApi
 {
     /// <summary>
     /// Gets the global title access policy
-    /// https://api.playfab.com/Documentation/Profiles/method/GetGlobalPolicy
+    /// https://docs.microsoft.com/rest/api/playfab/profiles/account-management/getglobalpolicy
     /// </summary>
     public static function GetGlobalPolicy($titleId, $entityToken, $request)
     {
@@ -17,7 +17,7 @@ class PlayFabProfilesApi
 
     /// <summary>
     /// Retrieves the entity's profile.
-    /// https://api.playfab.com/Documentation/Profiles/method/GetProfile
+    /// https://docs.microsoft.com/rest/api/playfab/profiles/account-management/getprofile
     /// </summary>
     public static function GetProfile($titleId, $entityToken, $request)
     {
@@ -29,7 +29,7 @@ class PlayFabProfilesApi
 
     /// <summary>
     /// Retrieves the entity's profile.
-    /// https://api.playfab.com/Documentation/Profiles/method/GetProfiles
+    /// https://docs.microsoft.com/rest/api/playfab/profiles/account-management/getprofiles
     /// </summary>
     public static function GetProfiles($titleId, $entityToken, $request)
     {
@@ -41,7 +41,7 @@ class PlayFabProfilesApi
 
     /// <summary>
     /// Retrieves the title player accounts associated with the given master player account.
-    /// https://api.playfab.com/Documentation/Profiles/method/GetTitlePlayersFromMasterPlayerAccountIds
+    /// https://docs.microsoft.com/rest/api/playfab/profiles/account-management/gettitleplayersfrommasterplayeraccountids
     /// </summary>
     public static function GetTitlePlayersFromMasterPlayerAccountIds($titleId, $entityToken, $request)
     {
@@ -53,7 +53,7 @@ class PlayFabProfilesApi
 
     /// <summary>
     /// Sets the global title access policy
-    /// https://api.playfab.com/Documentation/Profiles/method/SetGlobalPolicy
+    /// https://docs.microsoft.com/rest/api/playfab/profiles/account-management/setglobalpolicy
     /// </summary>
     public static function SetGlobalPolicy($titleId, $entityToken, $request)
     {
@@ -66,7 +66,7 @@ class PlayFabProfilesApi
     /// <summary>
     /// Updates the entity's language. The precedence hierarchy for communication to the player is Title Player Account
     /// language, Master Player Account language, and then title default language if the first two aren't set or supported.
-    /// https://api.playfab.com/Documentation/Profiles/method/SetProfileLanguage
+    /// https://docs.microsoft.com/rest/api/playfab/profiles/account-management/setprofilelanguage
     /// </summary>
     public static function SetProfileLanguage($titleId, $entityToken, $request)
     {
@@ -78,7 +78,7 @@ class PlayFabProfilesApi
 
     /// <summary>
     /// Sets the profiles access policy
-    /// https://api.playfab.com/Documentation/Profiles/method/SetProfilePolicy
+    /// https://docs.microsoft.com/rest/api/playfab/profiles/account-management/setprofilepolicy
     /// </summary>
     public static function SetProfilePolicy($titleId, $entityToken, $request)
     {

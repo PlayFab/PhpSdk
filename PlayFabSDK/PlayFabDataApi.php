@@ -5,7 +5,7 @@ class PlayFabDataApi
 {
     /// <summary>
     /// Abort pending file uploads to an entity's profile.
-    /// https://api.playfab.com/Documentation/Data/method/AbortFileUploads
+    /// https://docs.microsoft.com/rest/api/playfab/data/file/abortfileuploads
     /// </summary>
     public static function AbortFileUploads($titleId, $entityToken, $request)
     {
@@ -17,7 +17,7 @@ class PlayFabDataApi
 
     /// <summary>
     /// Delete files on an entity's profile.
-    /// https://api.playfab.com/Documentation/Data/method/DeleteFiles
+    /// https://docs.microsoft.com/rest/api/playfab/data/file/deletefiles
     /// </summary>
     public static function DeleteFiles($titleId, $entityToken, $request)
     {
@@ -29,7 +29,7 @@ class PlayFabDataApi
 
     /// <summary>
     /// Finalize file uploads to an entity's profile.
-    /// https://api.playfab.com/Documentation/Data/method/FinalizeFileUploads
+    /// https://docs.microsoft.com/rest/api/playfab/data/file/finalizefileuploads
     /// </summary>
     public static function FinalizeFileUploads($titleId, $entityToken, $request)
     {
@@ -41,7 +41,7 @@ class PlayFabDataApi
 
     /// <summary>
     /// Retrieves file metadata from an entity's profile.
-    /// https://api.playfab.com/Documentation/Data/method/GetFiles
+    /// https://docs.microsoft.com/rest/api/playfab/data/file/getfiles
     /// </summary>
     public static function GetFiles($titleId, $entityToken, $request)
     {
@@ -53,7 +53,7 @@ class PlayFabDataApi
 
     /// <summary>
     /// Retrieves objects from an entity's profile.
-    /// https://api.playfab.com/Documentation/Data/method/GetObjects
+    /// https://docs.microsoft.com/rest/api/playfab/data/object/getobjects
     /// </summary>
     public static function GetObjects($titleId, $entityToken, $request)
     {
@@ -65,7 +65,7 @@ class PlayFabDataApi
 
     /// <summary>
     /// Initiates file uploads to an entity's profile.
-    /// https://api.playfab.com/Documentation/Data/method/InitiateFileUploads
+    /// https://docs.microsoft.com/rest/api/playfab/data/file/initiatefileuploads
     /// </summary>
     public static function InitiateFileUploads($titleId, $entityToken, $request)
     {
@@ -77,7 +77,7 @@ class PlayFabDataApi
 
     /// <summary>
     /// Sets objects on an entity's profile.
-    /// https://api.playfab.com/Documentation/Data/method/SetObjects
+    /// https://docs.microsoft.com/rest/api/playfab/data/object/setobjects
     /// </summary>
     public static function SetObjects($titleId, $entityToken, $request)
     {

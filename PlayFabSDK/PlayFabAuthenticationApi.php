@@ -6,7 +6,7 @@ class PlayFabAuthenticationApi
     /// <summary>
     /// Method to exchange a legacy AuthenticationTicket or title SecretKey for an Entity Token or to refresh a still valid
     /// Entity Token.
-    /// https://api.playfab.com/Documentation/Authentication/method/GetEntityToken
+    /// https://docs.microsoft.com/rest/api/playfab/authentication/authentication/getentitytoken
     /// </summary>
     public static function GetEntityToken($titleId, $entityToken, $clientSessionTicket, $developerSecreteKey, $request)
     {
@@ -21,7 +21,7 @@ class PlayFabAuthenticationApi
     /// <summary>
     /// Method to exchange a legacy AuthenticationTicket or title SecretKey for an Entity Token or to refresh a still valid
     /// Entity Token.
-    /// https://api.playfab.com/Documentation/Authentication/method/GetEntityToken
+    /// https://docs.microsoft.com/rest/api/playfab/authentication/authentication/getentitytoken
     /// </summary>
     public static function GetEntityTokenWithEntityToken($titleId, $entityToken, $request)
     {
@@ -34,7 +34,7 @@ class PlayFabAuthenticationApi
     /// <summary>
     /// Method to exchange a legacy AuthenticationTicket or title SecretKey for an Entity Token or to refresh a still valid
     /// Entity Token.
-    /// https://api.playfab.com/Documentation/Authentication/method/GetEntityToken
+    /// https://docs.microsoft.com/rest/api/playfab/authentication/authentication/getentitytoken
     /// </summary>
     public static function GetEntityTokenWithSessionTicket($titleId, $clientSessionTicket, $request)
     {
@@ -47,7 +47,7 @@ class PlayFabAuthenticationApi
     /// <summary>
     /// Method to exchange a legacy AuthenticationTicket or title SecretKey for an Entity Token or to refresh a still valid
     /// Entity Token.
-    /// https://api.playfab.com/Documentation/Authentication/method/GetEntityToken
+    /// https://docs.microsoft.com/rest/api/playfab/authentication/authentication/getentitytoken
     /// </summary>
     public static function GetEntityTokenWithSecretKey($titleId, $developerSecreteKey, $request)
     {
@@ -59,7 +59,7 @@ class PlayFabAuthenticationApi
 
     /// <summary>
     /// Method for a server to validate a client provided EntityToken. Only callable by the title entity.
-    /// https://api.playfab.com/Documentation/Authentication/method/ValidateEntityToken
+    /// https://docs.microsoft.com/rest/api/playfab/authentication/authentication/validateentitytoken
     /// </summary>
     public static function ValidateEntityToken($titleId, $entityToken, $request)
     {

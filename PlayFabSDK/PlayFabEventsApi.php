@@ -5,7 +5,7 @@ class PlayFabEventsApi
 {
     /// <summary>
     /// Write batches of entity based events to PlayStream. The namespace of the Event must start with 'com.playfab.events.'
-    /// https://api.playfab.com/Documentation/Events/method/WriteEvents
+    /// https://docs.microsoft.com/rest/api/playfab/events/playstream-events/writeevents
     /// </summary>
     public static function WriteEvents($titleId, $entityToken, $request)
     {
@@ -18,7 +18,7 @@ class PlayFabEventsApi
     /// <summary>
     /// Write batches of entity based events to as Telemetry events (bypass PlayStream). The namespace must be 'custom' or start
     /// with 'custom.'
-    /// https://api.playfab.com/Documentation/Events/method/WriteTelemetryEvents
+    /// https://docs.microsoft.com/rest/api/playfab/events/playstream-events/writetelemetryevents
     /// </summary>
     public static function WriteTelemetryEvents($titleId, $entityToken, $request)
     {

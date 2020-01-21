@@ -5,7 +5,7 @@ class PlayFabMatchmakerApi
 {
     /// <summary>
     /// Validates a user with the PlayFab service
-    /// https://api.playfab.com/Documentation/Matchmaker/method/AuthUser
+    /// https://docs.microsoft.com/rest/api/playfab/matchmaker/matchmaking/authuser
     /// </summary>
     public static function AuthUser($titleId, $developerSecreteKey, $request)
     {
@@ -17,7 +17,7 @@ class PlayFabMatchmakerApi
 
     /// <summary>
     /// Informs the PlayFab game server hosting service that the indicated user has joined the Game Server Instance specified
-    /// https://api.playfab.com/Documentation/Matchmaker/method/PlayerJoined
+    /// https://docs.microsoft.com/rest/api/playfab/matchmaker/matchmaking/playerjoined
     /// </summary>
     public static function PlayerJoined($titleId, $developerSecreteKey, $request)
     {
@@ -29,7 +29,7 @@ class PlayFabMatchmakerApi
 
     /// <summary>
     /// Informs the PlayFab game server hosting service that the indicated user has left the Game Server Instance specified
-    /// https://api.playfab.com/Documentation/Matchmaker/method/PlayerLeft
+    /// https://docs.microsoft.com/rest/api/playfab/matchmaker/matchmaking/playerleft
     /// </summary>
     public static function PlayerLeft($titleId, $developerSecreteKey, $request)
     {
@@ -41,7 +41,7 @@ class PlayFabMatchmakerApi
 
     /// <summary>
     /// Instructs the PlayFab game server hosting service to instantiate a new Game Server Instance
-    /// https://api.playfab.com/Documentation/Matchmaker/method/StartGame
+    /// https://docs.microsoft.com/rest/api/playfab/matchmaker/matchmaking/startgame
     /// </summary>
     public static function StartGame($titleId, $developerSecreteKey, $request)
     {
@@ -54,7 +54,7 @@ class PlayFabMatchmakerApi
     /// <summary>
     /// Retrieves the relevant details for a specified user, which the external match-making service can then use to compute
     /// effective matches
-    /// https://api.playfab.com/Documentation/Matchmaker/method/UserInfo
+    /// https://docs.microsoft.com/rest/api/playfab/matchmaker/matchmaking/userinfo
     /// </summary>
     public static function UserInfo($titleId, $developerSecreteKey, $request)
     {

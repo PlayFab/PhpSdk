@@ -5,7 +5,7 @@ class PlayFabMultiplayerApi
 {
     /// <summary>
     /// Cancel all active tickets the player is a member of in a given queue.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/CancelAllMatchmakingTicketsForPlayer
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/matchmaking/cancelallmatchmakingticketsforplayer
     /// </summary>
     public static function CancelAllMatchmakingTicketsForPlayer($titleId, $entityToken, $request)
     {
@@ -16,8 +16,20 @@ class PlayFabMultiplayerApi
     }
 
     /// <summary>
+    /// Cancel all active backfill tickets the player is a member of in a given queue.
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/matchmaking/cancelallserverbackfillticketsforplayer
+    /// </summary>
+    public static function CancelAllServerBackfillTicketsForPlayer($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Match/CancelAllServerBackfillTicketsForPlayer", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Cancel a matchmaking ticket.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/CancelMatchmakingTicket
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/matchmaking/cancelmatchmakingticket
     /// </summary>
     public static function CancelMatchmakingTicket($titleId, $entityToken, $request)
     {
@@ -28,8 +40,20 @@ class PlayFabMultiplayerApi
     }
 
     /// <summary>
+    /// Cancel a server backfill ticket.
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/matchmaking/cancelserverbackfillticket
+    /// </summary>
+    public static function CancelServerBackfillTicket($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Match/CancelServerBackfillTicket", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Creates a multiplayer server build alias.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/CreateBuildAlias
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/createbuildalias
     /// </summary>
     public static function CreateBuildAlias($titleId, $entityToken, $request)
     {
@@ -41,7 +65,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Creates a multiplayer server build with a custom container.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/CreateBuildWithCustomContainer
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/createbuildwithcustomcontainer
     /// </summary>
     public static function CreateBuildWithCustomContainer($titleId, $entityToken, $request)
     {
@@ -53,7 +77,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Creates a multiplayer server build with a managed container.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/CreateBuildWithManagedContainer
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/createbuildwithmanagedcontainer
     /// </summary>
     public static function CreateBuildWithManagedContainer($titleId, $entityToken, $request)
     {
@@ -65,7 +89,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Create a matchmaking ticket as a client.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/CreateMatchmakingTicket
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/matchmaking/creatematchmakingticket
     /// </summary>
     public static function CreateMatchmakingTicket($titleId, $entityToken, $request)
     {
@@ -77,7 +101,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Creates a remote user to log on to a VM for a multiplayer server build.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/CreateRemoteUser
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/createremoteuser
     /// </summary>
     public static function CreateRemoteUser($titleId, $entityToken, $request)
     {
@@ -88,9 +112,23 @@ class PlayFabMultiplayerApi
     }
 
     /// <summary>
+    /// Create a backfill matchmaking ticket as a server. A backfill ticket represents an ongoing game. The matchmaking service
+    /// automatically starts matching the backfill ticket against other matchmaking tickets. Backfill tickets cannot match with
+    /// other backfill tickets.
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/matchmaking/createserverbackfillticket
+    /// </summary>
+    public static function CreateServerBackfillTicket($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Match/CreateServerBackfillTicket", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Create a matchmaking ticket as a server. The matchmaking service automatically starts matching the ticket against other
     /// matchmaking tickets.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/CreateServerMatchmakingTicket
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/matchmaking/createservermatchmakingticket
     /// </summary>
     public static function CreateServerMatchmakingTicket($titleId, $entityToken, $request)
     {
@@ -102,7 +140,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Deletes a multiplayer server game asset for a title.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/DeleteAsset
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/deleteasset
     /// </summary>
     public static function DeleteAsset($titleId, $entityToken, $request)
     {
@@ -114,7 +152,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Deletes a multiplayer server build.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/DeleteBuild
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/deletebuild
     /// </summary>
     public static function DeleteBuild($titleId, $entityToken, $request)
     {
@@ -126,7 +164,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Deletes a multiplayer server build alias.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/DeleteBuildAlias
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/deletebuildalias
     /// </summary>
     public static function DeleteBuildAlias($titleId, $entityToken, $request)
     {
@@ -138,7 +176,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Deletes a multiplayer server game certificate.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/DeleteCertificate
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/deletecertificate
     /// </summary>
     public static function DeleteCertificate($titleId, $entityToken, $request)
     {
@@ -150,7 +188,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Deletes a remote user to log on to a VM for a multiplayer server build.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/DeleteRemoteUser
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/deleteremoteuser
     /// </summary>
     public static function DeleteRemoteUser($titleId, $entityToken, $request)
     {
@@ -162,7 +200,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Enables the multiplayer server feature for a title.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/EnableMultiplayerServersForTitle
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/enablemultiplayerserversfortitle
     /// </summary>
     public static function EnableMultiplayerServersForTitle($titleId, $entityToken, $request)
     {
@@ -174,7 +212,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Gets the URL to upload assets to.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/GetAssetUploadUrl
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/getassetuploadurl
     /// </summary>
     public static function GetAssetUploadUrl($titleId, $entityToken, $request)
     {
@@ -186,7 +224,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Gets a multiplayer server build.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/GetBuild
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/getbuild
     /// </summary>
     public static function GetBuild($titleId, $entityToken, $request)
     {
@@ -198,7 +236,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Gets a multiplayer server build alias.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/GetBuildAlias
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/getbuildalias
     /// </summary>
     public static function GetBuildAlias($titleId, $entityToken, $request)
     {
@@ -210,7 +248,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Gets the credentials to the container registry.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/GetContainerRegistryCredentials
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/getcontainerregistrycredentials
     /// </summary>
     public static function GetContainerRegistryCredentials($titleId, $entityToken, $request)
     {
@@ -222,7 +260,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Get a match.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/GetMatch
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/matchmaking/getmatch
     /// </summary>
     public static function GetMatch($titleId, $entityToken, $request)
     {
@@ -234,7 +272,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Get a matchmaking ticket by ticket Id.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/GetMatchmakingTicket
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/matchmaking/getmatchmakingticket
     /// </summary>
     public static function GetMatchmakingTicket($titleId, $entityToken, $request)
     {
@@ -246,7 +284,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Gets multiplayer server session details for a build.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/GetMultiplayerServerDetails
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/getmultiplayerserverdetails
     /// </summary>
     public static function GetMultiplayerServerDetails($titleId, $entityToken, $request)
     {
@@ -258,7 +296,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Gets multiplayer server logs after a server has terminated.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/GetMultiplayerServerLogs
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/getmultiplayerserverlogs
     /// </summary>
     public static function GetMultiplayerServerLogs($titleId, $entityToken, $request)
     {
@@ -270,7 +308,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Get the statistics for a queue.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/GetQueueStatistics
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/matchmaking/getqueuestatistics
     /// </summary>
     public static function GetQueueStatistics($titleId, $entityToken, $request)
     {
@@ -282,7 +320,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Gets a remote login endpoint to a VM that is hosting a multiplayer server build.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/GetRemoteLoginEndpoint
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/getremoteloginendpoint
     /// </summary>
     public static function GetRemoteLoginEndpoint($titleId, $entityToken, $request)
     {
@@ -293,8 +331,20 @@ class PlayFabMultiplayerApi
     }
 
     /// <summary>
+    /// Get a matchmaking backfill ticket by ticket Id.
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/matchmaking/getserverbackfillticket
+    /// </summary>
+    public static function GetServerBackfillTicket($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Match/GetServerBackfillTicket", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Gets the status of whether a title is enabled for the multiplayer server feature.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/GetTitleEnabledForMultiplayerServersStatus
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/gettitleenabledformultiplayerserversstatus
     /// </summary>
     public static function GetTitleEnabledForMultiplayerServersStatus($titleId, $entityToken, $request)
     {
@@ -306,7 +356,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Gets the quotas for a title in relation to multiplayer servers.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/GetTitleMultiplayerServersQuotas
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/gettitlemultiplayerserversquotas
     /// </summary>
     public static function GetTitleMultiplayerServersQuotas($titleId, $entityToken, $request)
     {
@@ -318,7 +368,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Join a matchmaking ticket.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/JoinMatchmakingTicket
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/matchmaking/joinmatchmakingticket
     /// </summary>
     public static function JoinMatchmakingTicket($titleId, $entityToken, $request)
     {
@@ -330,7 +380,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Lists archived multiplayer server sessions for a build.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/ListArchivedMultiplayerServers
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/listarchivedmultiplayerservers
     /// </summary>
     public static function ListArchivedMultiplayerServers($titleId, $entityToken, $request)
     {
@@ -342,7 +392,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Lists multiplayer server game assets for a title.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/ListAssetSummaries
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/listassetsummaries
     /// </summary>
     public static function ListAssetSummaries($titleId, $entityToken, $request)
     {
@@ -355,7 +405,7 @@ class PlayFabMultiplayerApi
     /// <summary>
     /// Lists details of all build aliases for a title. Accepts tokens for title and if game client access is enabled, allows
     /// game client to request list of builds with player entity token.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/ListBuildAliases
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/listbuildaliases
     /// </summary>
     public static function ListBuildAliases($titleId, $entityToken, $request)
     {
@@ -368,7 +418,7 @@ class PlayFabMultiplayerApi
     /// <summary>
     /// Lists summarized details of all multiplayer server builds for a title. Accepts tokens for title and if game client
     /// access is enabled, allows game client to request list of builds with player entity token.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/ListBuildSummaries
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/listbuildsummaries
     /// </summary>
     public static function ListBuildSummaries($titleId, $entityToken, $request)
     {
@@ -380,7 +430,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Lists multiplayer server game certificates for a title.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/ListCertificateSummaries
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/listcertificatesummaries
     /// </summary>
     public static function ListCertificateSummaries($titleId, $entityToken, $request)
     {
@@ -392,7 +442,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Lists custom container images for a title.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/ListContainerImages
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/listcontainerimages
     /// </summary>
     public static function ListContainerImages($titleId, $entityToken, $request)
     {
@@ -404,7 +454,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Lists the tags for a custom container image.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/ListContainerImageTags
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/listcontainerimagetags
     /// </summary>
     public static function ListContainerImageTags($titleId, $entityToken, $request)
     {
@@ -416,7 +466,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// List all matchmaking ticket Ids the user is a member of.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/ListMatchmakingTicketsForPlayer
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/matchmaking/listmatchmakingticketsforplayer
     /// </summary>
     public static function ListMatchmakingTicketsForPlayer($titleId, $entityToken, $request)
     {
@@ -428,7 +478,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Lists multiplayer server sessions for a build.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/ListMultiplayerServers
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/listmultiplayerservers
     /// </summary>
     public static function ListMultiplayerServers($titleId, $entityToken, $request)
     {
@@ -440,7 +490,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Lists quality of service servers for party.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/ListPartyQosServers
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/listpartyqosservers
     /// </summary>
     public static function ListPartyQosServers($titleId, $entityToken, $request)
     {
@@ -452,7 +502,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Lists quality of service servers.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/ListQosServers
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/listqosservers
     /// </summary>
     public static function ListQosServers($titleId, $request)
     {
@@ -463,7 +513,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Lists quality of service servers.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/ListQosServersForTitle
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/listqosserversfortitle
     /// </summary>
     public static function ListQosServersForTitle($titleId, $entityToken, $request)
     {
@@ -474,8 +524,20 @@ class PlayFabMultiplayerApi
     }
 
     /// <summary>
+    /// List all server backfill ticket Ids the user is a member of.
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/matchmaking/listserverbackfillticketsforplayer
+    /// </summary>
+    public static function ListServerBackfillTicketsForPlayer($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Match/ListServerBackfillTicketsForPlayer", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Lists virtual machines for a title.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/ListVirtualMachineSummaries
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/listvirtualmachinesummaries
     /// </summary>
     public static function ListVirtualMachineSummaries($titleId, $entityToken, $request)
     {
@@ -488,7 +550,7 @@ class PlayFabMultiplayerApi
     /// <summary>
     /// Request a multiplayer server session. Accepts tokens for title and if game client access is enabled, allows game client
     /// to request a server with player entity token.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/RequestMultiplayerServer
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/requestmultiplayerserver
     /// </summary>
     public static function RequestMultiplayerServer($titleId, $entityToken, $request)
     {
@@ -500,7 +562,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Rolls over the credentials to the container registry.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/RolloverContainerRegistryCredentials
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/rollovercontainerregistrycredentials
     /// </summary>
     public static function RolloverContainerRegistryCredentials($titleId, $entityToken, $request)
     {
@@ -512,7 +574,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Shuts down a multiplayer server session.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/ShutdownMultiplayerServer
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/shutdownmultiplayerserver
     /// </summary>
     public static function ShutdownMultiplayerServer($titleId, $entityToken, $request)
     {
@@ -524,7 +586,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Untags a container image.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/UntagContainerImage
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/untagcontainerimage
     /// </summary>
     public static function UntagContainerImage($titleId, $entityToken, $request)
     {
@@ -536,7 +598,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Creates a multiplayer server build alias.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/UpdateBuildAlias
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/updatebuildalias
     /// </summary>
     public static function UpdateBuildAlias($titleId, $entityToken, $request)
     {
@@ -548,7 +610,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Updates a multiplayer server build's regions.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/UpdateBuildRegions
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/updatebuildregions
     /// </summary>
     public static function UpdateBuildRegions($titleId, $entityToken, $request)
     {
@@ -560,7 +622,7 @@ class PlayFabMultiplayerApi
 
     /// <summary>
     /// Uploads a multiplayer server game certificate.
-    /// https://api.playfab.com/Documentation/Multiplayer/method/UploadCertificate
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/uploadcertificate
     /// </summary>
     public static function UploadCertificate($titleId, $entityToken, $request)
     {

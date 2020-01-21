@@ -5,7 +5,7 @@ class PlayFabServerApi
 {
     /// <summary>
     /// Increments the character's balance of the specified virtual currency by the stated amount
-    /// https://api.playfab.com/Documentation/Server/method/AddCharacterVirtualCurrency
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/addcharactervirtualcurrency
     /// </summary>
     public static function AddCharacterVirtualCurrency($titleId, $developerSecreteKey, $request)
     {
@@ -18,7 +18,7 @@ class PlayFabServerApi
     /// <summary>
     /// Adds the Friend user to the friendlist of the user with PlayFabId. At least one of
     /// FriendPlayFabId,FriendUsername,FriendEmail, or FriendTitleDisplayName should be initialized.
-    /// https://api.playfab.com/Documentation/Server/method/AddFriend
+    /// https://docs.microsoft.com/rest/api/playfab/server/friend-list-management/addfriend
     /// </summary>
     public static function AddFriend($titleId, $developerSecreteKey, $request)
     {
@@ -32,7 +32,7 @@ class PlayFabServerApi
     /// Adds the specified generic service identifier to the player's PlayFab account. This is designed to allow for a PlayFab
     /// ID lookup of any arbitrary service identifier a title wants to add. This identifier should never be used as
     /// authentication credentials, as the intent is that it is easily accessible by other players.
-    /// https://api.playfab.com/Documentation/Server/method/AddGenericID
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/addgenericid
     /// </summary>
     public static function AddGenericID($titleId, $developerSecreteKey, $request)
     {
@@ -44,7 +44,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Adds a given tag to a player profile. The tag's namespace is automatically generated based on the source of the tag.
-    /// https://api.playfab.com/Documentation/Server/method/AddPlayerTag
+    /// https://docs.microsoft.com/rest/api/playfab/server/playstream/addplayertag
     /// </summary>
     public static function AddPlayerTag($titleId, $developerSecreteKey, $request)
     {
@@ -57,8 +57,9 @@ class PlayFabServerApi
     /// <summary>
     /// Adds users to the set of those able to update both the shared data, as well as the set of users in the group. Only users
     /// in the group (and the server) can add new members. Shared Groups are designed for sharing data between a very small
-    /// number of players, please see our guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
-    /// https://api.playfab.com/Documentation/Server/method/AddSharedGroupMembers
+    /// number of players, please see our guide:
+    /// https://docs.microsoft.com/gaming/playfab/features/social/groups/using-shared-group-data
+    /// https://docs.microsoft.com/rest/api/playfab/server/shared-group-data/addsharedgroupmembers
     /// </summary>
     public static function AddSharedGroupMembers($titleId, $developerSecreteKey, $request)
     {
@@ -70,7 +71,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Increments the user's balance of the specified virtual currency by the stated amount
-    /// https://api.playfab.com/Documentation/Server/method/AddUserVirtualCurrency
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/adduservirtualcurrency
     /// </summary>
     public static function AddUserVirtualCurrency($titleId, $developerSecreteKey, $request)
     {
@@ -82,7 +83,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Validated a client's session ticket, and if successful, returns details for that user
-    /// https://api.playfab.com/Documentation/Server/method/AuthenticateSessionTicket
+    /// https://docs.microsoft.com/rest/api/playfab/server/authentication/authenticatesessionticket
     /// </summary>
     public static function AuthenticateSessionTicket($titleId, $developerSecreteKey, $request)
     {
@@ -94,7 +95,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Awards the specified users the specified Steam achievements
-    /// https://api.playfab.com/Documentation/Server/method/AwardSteamAchievement
+    /// https://docs.microsoft.com/rest/api/playfab/server/platform-specific-methods/awardsteamachievement
     /// </summary>
     public static function AwardSteamAchievement($titleId, $developerSecreteKey, $request)
     {
@@ -106,7 +107,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Bans users by PlayFab ID with optional IP address, or MAC address for the provided game.
-    /// https://api.playfab.com/Documentation/Server/method/BanUsers
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/banusers
     /// </summary>
     public static function BanUsers($titleId, $developerSecreteKey, $request)
     {
@@ -118,7 +119,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Consume uses of a consumable item. When all uses are consumed, it will be removed from the player's inventory.
-    /// https://api.playfab.com/Documentation/Server/method/ConsumeItem
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/consumeitem
     /// </summary>
     public static function ConsumeItem($titleId, $developerSecreteKey, $request)
     {
@@ -132,8 +133,8 @@ class PlayFabServerApi
     /// Requests the creation of a shared group object, containing key/value pairs which may be updated by all members of the
     /// group. When created by a server, the group will initially have no members. Shared Groups are designed for sharing data
     /// between a very small number of players, please see our guide:
-    /// https://api.playfab.com/docs/tutorials/landing-players/shared-groups
-    /// https://api.playfab.com/Documentation/Server/method/CreateSharedGroup
+    /// https://docs.microsoft.com/gaming/playfab/features/social/groups/using-shared-group-data
+    /// https://docs.microsoft.com/rest/api/playfab/server/shared-group-data/createsharedgroup
     /// </summary>
     public static function CreateSharedGroup($titleId, $developerSecreteKey, $request)
     {
@@ -145,7 +146,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Deletes the specific character ID from the specified user.
-    /// https://api.playfab.com/Documentation/Server/method/DeleteCharacterFromUser
+    /// https://docs.microsoft.com/rest/api/playfab/server/characters/deletecharacterfromuser
     /// </summary>
     public static function DeleteCharacterFromUser($titleId, $developerSecreteKey, $request)
     {
@@ -157,7 +158,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Removes a user's player account from a title and deletes all associated data
-    /// https://api.playfab.com/Documentation/Server/method/DeletePlayer
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/deleteplayer
     /// </summary>
     public static function DeletePlayer($titleId, $developerSecreteKey, $request)
     {
@@ -169,7 +170,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Deletes push notification template for title
-    /// https://api.playfab.com/Documentation/Server/method/DeletePushNotificationTemplate
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/deletepushnotificationtemplate
     /// </summary>
     public static function DeletePushNotificationTemplate($titleId, $developerSecreteKey, $request)
     {
@@ -182,8 +183,8 @@ class PlayFabServerApi
     /// <summary>
     /// Deletes a shared group, freeing up the shared group ID to be reused for a new group. Shared Groups are designed for
     /// sharing data between a very small number of players, please see our guide:
-    /// https://api.playfab.com/docs/tutorials/landing-players/shared-groups
-    /// https://api.playfab.com/Documentation/Server/method/DeleteSharedGroup
+    /// https://docs.microsoft.com/gaming/playfab/features/social/groups/using-shared-group-data
+    /// https://docs.microsoft.com/rest/api/playfab/server/shared-group-data/deletesharedgroup
     /// </summary>
     public static function DeleteSharedGroup($titleId, $developerSecreteKey, $request)
     {
@@ -195,7 +196,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Inform the matchmaker that a Game Server Instance is removed.
-    /// https://api.playfab.com/Documentation/Server/method/DeregisterGame
+    /// https://docs.microsoft.com/rest/api/playfab/server/matchmaking/deregistergame
     /// </summary>
     public static function DeregisterGame($titleId, $developerSecreteKey, $request)
     {
@@ -208,7 +209,7 @@ class PlayFabServerApi
     /// <summary>
     /// Returns the result of an evaluation of a Random Result Table - the ItemId from the game Catalog which would have been
     /// added to the player inventory, if the Random Result Table were added via a Bundle or a call to UnlockContainer.
-    /// https://api.playfab.com/Documentation/Server/method/EvaluateRandomResultTable
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/evaluaterandomresulttable
     /// </summary>
     public static function EvaluateRandomResultTable($titleId, $developerSecreteKey, $request)
     {
@@ -220,7 +221,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Executes a CloudScript function, with the 'currentPlayerId' variable set to the specified PlayFabId parameter value.
-    /// https://api.playfab.com/Documentation/Server/method/ExecuteCloudScript
+    /// https://docs.microsoft.com/rest/api/playfab/server/server-side-cloud-script/executecloudscript
     /// </summary>
     public static function ExecuteCloudScript($titleId, $developerSecreteKey, $request)
     {
@@ -233,7 +234,7 @@ class PlayFabServerApi
     /// <summary>
     /// Retrieves an array of player segment definitions. Results from this can be used in subsequent API calls such as
     /// GetPlayersInSegment which requires a Segment ID. While segment names can change the ID for that segment will not change.
-    /// https://api.playfab.com/Documentation/Server/method/GetAllSegments
+    /// https://docs.microsoft.com/rest/api/playfab/server/playstream/getallsegments
     /// </summary>
     public static function GetAllSegments($titleId, $developerSecreteKey, $request)
     {
@@ -246,7 +247,7 @@ class PlayFabServerApi
     /// <summary>
     /// Lists all of the characters that belong to a specific user. CharacterIds are not globally unique; characterId must be
     /// evaluated with the parent PlayFabId to guarantee uniqueness.
-    /// https://api.playfab.com/Documentation/Server/method/GetAllUsersCharacters
+    /// https://docs.microsoft.com/rest/api/playfab/server/characters/getalluserscharacters
     /// </summary>
     public static function GetAllUsersCharacters($titleId, $developerSecreteKey, $request)
     {
@@ -258,7 +259,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the specified version of the title's catalog of virtual goods, including all defined properties
-    /// https://api.playfab.com/Documentation/Server/method/GetCatalogItems
+    /// https://docs.microsoft.com/rest/api/playfab/server/title-wide-data-management/getcatalogitems
     /// </summary>
     public static function GetCatalogItems($titleId, $developerSecreteKey, $request)
     {
@@ -270,7 +271,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the title-specific custom data for the user which is readable and writable by the client
-    /// https://api.playfab.com/Documentation/Server/method/GetCharacterData
+    /// https://docs.microsoft.com/rest/api/playfab/server/character-data/getcharacterdata
     /// </summary>
     public static function GetCharacterData($titleId, $developerSecreteKey, $request)
     {
@@ -282,7 +283,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the title-specific custom data for the user's character which cannot be accessed by the client
-    /// https://api.playfab.com/Documentation/Server/method/GetCharacterInternalData
+    /// https://docs.microsoft.com/rest/api/playfab/server/character-data/getcharacterinternaldata
     /// </summary>
     public static function GetCharacterInternalData($titleId, $developerSecreteKey, $request)
     {
@@ -294,7 +295,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the specified character's current inventory of virtual goods
-    /// https://api.playfab.com/Documentation/Server/method/GetCharacterInventory
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/getcharacterinventory
     /// </summary>
     public static function GetCharacterInventory($titleId, $developerSecreteKey, $request)
     {
@@ -306,7 +307,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves a list of ranked characters for the given statistic, starting from the indicated point in the leaderboard
-    /// https://api.playfab.com/Documentation/Server/method/GetCharacterLeaderboard
+    /// https://docs.microsoft.com/rest/api/playfab/server/characters/getcharacterleaderboard
     /// </summary>
     public static function GetCharacterLeaderboard($titleId, $developerSecreteKey, $request)
     {
@@ -318,7 +319,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the title-specific custom data for the user's character which can only be read by the client
-    /// https://api.playfab.com/Documentation/Server/method/GetCharacterReadOnlyData
+    /// https://docs.microsoft.com/rest/api/playfab/server/character-data/getcharacterreadonlydata
     /// </summary>
     public static function GetCharacterReadOnlyData($titleId, $developerSecreteKey, $request)
     {
@@ -330,7 +331,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the details of all title-specific statistics for the specific character
-    /// https://api.playfab.com/Documentation/Server/method/GetCharacterStatistics
+    /// https://docs.microsoft.com/rest/api/playfab/server/characters/getcharacterstatistics
     /// </summary>
     public static function GetCharacterStatistics($titleId, $developerSecreteKey, $request)
     {
@@ -345,9 +346,9 @@ class PlayFabServerApi
     /// URL will attempt to download the content. A HEAD query to the returned URL will attempt to retrieve the metadata of the
     /// content. Note that a successful result does not guarantee the existence of this content - if it has not been uploaded,
     /// the query to retrieve the data will fail. See this post for more information:
-    /// https://community.playfab.com/hc/en-us/community/posts/205469488-How-to-upload-files-to-PlayFab-s-Content-Service. Also,
+    /// https://community.playfab.com/hc/community/posts/205469488-How-to-upload-files-to-PlayFab-s-Content-Service. Also,
     /// please be aware that the Content service is specifically PlayFab's CDN offering, for which standard CDN rates apply.
-    /// https://api.playfab.com/Documentation/Server/method/GetContentDownloadUrl
+    /// https://docs.microsoft.com/rest/api/playfab/server/content/getcontentdownloadurl
     /// </summary>
     public static function GetContentDownloadUrl($titleId, $developerSecreteKey, $request)
     {
@@ -360,7 +361,7 @@ class PlayFabServerApi
     /// <summary>
     /// Retrieves a list of ranked friends of the given player for the given statistic, starting from the indicated point in the
     /// leaderboard
-    /// https://api.playfab.com/Documentation/Server/method/GetFriendLeaderboard
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-data-management/getfriendleaderboard
     /// </summary>
     public static function GetFriendLeaderboard($titleId, $developerSecreteKey, $request)
     {
@@ -373,7 +374,7 @@ class PlayFabServerApi
     /// <summary>
     /// Retrieves the current friends for the user with PlayFabId, constrained to users who have PlayFab accounts. Friends from
     /// linked accounts (Facebook, Steam) are also included. You may optionally exclude some linked services' friends.
-    /// https://api.playfab.com/Documentation/Server/method/GetFriendsList
+    /// https://docs.microsoft.com/rest/api/playfab/server/friend-list-management/getfriendslist
     /// </summary>
     public static function GetFriendsList($titleId, $developerSecreteKey, $request)
     {
@@ -385,7 +386,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves a list of ranked users for the given statistic, starting from the indicated point in the leaderboard
-    /// https://api.playfab.com/Documentation/Server/method/GetLeaderboard
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-data-management/getleaderboard
     /// </summary>
     public static function GetLeaderboard($titleId, $developerSecreteKey, $request)
     {
@@ -397,7 +398,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves a list of ranked characters for the given statistic, centered on the requested user
-    /// https://api.playfab.com/Documentation/Server/method/GetLeaderboardAroundCharacter
+    /// https://docs.microsoft.com/rest/api/playfab/server/characters/getleaderboardaroundcharacter
     /// </summary>
     public static function GetLeaderboardAroundCharacter($titleId, $developerSecreteKey, $request)
     {
@@ -409,7 +410,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves a list of ranked users for the given statistic, centered on the currently signed-in user
-    /// https://api.playfab.com/Documentation/Server/method/GetLeaderboardAroundUser
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-data-management/getleaderboardarounduser
     /// </summary>
     public static function GetLeaderboardAroundUser($titleId, $developerSecreteKey, $request)
     {
@@ -421,7 +422,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves a list of all of the user's characters for the given statistic.
-    /// https://api.playfab.com/Documentation/Server/method/GetLeaderboardForUserCharacters
+    /// https://docs.microsoft.com/rest/api/playfab/server/characters/getleaderboardforusercharacters
     /// </summary>
     public static function GetLeaderboardForUserCharacters($titleId, $developerSecreteKey, $request)
     {
@@ -434,7 +435,7 @@ class PlayFabServerApi
     /// <summary>
     /// Returns whatever info is requested in the response for the user. Note that PII (like email address, facebook id) may be
     /// returned. All parameters default to false.
-    /// https://api.playfab.com/Documentation/Server/method/GetPlayerCombinedInfo
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-data-management/getplayercombinedinfo
     /// </summary>
     public static function GetPlayerCombinedInfo($titleId, $developerSecreteKey, $request)
     {
@@ -446,7 +447,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the player's profile
-    /// https://api.playfab.com/Documentation/Server/method/GetPlayerProfile
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/getplayerprofile
     /// </summary>
     public static function GetPlayerProfile($titleId, $developerSecreteKey, $request)
     {
@@ -458,7 +459,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// List all segments that a player currently belongs to at this moment in time.
-    /// https://api.playfab.com/Documentation/Server/method/GetPlayerSegments
+    /// https://docs.microsoft.com/rest/api/playfab/server/playstream/getplayersegments
     /// </summary>
     public static function GetPlayerSegments($titleId, $developerSecreteKey, $request)
     {
@@ -474,7 +475,7 @@ class PlayFabServerApi
     /// on each subsequent use of the Continuation Token. Profiles that change during the course of paging will not be reflected
     /// in the results. AB Test segments are currently not supported by this operation. NOTE: This API is limited to being
     /// called 30 times in one minute. You will be returned an error if you exceed this threshold.
-    /// https://api.playfab.com/Documentation/Server/method/GetPlayersInSegment
+    /// https://docs.microsoft.com/rest/api/playfab/server/playstream/getplayersinsegment
     /// </summary>
     public static function GetPlayersInSegment($titleId, $developerSecreteKey, $request)
     {
@@ -486,7 +487,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the current version and values for the indicated statistics, for the local player.
-    /// https://api.playfab.com/Documentation/Server/method/GetPlayerStatistics
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-data-management/getplayerstatistics
     /// </summary>
     public static function GetPlayerStatistics($titleId, $developerSecreteKey, $request)
     {
@@ -498,7 +499,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the information on the available versions of the specified statistic.
-    /// https://api.playfab.com/Documentation/Server/method/GetPlayerStatisticVersions
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-data-management/getplayerstatisticversions
     /// </summary>
     public static function GetPlayerStatisticVersions($titleId, $developerSecreteKey, $request)
     {
@@ -510,7 +511,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Get all tags with a given Namespace (optional) from a player profile.
-    /// https://api.playfab.com/Documentation/Server/method/GetPlayerTags
+    /// https://docs.microsoft.com/rest/api/playfab/server/playstream/getplayertags
     /// </summary>
     public static function GetPlayerTags($titleId, $developerSecreteKey, $request)
     {
@@ -522,7 +523,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the unique PlayFab identifiers for the given set of Facebook identifiers.
-    /// https://api.playfab.com/Documentation/Server/method/GetPlayFabIDsFromFacebookIDs
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/getplayfabidsfromfacebookids
     /// </summary>
     public static function GetPlayFabIDsFromFacebookIDs($titleId, $developerSecreteKey, $request)
     {
@@ -534,7 +535,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the unique PlayFab identifiers for the given set of Facebook Instant Games identifiers.
-    /// https://api.playfab.com/Documentation/Server/method/GetPlayFabIDsFromFacebookInstantGamesIds
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/getplayfabidsfromfacebookinstantgamesids
     /// </summary>
     public static function GetPlayFabIDsFromFacebookInstantGamesIds($titleId, $developerSecreteKey, $request)
     {
@@ -548,7 +549,7 @@ class PlayFabServerApi
     /// Retrieves the unique PlayFab identifiers for the given set of generic service identifiers. A generic identifier is the
     /// service name plus the service-specific ID for the player, as specified by the title when the generic identifier was
     /// added to the player account.
-    /// https://api.playfab.com/Documentation/Server/method/GetPlayFabIDsFromGenericIDs
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/getplayfabidsfromgenericids
     /// </summary>
     public static function GetPlayFabIDsFromGenericIDs($titleId, $developerSecreteKey, $request)
     {
@@ -560,7 +561,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the unique PlayFab identifiers for the given set of Nintendo Switch Device identifiers.
-    /// https://api.playfab.com/Documentation/Server/method/GetPlayFabIDsFromNintendoSwitchDeviceIds
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/getplayfabidsfromnintendoswitchdeviceids
     /// </summary>
     public static function GetPlayFabIDsFromNintendoSwitchDeviceIds($titleId, $developerSecreteKey, $request)
     {
@@ -572,7 +573,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the unique PlayFab identifiers for the given set of PlayStation Network identifiers.
-    /// https://api.playfab.com/Documentation/Server/method/GetPlayFabIDsFromPSNAccountIDs
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/getplayfabidsfrompsnaccountids
     /// </summary>
     public static function GetPlayFabIDsFromPSNAccountIDs($titleId, $developerSecreteKey, $request)
     {
@@ -585,7 +586,7 @@ class PlayFabServerApi
     /// <summary>
     /// Retrieves the unique PlayFab identifiers for the given set of Steam identifiers. The Steam identifiers are the profile
     /// IDs for the user accounts, available as SteamId in the Steamworks Community API calls.
-    /// https://api.playfab.com/Documentation/Server/method/GetPlayFabIDsFromSteamIDs
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/getplayfabidsfromsteamids
     /// </summary>
     public static function GetPlayFabIDsFromSteamIDs($titleId, $developerSecreteKey, $request)
     {
@@ -597,7 +598,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the unique PlayFab identifiers for the given set of XboxLive identifiers.
-    /// https://api.playfab.com/Documentation/Server/method/GetPlayFabIDsFromXboxLiveIDs
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/getplayfabidsfromxboxliveids
     /// </summary>
     public static function GetPlayFabIDsFromXboxLiveIDs($titleId, $developerSecreteKey, $request)
     {
@@ -609,7 +610,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the key-value store of custom publisher settings
-    /// https://api.playfab.com/Documentation/Server/method/GetPublisherData
+    /// https://docs.microsoft.com/rest/api/playfab/server/title-wide-data-management/getpublisherdata
     /// </summary>
     public static function GetPublisherData($titleId, $developerSecreteKey, $request)
     {
@@ -622,7 +623,7 @@ class PlayFabServerApi
     /// <summary>
     /// Retrieves the configuration information for the specified random results tables for the title, including all ItemId
     /// values and weights
-    /// https://api.playfab.com/Documentation/Server/method/GetRandomResultTables
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/getrandomresulttables
     /// </summary>
     public static function GetRandomResultTables($titleId, $developerSecreteKey, $request)
     {
@@ -634,7 +635,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the associated PlayFab account identifiers for the given set of server custom identifiers.
-    /// https://api.playfab.com/Documentation/Server/method/GetServerCustomIDsFromPlayFabIDs
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/getservercustomidsfromplayfabids
     /// </summary>
     public static function GetServerCustomIDsFromPlayFabIDs($titleId, $developerSecreteKey, $request)
     {
@@ -647,8 +648,8 @@ class PlayFabServerApi
     /// <summary>
     /// Retrieves data stored in a shared group object, as well as the list of members in the group. The server can access all
     /// public and private group data. Shared Groups are designed for sharing data between a very small number of players,
-    /// please see our guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
-    /// https://api.playfab.com/Documentation/Server/method/GetSharedGroupData
+    /// please see our guide: https://docs.microsoft.com/gaming/playfab/features/social/groups/using-shared-group-data
+    /// https://docs.microsoft.com/rest/api/playfab/server/shared-group-data/getsharedgroupdata
     /// </summary>
     public static function GetSharedGroupData($titleId, $developerSecreteKey, $request)
     {
@@ -660,7 +661,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the set of items defined for the specified store, including all prices defined, for the specified player
-    /// https://api.playfab.com/Documentation/Server/method/GetStoreItems
+    /// https://docs.microsoft.com/rest/api/playfab/server/title-wide-data-management/getstoreitems
     /// </summary>
     public static function GetStoreItems($titleId, $developerSecreteKey, $request)
     {
@@ -672,7 +673,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the current server time
-    /// https://api.playfab.com/Documentation/Server/method/GetTime
+    /// https://docs.microsoft.com/rest/api/playfab/server/title-wide-data-management/gettime
     /// </summary>
     public static function GetTime($titleId, $developerSecreteKey, $request)
     {
@@ -684,7 +685,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the key-value store of custom title settings
-    /// https://api.playfab.com/Documentation/Server/method/GetTitleData
+    /// https://docs.microsoft.com/rest/api/playfab/server/title-wide-data-management/gettitledata
     /// </summary>
     public static function GetTitleData($titleId, $developerSecreteKey, $request)
     {
@@ -696,7 +697,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the key-value store of custom internal title settings
-    /// https://api.playfab.com/Documentation/Server/method/GetTitleInternalData
+    /// https://docs.microsoft.com/rest/api/playfab/server/title-wide-data-management/gettitleinternaldata
     /// </summary>
     public static function GetTitleInternalData($titleId, $developerSecreteKey, $request)
     {
@@ -708,7 +709,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the title news feed, as configured in the developer portal
-    /// https://api.playfab.com/Documentation/Server/method/GetTitleNews
+    /// https://docs.microsoft.com/rest/api/playfab/server/title-wide-data-management/gettitlenews
     /// </summary>
     public static function GetTitleNews($titleId, $developerSecreteKey, $request)
     {
@@ -720,7 +721,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the relevant details for a specified user
-    /// https://api.playfab.com/Documentation/Server/method/GetUserAccountInfo
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/getuseraccountinfo
     /// </summary>
     public static function GetUserAccountInfo($titleId, $developerSecreteKey, $request)
     {
@@ -732,7 +733,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Gets all bans for a user.
-    /// https://api.playfab.com/Documentation/Server/method/GetUserBans
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/getuserbans
     /// </summary>
     public static function GetUserBans($titleId, $developerSecreteKey, $request)
     {
@@ -744,7 +745,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the title-specific custom data for the user which is readable and writable by the client
-    /// https://api.playfab.com/Documentation/Server/method/GetUserData
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-data-management/getuserdata
     /// </summary>
     public static function GetUserData($titleId, $developerSecreteKey, $request)
     {
@@ -756,7 +757,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the title-specific custom data for the user which cannot be accessed by the client
-    /// https://api.playfab.com/Documentation/Server/method/GetUserInternalData
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-data-management/getuserinternaldata
     /// </summary>
     public static function GetUserInternalData($titleId, $developerSecreteKey, $request)
     {
@@ -768,7 +769,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the specified user's current inventory of virtual goods
-    /// https://api.playfab.com/Documentation/Server/method/GetUserInventory
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/getuserinventory
     /// </summary>
     public static function GetUserInventory($titleId, $developerSecreteKey, $request)
     {
@@ -780,7 +781,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the publisher-specific custom data for the user which is readable and writable by the client
-    /// https://api.playfab.com/Documentation/Server/method/GetUserPublisherData
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-data-management/getuserpublisherdata
     /// </summary>
     public static function GetUserPublisherData($titleId, $developerSecreteKey, $request)
     {
@@ -792,7 +793,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the publisher-specific custom data for the user which cannot be accessed by the client
-    /// https://api.playfab.com/Documentation/Server/method/GetUserPublisherInternalData
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-data-management/getuserpublisherinternaldata
     /// </summary>
     public static function GetUserPublisherInternalData($titleId, $developerSecreteKey, $request)
     {
@@ -804,7 +805,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the publisher-specific custom data for the user which can only be read by the client
-    /// https://api.playfab.com/Documentation/Server/method/GetUserPublisherReadOnlyData
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-data-management/getuserpublisherreadonlydata
     /// </summary>
     public static function GetUserPublisherReadOnlyData($titleId, $developerSecreteKey, $request)
     {
@@ -816,7 +817,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Retrieves the title-specific custom data for the user which can only be read by the client
-    /// https://api.playfab.com/Documentation/Server/method/GetUserReadOnlyData
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-data-management/getuserreadonlydata
     /// </summary>
     public static function GetUserReadOnlyData($titleId, $developerSecreteKey, $request)
     {
@@ -829,7 +830,7 @@ class PlayFabServerApi
     /// <summary>
     /// Grants the specified character type to the user. CharacterIds are not globally unique; characterId must be evaluated
     /// with the parent PlayFabId to guarantee uniqueness.
-    /// https://api.playfab.com/Documentation/Server/method/GrantCharacterToUser
+    /// https://docs.microsoft.com/rest/api/playfab/server/characters/grantcharactertouser
     /// </summary>
     public static function GrantCharacterToUser($titleId, $developerSecreteKey, $request)
     {
@@ -841,7 +842,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Adds the specified items to the specified character's inventory
-    /// https://api.playfab.com/Documentation/Server/method/GrantItemsToCharacter
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/grantitemstocharacter
     /// </summary>
     public static function GrantItemsToCharacter($titleId, $developerSecreteKey, $request)
     {
@@ -853,7 +854,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Adds the specified items to the specified user's inventory
-    /// https://api.playfab.com/Documentation/Server/method/GrantItemsToUser
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/grantitemstouser
     /// </summary>
     public static function GrantItemsToUser($titleId, $developerSecreteKey, $request)
     {
@@ -865,7 +866,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Adds the specified items to the specified user inventories
-    /// https://api.playfab.com/Documentation/Server/method/GrantItemsToUsers
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/grantitemstousers
     /// </summary>
     public static function GrantItemsToUsers($titleId, $developerSecreteKey, $request)
     {
@@ -876,8 +877,20 @@ class PlayFabServerApi
     }
 
     /// <summary>
+    /// Links the PlayStation Network account associated with the provided access code to the user's PlayFab account
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/linkpsnaccount
+    /// </summary>
+    public static function LinkPSNAccount($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/LinkPSNAccount", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
     /// Links the custom server identifier, generated by the title, to the user's PlayFab account.
-    /// https://api.playfab.com/Documentation/Server/method/LinkServerCustomId
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/linkservercustomid
     /// </summary>
     public static function LinkServerCustomId($titleId, $developerSecreteKey, $request)
     {
@@ -889,7 +902,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Links the Xbox Live account associated with the provided access code to the user's PlayFab account
-    /// https://api.playfab.com/Documentation/Server/method/LinkXboxAccount
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/linkxboxaccount
     /// </summary>
     public static function LinkXboxAccount($titleId, $developerSecreteKey, $request)
     {
@@ -902,7 +915,7 @@ class PlayFabServerApi
     /// <summary>
     /// Securely login a game client from an external server backend using a custom identifier for that player. Server Custom ID
     /// and Client Custom ID are mutually exclusive and cannot be used to retrieve the same player account.
-    /// https://api.playfab.com/Documentation/Server/method/LoginWithServerCustomId
+    /// https://docs.microsoft.com/rest/api/playfab/server/authentication/loginwithservercustomid
     /// </summary>
     public static function LoginWithServerCustomId($titleId, $developerSecreteKey, $request)
     {
@@ -915,7 +928,7 @@ class PlayFabServerApi
     /// <summary>
     /// Signs the user in using a Xbox Live Token from an external server backend, returning a session identifier that can
     /// subsequently be used for API calls which require an authenticated user
-    /// https://api.playfab.com/Documentation/Server/method/LoginWithXbox
+    /// https://docs.microsoft.com/rest/api/playfab/server/authentication/loginwithxbox
     /// </summary>
     public static function LoginWithXbox($titleId, $developerSecreteKey, $request)
     {
@@ -928,7 +941,7 @@ class PlayFabServerApi
     /// <summary>
     /// Signs the user in using an Xbox ID and Sandbox ID, returning a session identifier that can subsequently be used for API
     /// calls which require an authenticated user
-    /// https://api.playfab.com/Documentation/Server/method/LoginWithXboxId
+    /// https://docs.microsoft.com/rest/api/playfab/server/authentication/loginwithxboxid
     /// </summary>
     public static function LoginWithXboxId($titleId, $developerSecreteKey, $request)
     {
@@ -940,7 +953,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Modifies the number of remaining uses of a player's inventory item
-    /// https://api.playfab.com/Documentation/Server/method/ModifyItemUses
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/modifyitemuses
     /// </summary>
     public static function ModifyItemUses($titleId, $developerSecreteKey, $request)
     {
@@ -952,7 +965,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Moves an item from a character's inventory into another of the users's character's inventory.
-    /// https://api.playfab.com/Documentation/Server/method/MoveItemToCharacterFromCharacter
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/moveitemtocharacterfromcharacter
     /// </summary>
     public static function MoveItemToCharacterFromCharacter($titleId, $developerSecreteKey, $request)
     {
@@ -964,7 +977,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Moves an item from a user's inventory into their character's inventory.
-    /// https://api.playfab.com/Documentation/Server/method/MoveItemToCharacterFromUser
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/moveitemtocharacterfromuser
     /// </summary>
     public static function MoveItemToCharacterFromUser($titleId, $developerSecreteKey, $request)
     {
@@ -976,7 +989,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Moves an item from a character's inventory into the owning user's inventory.
-    /// https://api.playfab.com/Documentation/Server/method/MoveItemToUserFromCharacter
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/moveitemtouserfromcharacter
     /// </summary>
     public static function MoveItemToUserFromCharacter($titleId, $developerSecreteKey, $request)
     {
@@ -988,7 +1001,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Informs the PlayFab match-making service that the user specified has left the Game Server Instance
-    /// https://api.playfab.com/Documentation/Server/method/NotifyMatchmakerPlayerLeft
+    /// https://docs.microsoft.com/rest/api/playfab/server/matchmaking/notifymatchmakerplayerleft
     /// </summary>
     public static function NotifyMatchmakerPlayerLeft($titleId, $developerSecreteKey, $request)
     {
@@ -1001,7 +1014,7 @@ class PlayFabServerApi
     /// <summary>
     /// Adds the virtual goods associated with the coupon to the user's inventory. Coupons can be generated via the
     /// Economy->Catalogs tab in the PlayFab Game Manager.
-    /// https://api.playfab.com/Documentation/Server/method/RedeemCoupon
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/redeemcoupon
     /// </summary>
     public static function RedeemCoupon($titleId, $developerSecreteKey, $request)
     {
@@ -1013,7 +1026,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Validates a Game Server session ticket and returns details about the user
-    /// https://api.playfab.com/Documentation/Server/method/RedeemMatchmakerTicket
+    /// https://docs.microsoft.com/rest/api/playfab/server/matchmaking/redeemmatchmakerticket
     /// </summary>
     public static function RedeemMatchmakerTicket($titleId, $developerSecreteKey, $request)
     {
@@ -1025,7 +1038,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Set the state of the indicated Game Server Instance. Also update the heartbeat for the instance.
-    /// https://api.playfab.com/Documentation/Server/method/RefreshGameServerInstanceHeartbeat
+    /// https://docs.microsoft.com/rest/api/playfab/server/matchmaking/refreshgameserverinstanceheartbeat
     /// </summary>
     public static function RefreshGameServerInstanceHeartbeat($titleId, $developerSecreteKey, $request)
     {
@@ -1037,7 +1050,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Inform the matchmaker that a new Game Server Instance is added.
-    /// https://api.playfab.com/Documentation/Server/method/RegisterGame
+    /// https://docs.microsoft.com/rest/api/playfab/server/matchmaking/registergame
     /// </summary>
     public static function RegisterGame($titleId, $developerSecreteKey, $request)
     {
@@ -1049,7 +1062,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Removes the specified friend from the the user's friend list
-    /// https://api.playfab.com/Documentation/Server/method/RemoveFriend
+    /// https://docs.microsoft.com/rest/api/playfab/server/friend-list-management/removefriend
     /// </summary>
     public static function RemoveFriend($titleId, $developerSecreteKey, $request)
     {
@@ -1061,7 +1074,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Removes the specified generic service identifier from the player's PlayFab account.
-    /// https://api.playfab.com/Documentation/Server/method/RemoveGenericID
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/removegenericid
     /// </summary>
     public static function RemoveGenericID($titleId, $developerSecreteKey, $request)
     {
@@ -1073,7 +1086,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Remove a given tag from a player profile. The tag's namespace is automatically generated based on the source of the tag.
-    /// https://api.playfab.com/Documentation/Server/method/RemovePlayerTag
+    /// https://docs.microsoft.com/rest/api/playfab/server/playstream/removeplayertag
     /// </summary>
     public static function RemovePlayerTag($titleId, $developerSecreteKey, $request)
     {
@@ -1087,8 +1100,8 @@ class PlayFabServerApi
     /// Removes users from the set of those able to update the shared data and the set of users in the group. Only users in the
     /// group can remove members. If as a result of the call, zero users remain with access, the group and its associated data
     /// will be deleted. Shared Groups are designed for sharing data between a very small number of players, please see our
-    /// guide: https://api.playfab.com/docs/tutorials/landing-players/shared-groups
-    /// https://api.playfab.com/Documentation/Server/method/RemoveSharedGroupMembers
+    /// guide: https://docs.microsoft.com/gaming/playfab/features/social/groups/using-shared-group-data
+    /// https://docs.microsoft.com/rest/api/playfab/server/shared-group-data/removesharedgroupmembers
     /// </summary>
     public static function RemoveSharedGroupMembers($titleId, $developerSecreteKey, $request)
     {
@@ -1101,7 +1114,7 @@ class PlayFabServerApi
     /// <summary>
     /// Submit a report about a player (due to bad bahavior, etc.) on behalf of another player, so that customer service
     /// representatives for the title can take action concerning potentially toxic players.
-    /// https://api.playfab.com/Documentation/Server/method/ReportPlayer
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/reportplayer
     /// </summary>
     public static function ReportPlayer($titleId, $developerSecreteKey, $request)
     {
@@ -1113,7 +1126,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Revoke all active bans for a user.
-    /// https://api.playfab.com/Documentation/Server/method/RevokeAllBansForUser
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/revokeallbansforuser
     /// </summary>
     public static function RevokeAllBansForUser($titleId, $developerSecreteKey, $request)
     {
@@ -1125,7 +1138,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Revoke all active bans specified with BanId.
-    /// https://api.playfab.com/Documentation/Server/method/RevokeBans
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/revokebans
     /// </summary>
     public static function RevokeBans($titleId, $developerSecreteKey, $request)
     {
@@ -1137,7 +1150,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Revokes access to an item in a user's inventory
-    /// https://api.playfab.com/Documentation/Server/method/RevokeInventoryItem
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/revokeinventoryitem
     /// </summary>
     public static function RevokeInventoryItem($titleId, $developerSecreteKey, $request)
     {
@@ -1149,7 +1162,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Revokes access for up to 25 items across multiple users and characters.
-    /// https://api.playfab.com/Documentation/Server/method/RevokeInventoryItems
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/revokeinventoryitems
     /// </summary>
     public static function RevokeInventoryItems($titleId, $developerSecreteKey, $request)
     {
@@ -1161,7 +1174,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Saves push notification template for title
-    /// https://api.playfab.com/Documentation/Server/method/SavePushNotificationTemplate
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/savepushnotificationtemplate
     /// </summary>
     public static function SavePushNotificationTemplate($titleId, $developerSecreteKey, $request)
     {
@@ -1174,7 +1187,7 @@ class PlayFabServerApi
     /// <summary>
     /// Forces an email to be sent to the registered contact email address for the user's account based on an account recovery
     /// email template
-    /// https://api.playfab.com/Documentation/Server/method/SendCustomAccountRecoveryEmail
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/sendcustomaccountrecoveryemail
     /// </summary>
     public static function SendCustomAccountRecoveryEmail($titleId, $developerSecreteKey, $request)
     {
@@ -1186,7 +1199,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Sends an email based on an email template to a player's contact email
-    /// https://api.playfab.com/Documentation/Server/method/SendEmailFromTemplate
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/sendemailfromtemplate
     /// </summary>
     public static function SendEmailFromTemplate($titleId, $developerSecreteKey, $request)
     {
@@ -1199,7 +1212,7 @@ class PlayFabServerApi
     /// <summary>
     /// Sends an iOS/Android Push Notification to a specific user, if that user's device has been configured for Push
     /// Notifications in PlayFab. If a user has linked both Android and iOS devices, both will be notified.
-    /// https://api.playfab.com/Documentation/Server/method/SendPushNotification
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/sendpushnotification
     /// </summary>
     public static function SendPushNotification($titleId, $developerSecreteKey, $request)
     {
@@ -1212,7 +1225,7 @@ class PlayFabServerApi
     /// <summary>
     /// Sends an iOS/Android Push Notification template to a specific user, if that user's device has been configured for Push
     /// Notifications in PlayFab. If a user has linked both Android and iOS devices, both will be notified.
-    /// https://api.playfab.com/Documentation/Server/method/SendPushNotificationFromTemplate
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/sendpushnotificationfromtemplate
     /// </summary>
     public static function SendPushNotificationFromTemplate($titleId, $developerSecreteKey, $request)
     {
@@ -1224,7 +1237,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Updates the tag list for a specified user in the friend list of another user
-    /// https://api.playfab.com/Documentation/Server/method/SetFriendTags
+    /// https://docs.microsoft.com/rest/api/playfab/server/friend-list-management/setfriendtags
     /// </summary>
     public static function SetFriendTags($titleId, $developerSecreteKey, $request)
     {
@@ -1236,7 +1249,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Sets the custom data of the indicated Game Server Instance
-    /// https://api.playfab.com/Documentation/Server/method/SetGameServerInstanceData
+    /// https://docs.microsoft.com/rest/api/playfab/server/matchmaking/setgameserverinstancedata
     /// </summary>
     public static function SetGameServerInstanceData($titleId, $developerSecreteKey, $request)
     {
@@ -1248,7 +1261,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Set the state of the indicated Game Server Instance.
-    /// https://api.playfab.com/Documentation/Server/method/SetGameServerInstanceState
+    /// https://docs.microsoft.com/rest/api/playfab/server/matchmaking/setgameserverinstancestate
     /// </summary>
     public static function SetGameServerInstanceState($titleId, $developerSecreteKey, $request)
     {
@@ -1260,7 +1273,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Set custom tags for the specified Game Server Instance
-    /// https://api.playfab.com/Documentation/Server/method/SetGameServerInstanceTags
+    /// https://docs.microsoft.com/rest/api/playfab/server/matchmaking/setgameserverinstancetags
     /// </summary>
     public static function SetGameServerInstanceTags($titleId, $developerSecreteKey, $request)
     {
@@ -1273,7 +1286,7 @@ class PlayFabServerApi
     /// <summary>
     /// Sets the player's secret if it is not already set. Player secrets are used to sign API requests. To reset a player's
     /// secret use the Admin or Server API method SetPlayerSecret.
-    /// https://api.playfab.com/Documentation/Server/method/SetPlayerSecret
+    /// https://docs.microsoft.com/rest/api/playfab/server/authentication/setplayersecret
     /// </summary>
     public static function SetPlayerSecret($titleId, $developerSecreteKey, $request)
     {
@@ -1285,7 +1298,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Updates the key-value store of custom publisher settings
-    /// https://api.playfab.com/Documentation/Server/method/SetPublisherData
+    /// https://docs.microsoft.com/rest/api/playfab/server/title-wide-data-management/setpublisherdata
     /// </summary>
     public static function SetPublisherData($titleId, $developerSecreteKey, $request)
     {
@@ -1297,7 +1310,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Updates the key-value store of custom title settings
-    /// https://api.playfab.com/Documentation/Server/method/SetTitleData
+    /// https://docs.microsoft.com/rest/api/playfab/server/title-wide-data-management/settitledata
     /// </summary>
     public static function SetTitleData($titleId, $developerSecreteKey, $request)
     {
@@ -1309,7 +1322,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Updates the key-value store of custom title settings
-    /// https://api.playfab.com/Documentation/Server/method/SetTitleInternalData
+    /// https://docs.microsoft.com/rest/api/playfab/server/title-wide-data-management/settitleinternaldata
     /// </summary>
     public static function SetTitleInternalData($titleId, $developerSecreteKey, $request)
     {
@@ -1322,7 +1335,7 @@ class PlayFabServerApi
     /// <summary>
     /// Decrements the character's balance of the specified virtual currency by the stated amount. It is possible to make a VC
     /// balance negative with this API.
-    /// https://api.playfab.com/Documentation/Server/method/SubtractCharacterVirtualCurrency
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/subtractcharactervirtualcurrency
     /// </summary>
     public static function SubtractCharacterVirtualCurrency($titleId, $developerSecreteKey, $request)
     {
@@ -1335,7 +1348,7 @@ class PlayFabServerApi
     /// <summary>
     /// Decrements the user's balance of the specified virtual currency by the stated amount. It is possible to make a VC
     /// balance negative with this API.
-    /// https://api.playfab.com/Documentation/Server/method/SubtractUserVirtualCurrency
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/subtractuservirtualcurrency
     /// </summary>
     public static function SubtractUserVirtualCurrency($titleId, $developerSecreteKey, $request)
     {
@@ -1346,8 +1359,20 @@ class PlayFabServerApi
     }
 
     /// <summary>
+    /// Unlinks the related PSN account from the user's PlayFab account
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/unlinkpsnaccount
+    /// </summary>
+    public static function UnlinkPSNAccount($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Server/UnlinkPSNAccount", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
     /// Unlinks the custom server identifier from the user's PlayFab account.
-    /// https://api.playfab.com/Documentation/Server/method/UnlinkServerCustomId
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/unlinkservercustomid
     /// </summary>
     public static function UnlinkServerCustomId($titleId, $developerSecreteKey, $request)
     {
@@ -1359,7 +1384,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Unlinks the related Xbox Live account from the user's PlayFab account
-    /// https://api.playfab.com/Documentation/Server/method/UnlinkXboxAccount
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/unlinkxboxaccount
     /// </summary>
     public static function UnlinkXboxAccount($titleId, $developerSecreteKey, $request)
     {
@@ -1373,7 +1398,7 @@ class PlayFabServerApi
     /// Opens a specific container (ContainerItemInstanceId), with a specific key (KeyItemInstanceId, when required), and
     /// returns the contents of the opened container. If the container (and key when relevant) are consumable (RemainingUses >
     /// 0), their RemainingUses will be decremented, consistent with the operation of ConsumeItem.
-    /// https://api.playfab.com/Documentation/Server/method/UnlockContainerInstance
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/unlockcontainerinstance
     /// </summary>
     public static function UnlockContainerInstance($titleId, $developerSecreteKey, $request)
     {
@@ -1388,7 +1413,7 @@ class PlayFabServerApi
     /// using any appropriate key, and returns the contents of the opened container. If the container (and key when relevant)
     /// are consumable (RemainingUses > 0), their RemainingUses will be decremented, consistent with the operation of
     /// ConsumeItem.
-    /// https://api.playfab.com/Documentation/Server/method/UnlockContainerItem
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/unlockcontaineritem
     /// </summary>
     public static function UnlockContainerItem($titleId, $developerSecreteKey, $request)
     {
@@ -1400,7 +1425,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Update the avatar URL of the specified player
-    /// https://api.playfab.com/Documentation/Server/method/UpdateAvatarUrl
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/updateavatarurl
     /// </summary>
     public static function UpdateAvatarUrl($titleId, $developerSecreteKey, $request)
     {
@@ -1412,7 +1437,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Updates information of a list of existing bans specified with Ban Ids.
-    /// https://api.playfab.com/Documentation/Server/method/UpdateBans
+    /// https://docs.microsoft.com/rest/api/playfab/server/account-management/updatebans
     /// </summary>
     public static function UpdateBans($titleId, $developerSecreteKey, $request)
     {
@@ -1424,7 +1449,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Updates the title-specific custom data for the user's character which is readable and writable by the client
-    /// https://api.playfab.com/Documentation/Server/method/UpdateCharacterData
+    /// https://docs.microsoft.com/rest/api/playfab/server/character-data/updatecharacterdata
     /// </summary>
     public static function UpdateCharacterData($titleId, $developerSecreteKey, $request)
     {
@@ -1436,7 +1461,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Updates the title-specific custom data for the user's character which cannot be accessed by the client
-    /// https://api.playfab.com/Documentation/Server/method/UpdateCharacterInternalData
+    /// https://docs.microsoft.com/rest/api/playfab/server/character-data/updatecharacterinternaldata
     /// </summary>
     public static function UpdateCharacterInternalData($titleId, $developerSecreteKey, $request)
     {
@@ -1448,7 +1473,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Updates the title-specific custom data for the user's character which can only be read by the client
-    /// https://api.playfab.com/Documentation/Server/method/UpdateCharacterReadOnlyData
+    /// https://docs.microsoft.com/rest/api/playfab/server/character-data/updatecharacterreadonlydata
     /// </summary>
     public static function UpdateCharacterReadOnlyData($titleId, $developerSecreteKey, $request)
     {
@@ -1460,7 +1485,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Updates the values of the specified title-specific statistics for the specific character
-    /// https://api.playfab.com/Documentation/Server/method/UpdateCharacterStatistics
+    /// https://docs.microsoft.com/rest/api/playfab/server/characters/updatecharacterstatistics
     /// </summary>
     public static function UpdateCharacterStatistics($titleId, $developerSecreteKey, $request)
     {
@@ -1472,7 +1497,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Updates the values of the specified title-specific statistics for the user
-    /// https://api.playfab.com/Documentation/Server/method/UpdatePlayerStatistics
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-data-management/updateplayerstatistics
     /// </summary>
     public static function UpdatePlayerStatistics($titleId, $developerSecreteKey, $request)
     {
@@ -1487,8 +1512,8 @@ class PlayFabServerApi
     /// or added in this call will be readable by users not in the group. By default, data permissions are set to Private.
     /// Regardless of the permission setting, only members of the group (and the server) can update the data. Shared Groups are
     /// designed for sharing data between a very small number of players, please see our guide:
-    /// https://api.playfab.com/docs/tutorials/landing-players/shared-groups
-    /// https://api.playfab.com/Documentation/Server/method/UpdateSharedGroupData
+    /// https://docs.microsoft.com/gaming/playfab/features/social/groups/using-shared-group-data
+    /// https://docs.microsoft.com/rest/api/playfab/server/shared-group-data/updatesharedgroupdata
     /// </summary>
     public static function UpdateSharedGroupData($titleId, $developerSecreteKey, $request)
     {
@@ -1500,7 +1525,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Updates the title-specific custom data for the user which is readable and writable by the client
-    /// https://api.playfab.com/Documentation/Server/method/UpdateUserData
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-data-management/updateuserdata
     /// </summary>
     public static function UpdateUserData($titleId, $developerSecreteKey, $request)
     {
@@ -1512,7 +1537,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Updates the title-specific custom data for the user which cannot be accessed by the client
-    /// https://api.playfab.com/Documentation/Server/method/UpdateUserInternalData
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-data-management/updateuserinternaldata
     /// </summary>
     public static function UpdateUserInternalData($titleId, $developerSecreteKey, $request)
     {
@@ -1524,7 +1549,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Updates the key-value pair data tagged to the specified item, which is read-only from the client.
-    /// https://api.playfab.com/Documentation/Server/method/UpdateUserInventoryItemCustomData
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-item-management/updateuserinventoryitemcustomdata
     /// </summary>
     public static function UpdateUserInventoryItemCustomData($titleId, $developerSecreteKey, $request)
     {
@@ -1536,7 +1561,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Updates the publisher-specific custom data for the user which is readable and writable by the client
-    /// https://api.playfab.com/Documentation/Server/method/UpdateUserPublisherData
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-data-management/updateuserpublisherdata
     /// </summary>
     public static function UpdateUserPublisherData($titleId, $developerSecreteKey, $request)
     {
@@ -1548,7 +1573,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Updates the publisher-specific custom data for the user which cannot be accessed by the client
-    /// https://api.playfab.com/Documentation/Server/method/UpdateUserPublisherInternalData
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-data-management/updateuserpublisherinternaldata
     /// </summary>
     public static function UpdateUserPublisherInternalData($titleId, $developerSecreteKey, $request)
     {
@@ -1560,7 +1585,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Updates the publisher-specific custom data for the user which can only be read by the client
-    /// https://api.playfab.com/Documentation/Server/method/UpdateUserPublisherReadOnlyData
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-data-management/updateuserpublisherreadonlydata
     /// </summary>
     public static function UpdateUserPublisherReadOnlyData($titleId, $developerSecreteKey, $request)
     {
@@ -1572,7 +1597,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Updates the title-specific custom data for the user which can only be read by the client
-    /// https://api.playfab.com/Documentation/Server/method/UpdateUserReadOnlyData
+    /// https://docs.microsoft.com/rest/api/playfab/server/player-data-management/updateuserreadonlydata
     /// </summary>
     public static function UpdateUserReadOnlyData($titleId, $developerSecreteKey, $request)
     {
@@ -1584,7 +1609,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Writes a character-based event into PlayStream.
-    /// https://api.playfab.com/Documentation/Server/method/WriteCharacterEvent
+    /// https://docs.microsoft.com/rest/api/playfab/server/analytics/writecharacterevent
     /// </summary>
     public static function WriteCharacterEvent($titleId, $developerSecreteKey, $request)
     {
@@ -1596,7 +1621,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Writes a player-based event into PlayStream.
-    /// https://api.playfab.com/Documentation/Server/method/WritePlayerEvent
+    /// https://docs.microsoft.com/rest/api/playfab/server/analytics/writeplayerevent
     /// </summary>
     public static function WritePlayerEvent($titleId, $developerSecreteKey, $request)
     {
@@ -1608,7 +1633,7 @@ class PlayFabServerApi
 
     /// <summary>
     /// Writes a title-based event into PlayStream.
-    /// https://api.playfab.com/Documentation/Server/method/WriteTitleEvent
+    /// https://docs.microsoft.com/rest/api/playfab/server/analytics/writetitleevent
     /// </summary>
     public static function WriteTitleEvent($titleId, $developerSecreteKey, $request)
     {

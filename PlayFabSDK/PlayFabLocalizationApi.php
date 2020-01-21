@@ -5,7 +5,7 @@ class PlayFabLocalizationApi
 {
     /// <summary>
     /// Retrieves the list of allowed languages, only accessible by title entities
-    /// https://api.playfab.com/Documentation/Localization/method/GetLanguageList
+    /// https://docs.microsoft.com/rest/api/playfab/localization/localization/getlanguagelist
     /// </summary>
     public static function GetLanguageList($titleId, $entityToken, $request)
     {
