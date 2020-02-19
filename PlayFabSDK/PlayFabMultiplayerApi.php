@@ -307,6 +307,18 @@ class PlayFabMultiplayerApi
     }
 
     /// <summary>
+    /// Gets multiplayer server logs after a server has terminated.
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/getmultiplayersessionlogsbysessionid
+    /// </summary>
+    public static function GetMultiplayerSessionLogsBySessionId($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/GetMultiplayerSessionLogsBySessionId", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Get the statistics for a queue.
     /// https://docs.microsoft.com/rest/api/playfab/multiplayer/matchmaking/getqueuestatistics
     /// </summary>

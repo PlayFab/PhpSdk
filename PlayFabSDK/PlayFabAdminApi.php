@@ -138,6 +138,18 @@ class PlayFabAdminApi
     }
 
     /// <summary>
+    /// Create a Insights Scheduled Scaling task, which can scale Insights Performance Units on a schedule
+    /// https://docs.microsoft.com/rest/api/playfab/admin/scheduledtask/createinsightsscheduledscalingtask
+    /// </summary>
+    public static function CreateInsightsScheduledScalingTask($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/CreateInsightsScheduledScalingTask", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
     /// Registers a relationship between a title and an Open ID Connect provider.
     /// https://docs.microsoft.com/rest/api/playfab/admin/authentication/createopenidconnection
     /// </summary>
