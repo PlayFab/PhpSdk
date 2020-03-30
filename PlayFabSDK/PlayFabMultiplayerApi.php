@@ -175,6 +175,18 @@ class PlayFabMultiplayerApi
     }
 
     /// <summary>
+    /// Removes a multiplayer server build's region.
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/deletebuildregion
+    /// </summary>
+    public static function DeleteBuildRegion($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/DeleteBuildRegion", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Deletes a multiplayer server game certificate.
     /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/deletecertificate
     /// </summary>
@@ -617,6 +629,18 @@ class PlayFabMultiplayerApi
         //TODO: Check the entityToken
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/UpdateBuildAlias", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
+    /// Updates a multiplayer server build's region. If the region is not yet created, it will be created
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/updatebuildregion
+    /// </summary>
+    public static function UpdateBuildRegion($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/UpdateBuildRegion", $request, "X-EntityToken", $entityToken);
         return $result;
     }
 
