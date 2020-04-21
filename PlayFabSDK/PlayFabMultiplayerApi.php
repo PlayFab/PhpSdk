@@ -199,6 +199,18 @@ class PlayFabMultiplayerApi
     }
 
     /// <summary>
+    /// Deletes a container image repository.
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/deletecontainerimagerepository
+    /// </summary>
+    public static function DeleteContainerImageRepository($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/DeleteContainerImageRepository", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Deletes a remote user to log on to a VM for a multiplayer server build.
     /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/deleteremoteuser
     /// </summary>
