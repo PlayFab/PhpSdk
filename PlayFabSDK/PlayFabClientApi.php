@@ -1005,14 +1005,14 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Links the Nintendo Switch account associated with the token to the user's PlayFab account.
-    /// https://docs.microsoft.com/rest/api/playfab/client/account-management/linknintendoswitchaccount
+    /// Links the Nintendo account associated with the token to the user's PlayFab account. (Open ID)
+    /// https://docs.microsoft.com/rest/api/playfab/client/account-management/linknintendoaccount
     /// </summary>
-    public static function LinkNintendoSwitchAccount($titleId, $clientSessionTicket, $request)
+    public static function LinkNintendoAccount($titleId, $clientSessionTicket, $request)
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkNintendoSwitchAccount", $request, "X-Authorization", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LinkNintendoAccount", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 
@@ -1241,15 +1241,15 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Signs in the user with a Nintendo Switch Account identity token.
-    /// https://docs.microsoft.com/rest/api/playfab/client/authentication/loginwithnintendoswitchaccount
+    /// Signs in the user with a Nintendo account identity token. (Open ID)
+    /// https://docs.microsoft.com/rest/api/playfab/client/authentication/loginwithnintendoaccount
     /// </summary>
-    public static function LoginWithNintendoSwitchAccount($titleId, $request)
+    public static function LoginWithNintendoAccount($titleId, $request)
     {
         if (!isset($titleId)) $titleId = PlayFabSettings::$titleId;
         if (!isset($request->$titleId)) !$request->titleId = $titleId;
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LoginWithNintendoSwitchAccount", $request, null, null);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/LoginWithNintendoAccount", $request, null, null);
         return $result;
     }
 
@@ -1785,14 +1785,14 @@ class PlayFabClientApi
     }
 
     /// <summary>
-    /// Unlinks the related Nintendo Switch account from the user's PlayFab account.
-    /// https://docs.microsoft.com/rest/api/playfab/client/account-management/unlinknintendoswitchaccount
+    /// Unlinks the related Nintendo account from the user's PlayFab account. (Open ID)
+    /// https://docs.microsoft.com/rest/api/playfab/client/account-management/unlinknintendoaccount
     /// </summary>
-    public static function UnlinkNintendoSwitchAccount($titleId, $clientSessionTicket, $request)
+    public static function UnlinkNintendoAccount($titleId, $clientSessionTicket, $request)
     {
         //TODO: Check the sessionTicket
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkNintendoSwitchAccount", $request, "X-Authorization", $clientSessionTicket);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Client/UnlinkNintendoAccount", $request, "X-Authorization", $clientSessionTicket);
         return $result;
     }
 

@@ -528,11 +528,10 @@ class PlayFabMultiplayerApi
     /// Lists quality of service servers for party.
     /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/listpartyqosservers
     /// </summary>
-    public static function ListPartyQosServers($titleId, $entityToken, $request)
+    public static function ListPartyQosServers($titleId, $request)
     {
-        //TODO: Check the entityToken
 
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/ListPartyQosServers", $request, "X-EntityToken", $entityToken);
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/ListPartyQosServers", $request, null, null);
         return $result;
     }
 
