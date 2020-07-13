@@ -88,6 +88,18 @@ class PlayFabMultiplayerApi
     }
 
     /// <summary>
+    /// Creates a multiplayer server build with the server running as a process.
+    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/createbuildwithprocessbasedserver
+    /// </summary>
+    public static function CreateBuildWithProcessBasedServer($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/CreateBuildWithProcessBasedServer", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Create a matchmaking ticket as a client.
     /// https://docs.microsoft.com/rest/api/playfab/multiplayer/matchmaking/creatematchmakingticket
     /// </summary>
