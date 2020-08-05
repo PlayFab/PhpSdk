@@ -285,6 +285,18 @@ class PlayFabAdminApi
     }
 
     /// <summary>
+    /// Deletes a specified set of title data overrides.
+    /// https://docs.microsoft.com/rest/api/playfab/admin/title-wide-data-management/deletetitledataoverride
+    /// </summary>
+    public static function DeleteTitleDataOverride($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/DeleteTitleDataOverride", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
     /// Exports all associated data of a master player account
     /// https://docs.microsoft.com/rest/api/playfab/admin/account-management/exportmasterplayerdata
     /// </summary>
@@ -1110,6 +1122,18 @@ class PlayFabAdminApi
         //TODO: Check the devSecretKey
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/SetTitleData", $request, "X-SecretKey", $developerSecreteKey);
+        return $result;
+    }
+
+    /// <summary>
+    /// Set and delete key-value pairs in a title data override instance.
+    /// https://docs.microsoft.com/rest/api/playfab/admin/title-wide-data-management/settitledataandoverrides
+    /// </summary>
+    public static function SetTitleDataAndOverrides($titleId, $developerSecreteKey, $request)
+    {
+        //TODO: Check the devSecretKey
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Admin/SetTitleDataAndOverrides", $request, "X-SecretKey", $developerSecreteKey);
         return $result;
     }
 
