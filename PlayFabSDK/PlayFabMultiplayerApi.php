@@ -548,18 +548,8 @@ class PlayFabMultiplayerApi
     }
 
     /// <summary>
-    /// Lists quality of service servers.
-    /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/listqosservers
-    /// </summary>
-    public static function ListQosServers($titleId, $request)
-    {
-
-        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/MultiplayerServer/ListQosServers", $request, null, null);
-        return $result;
-    }
-
-    /// <summary>
-    /// Lists quality of service servers.
+    /// Lists quality of service servers for the title. By default, servers are only returned for regions where a Multiplayer
+    /// Servers build has been deployed.
     /// https://docs.microsoft.com/rest/api/playfab/multiplayer/multiplayerserver/listqosserversfortitle
     /// </summary>
     public static function ListQosServersForTitle($titleId, $entityToken, $request)
