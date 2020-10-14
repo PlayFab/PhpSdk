@@ -4,6 +4,18 @@ include 'PlayFabHttp.php';
 class PlayFabExperimentationApi
 {
     /// <summary>
+    /// Creates a new experiment exclusion group for a title.
+    /// https://docs.microsoft.com/rest/api/playfab/experimentation/experimentation/createexclusiongroup
+    /// </summary>
+    public static function CreateExclusionGroup($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Experimentation/CreateExclusionGroup", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Creates a new experiment for a title.
     /// https://docs.microsoft.com/rest/api/playfab/experimentation/experimentation/createexperiment
     /// </summary>
@@ -16,6 +28,18 @@ class PlayFabExperimentationApi
     }
 
     /// <summary>
+    /// Deletes an existing exclusion group for a title.
+    /// https://docs.microsoft.com/rest/api/playfab/experimentation/experimentation/deleteexclusiongroup
+    /// </summary>
+    public static function DeleteExclusionGroup($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Experimentation/DeleteExclusionGroup", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
     /// Deletes an existing experiment for a title.
     /// https://docs.microsoft.com/rest/api/playfab/experimentation/experimentation/deleteexperiment
     /// </summary>
@@ -24,6 +48,30 @@ class PlayFabExperimentationApi
         //TODO: Check the entityToken
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Experimentation/DeleteExperiment", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
+    /// Gets the details of all exclusion groups for a title.
+    /// https://docs.microsoft.com/rest/api/playfab/experimentation/experimentation/getexclusiongroups
+    /// </summary>
+    public static function GetExclusionGroups($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Experimentation/GetExclusionGroups", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
+    /// Gets the details of all exclusion groups for a title.
+    /// https://docs.microsoft.com/rest/api/playfab/experimentation/experimentation/getexclusiongrouptraffic
+    /// </summary>
+    public static function GetExclusionGroupTraffic($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Experimentation/GetExclusionGroupTraffic", $request, "X-EntityToken", $entityToken);
         return $result;
     }
 
@@ -84,6 +132,18 @@ class PlayFabExperimentationApi
         //TODO: Check the entityToken
 
         $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Experimentation/StopExperiment", $request, "X-EntityToken", $entityToken);
+        return $result;
+    }
+
+    /// <summary>
+    /// Updates an existing exclusion group for a title.
+    /// https://docs.microsoft.com/rest/api/playfab/experimentation/experimentation/updateexclusiongroup
+    /// </summary>
+    public static function UpdateExclusionGroup($titleId, $entityToken, $request)
+    {
+        //TODO: Check the entityToken
+
+        $result = PlayFabHttp::MakeCurlApiCall($titleId, "/Experimentation/UpdateExclusionGroup", $request, "X-EntityToken", $entityToken);
         return $result;
     }
 
