@@ -1,40 +1,24 @@
 # PhpSdk README
 
-This is a beta launch of a PHP SDK for PlayFab. It's current design is to be minimal, without formal class definitions for API requests and results, but left to be dynamic and open ended like JavaScriptSdk.
+## 1. Community Support
+
+This is a community supported SDK. 
+
+For new and existing users, you can use the current version as it is. The team at Microsoft would no longer be providing official support for those using this SDK. You can continue to get community support and updates at [PlayFab forums](https://community.playfab.com/index.html).
+
+We are currently looking for reliable community partners to provide long-term support for this SDK. If you are interested to take ownership and provide future maintenance, let us know. 
+
+What you have to do: 
+* Fork this repo
+* Push your updates
+* Make sure you follow the Apache License, Version 2.0 guidelines for reproduction and modification, and document that Microsoft PlayFab is the original creator
+* Go to [PlayFab forums](https://community.playfab.com/index.html)
+* Write a post with a link to your forked repo so everyone knows about them
+
+We're excited to hear from you. Thank you for your support and happy coding.
 
 
-## 1. Overview:
-
-This document describes using the PlayFab Php SDK in your web-server.
-
-
-## 2. Prerequisites:
-
-* Users should also be familiar with the topics covered in our [getting started guide](https://api.playfab.com/docs/general-getting-started).
-
-To connect to the PlayFab service, your machine must be running TLS v1.2 or better.
-* For Windows, this means Windows 7 and above
-* [Official Microsoft Documentation](https://msdn.microsoft.com/en-us/library/windows/desktop/aa380516%28v=vs.85%29.aspx)
-* [Support for SSL/TLS protocols on Windows](http://blogs.msdn.com/b/kaushal/archive/2011/10/02/support-for-ssl-tls-protocols-on-windows.aspx)
-
-This SDK is tested with PHP 7.1 and Apache 2.4.  You will need to enable SSL in both, and acquire and configure a ca-bundle.crt for your PHP installation.
-
-## 3. Beta
-
-This SDK is currently designed to be a min-spec PHP SDK, allowing you to make PlayFab api calls from your PHP server.  There's very little of the niceties and convienience that exists in the other SDKs.  Based on customer interest, we may bring this SDK up to the feature spec of other SDKs in the future.
-
-
-## 4. Troubleshooting:
-
-#### Contact Us
-We love to hear from our developer community! 
-Do you have ideas on how we can make our products and services better? 
-
-Our Developer Success Team can assist with answering any questions as well as process any feedback you have about PlayFab services.
-
-[Forums, Support and Knowledge Base](https://community.playfab.com/index.html)
-
-## 5. Copyright and Licensing Information:
+## 2. Copyright and Licensing Information:
 
   Apache License -- 
   Version 2.0, January 2004
